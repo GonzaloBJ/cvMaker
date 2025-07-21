@@ -1,150 +1,160 @@
+from enum import Enum
 from typing import List
 
-class MultiLanguageText:
-    ESP: str
-    ENG: str
-    
-    def __init__(self, ESP: str, ENG: str) -> None:
-        self.ESP = ESP
-        self.ENG = ENG
+
+class Career:
+    esp: str
+    eng: str
+
+    def __init__(self, esp: str, eng: str) -> None:
+        self.esp = esp
+        self.eng = eng
+
+
+class WorkModel(Enum):
+    HYBRID = "hybrid"
+    ON_SITE = "on-site"
+    REMOTE = "remote"
+
 
 class EmploymentHistory:
-    position: MultiLanguageText
+    position: Career
     client: str
     company: str
-    dateRange: MultiLanguageText
-    workModel: str
-    outSourcing: bool
-    currentJob: bool
-    functions: List[MultiLanguageText]
+    date_range: Career
+    work_model: WorkModel
+    out_sourcing: bool
+    current_job: bool
+    functions: List[Career]
 
-    def __init__(self, position: MultiLanguageText, client: str, company: str, dateRange: MultiLanguageText, outSourcing: bool, currentJob: bool, functions: List[MultiLanguageText], workModel: str) -> None:
+    def __init__(self, position: Career, client: str, company: str, date_range: Career, work_model: WorkModel, out_sourcing: bool, current_job: bool, functions: List[Career]) -> None:
         self.position = position
         self.client = client
         self.company = company
-        self.dateRange = dateRange
-        self.outSourcing = outSourcing
-        self.currentJob = currentJob
+        self.date_range = date_range
+        self.work_model = work_model
+        self.out_sourcing = out_sourcing
+        self.current_job = current_job
         self.functions = functions
-        self.workModel = workModel
 
 
 class Certification:
     title: str
-    educationalInstitution: str
-    certificationDate: str
+    educational_institution: str
+    certification_date: int
 
-    def __init__(self, title: str, educationalInstitution: str, certificationDate: str) -> None:
+    def __init__(self, title: str, educational_institution: str, certification_date: int) -> None:
         self.title = title
-        self.educationalInstitution = educationalInstitution
-        self.certificationDate = certificationDate
+        self.educational_institution = educational_institution
+        self.certification_date = certification_date
 
 
-class Formation:
-    degree: str
-    educationalInstitution: str
-    endDate: str
-    hasDegree: bool
-
-    def __init__(self, degree: str, educationalInstitution: str, endDate: str, hasDegree: bool) -> None:
-        self.degree = degree
-        self.educationalInstitution = educationalInstitution
-        self.endDate = endDate
-        self.hasDegree = hasDegree
-        
-
-class Reference:
-    contactName: str
-    position: str
-    company: str
-    phoneNumber: str
-    email: str
-
-    def __init__(self, contactName: str, position: str, company: str, phoneNumber: str, email: str) -> None:
-        self.contactName = contactName
-        self.position = position
-        self.company = company
-        self.phoneNumber = phoneNumber
-        self.email = email
-        
-        
-class ContactInfo: 
-    icon: str 
+class Contact:
+    icon: str
     name: str
     value: str
-    
+
     def __init__(self, icon: str, name: str, value: str) -> None:
         self.icon = icon
         self.name = name
         self.value = value
-        
-        
-class Languages:
+
+
+class Formation:
+    degree: str
+    educational_institution: str
+    end_date: int
+    has_degree: bool
+
+    def __init__(self, degree: str, educational_institution: str, end_date: int, has_degree: bool) -> None:
+        self.degree = degree
+        self.educational_institution = educational_institution
+        self.end_date = end_date
+        self.has_degree = has_degree
+
+
+class Language:
     language: str
     level: str
     certified: bool
-    
+
     def __init__(self, language: str, level: str, certified: bool) -> None:
         self.language = language
         self.level = level
         self.certified = certified
 
-    
+
+class Reference:
+    contact_name: str
+    position: str
+    company: str
+    phone_number: str
+    email: str
+
+    def __init__(self, contact_name: str, position: str, company: str, phone_number: str, email: str) -> None:
+        self.contact_name = contact_name
+        self.position = position
+        self.company = company
+        self.phone_number = phone_number
+        self.email = email
+
+
 class ProfessionalInfo:
     name: str
-    career: MultiLanguageText
-    profileSummary: MultiLanguageText
-    picturePath: str
-    contacts: List[ContactInfo]
-    goals: List[MultiLanguageText]
+    career: Career
+    profile_summary: Career
+    picture_path: str
+    contacts: List[Contact]
+    goals: List[Career]
     skills: List[str]
     formation: List[Formation]
     certification: List[Certification]
-    languages: Languages
-    refereces: List[Reference]
+    languages: List[Language]
+    references: List[Reference]
 
-    def __init__(self, name: str, career: MultiLanguageText, profileSummary: MultiLanguageText, goals: List[MultiLanguageText], picturePath: str, languages: Languages, skills: List[str], formation: List[Formation], certification: List[Certification], references: List[Reference]) -> None:
+    def __init__(self, name: str, career: Career, profile_summary: Career, picture_path: str, contacts: List[Contact], goals: List[Career], skills: List[str], formation: List[Formation], certification: List[Certification], languages: List[Language], references: List[Reference]) -> None:
         self.name = name
         self.career = career
-        self.profileSummary = profileSummary
+        self.profile_summary = profile_summary
+        self.picture_path = picture_path
+        self.contacts = contacts
         self.goals = goals
-        self.picturePath = picturePath
         self.skills = skills
         self.formation = formation
         self.certification = certification
         self.languages = languages
         self.references = references
 
+
 class SectionConfig:
-    profile: MultiLanguageText
-    formation: MultiLanguageText
-    certification: MultiLanguageText
-    languages: MultiLanguageText
-    goals: MultiLanguageText
-    skills: MultiLanguageText
-    workHistory: MultiLanguageText
-    references: MultiLanguageText
-    
-    def __init__(self, profile: MultiLanguageText, formation: MultiLanguageText, certification: MultiLanguageText, languages: MultiLanguageText, goals: MultiLanguageText, skills: MultiLanguageText, workHistory: MultiLanguageText, references: MultiLanguageText) -> None:
+    profile: Career
+    formation: Career
+    certification: Career
+    languages: Career
+    goals: Career
+    skills: Career
+    work_history: Career
+    references: Career
+
+    def __init__(self, profile: Career, formation: Career, certification: Career, languages: Career, goals: Career, skills: Career, work_history: Career, references: Career) -> None:
         self.profile = profile
         self.formation = formation
         self.certification = certification
         self.languages = languages
         self.goals = goals
         self.skills = skills
-        self.workHistory = workHistory
+        self.work_history = work_history
         self.references = references
-        
 
-class CV:
+
+class Root:
     lang: str
-    sectionConfig: SectionConfig
-    professionalInfo: ProfessionalInfo
-    employmentHistory: List[EmploymentHistory]
+    section_config: SectionConfig
+    professional_info: ProfessionalInfo
+    employment_history: List[EmploymentHistory]
 
-    def __init__(self, sectionConfig: List[MultiLanguageText], professionalInfo: ProfessionalInfo, employmentHistory: List[EmploymentHistory]) -> None:
-        self.lang: str = ""
-        self.sectionConfig = sectionConfig
-        self.professionalInfo = professionalInfo
-        self.employmentHistory = employmentHistory
-
+    def __init__(self, lang: str, section_config: SectionConfig, professional_info: ProfessionalInfo, employment_history: List[EmploymentHistory]) -> None:
+        self.lang = lang
+        self.section_config = section_config
+        self.professional_info = professional_info
+        self.employment_history = employment_history

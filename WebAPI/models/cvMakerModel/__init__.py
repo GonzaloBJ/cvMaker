@@ -1,9 +1,11 @@
-class Template:
+class CVTemplate:
     name: str
-    html_path: str
-    style_path: str
+    htmlPath: str
+    stylePath: str
+    description: str
 
-    def __init__(self, name: str, html_path: str, style_path: str) -> None:
+    def __init__(self, name: str, htmlPath: str, stylePath: str, description: str) -> None:
         self.name = name
-        self.html_path = html_path
-        self.style_path = style_path
+        self.htmlPath = htmlPath
+        self.stylePath = stylePath
+        self.description = description

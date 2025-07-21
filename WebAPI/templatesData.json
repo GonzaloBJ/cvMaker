@@ -1,0 +1,26 @@
+[
+   {
+      "name": "BasicoATS",
+      "htmlPath": "./templates/basic/basicTemplate.html",
+      "stylePath": "./templates/basic/basicStyles.css",
+      "description": "pensado para cumplir con el formato ATS"
+   },
+   {
+      "name": "SimpleA",
+      "htmlPath": "./templates/simpleA/simpleA.html",
+      "stylePath": "./templates/simpleA/simpleA.css",
+      "description": "plantilla simple"
+   },
+   {
+      "name": "SimpleCustomA",
+      "htmlPath": "./templates/simpleCustomA/simpleCustomA.html",
+      "stylePath": "./templates/simpleCustomA/simpleCustomA.css",
+      "description": "plantilla simple pero con aspecto mejorado"
+   },
+   {
+      "name": "SimpleB",
+      "htmlPath": "./templates/simpleB/simpleB.html",
+      "stylePath": "./templates/simpleB/simpleB.css",
+      "description": "plantilla simple"
+   }
+]
