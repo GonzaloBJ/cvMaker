@@ -1,8 +1,7 @@
 from flask import jsonify, request
 from flask import Blueprint
-from models.cvMakerModel import Template
+from enums.cvMaker import ELanguages
 from services.cvMakerService import cvMakerService
-#from datetime import datetime
 
 cvMaker = Blueprint('cvMaker',__name__,  url_prefix='/cvMaker')
 
@@ -10,14 +9,20 @@ cvMaker = Blueprint('cvMaker',__name__,  url_prefix='/cvMaker')
 def cv_from_json():
     try:
         template_name = request.args.get('template', 'basic')
+        language_str = request.args.get('lang', 'ESP')
+        
+        try:
+            language_enum = ELanguages[language_str]
+        except KeyError:
+            language_enum = ELanguages.ESP
         
         cvMaker_service = cvMakerService()
         
         output_pdf = './cv_generated.pdf'
         cv_context = cvMakerService.get_cv_context()
+        cv_context["lang"] = language_enum.name
+        
         cv_template = cvMakerService.get_template(template_name)
-       
-        ##cvMaker_service.generate_test()
        
         cv_object = cvMaker_service.make_pdf_cv(cv_template, cv_context, output_pdf)
         if cv_object is None:

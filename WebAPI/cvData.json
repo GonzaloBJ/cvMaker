@@ -1,4 +1,39 @@
 {
+   "lang": "ESP",
+   "sectionConfig": {
+      "profile":{
+         "ESP": "Perfil",
+         "ENG": "Profile"
+      },
+      "formation":{
+         "ESP": "Educación",
+         "ENG": "Education"
+      },
+      "certification":{
+         "ESP": "Certificaciones",
+         "ENG": "Certifications"
+      },
+      "languages":{
+         "ESP": "Lenguajes",
+         "ENG": "Languages"
+      },
+      "goals":{
+         "ESP": "Logros",
+         "ENG": "Goals"
+      },
+      "skills":{
+         "ESP": "Aptitudes",
+         "ENG": "Skills"
+      },
+      "workHistory":{
+         "ESP": "Historial Laboral",
+         "ENG": "Work Experience"
+      },
+      "references":{
+         "ESP": "Referencias",
+         "ENG": "References"
+      }
+   },
    "professionalInfo":{
       "name":"Gonzalo Javier Barahona Jiménez",
       "career": {
@@ -6,8 +41,8 @@
          "ENG": "Software Engineer"
       },
       "profileSummary": {
-         "ESP": "Soy desarrollador FullStack, llevo más de cinco años trabajando en desarrollo de software y web, principalmente con tecnologías Microsoft (.Net, NetCore, SQL Server), javascript/typescript (node, express, react, next, nest), y junto con servicios cloud como AWS y Azure. Me he desempeñado en distintos rubros y negocios, logrando así adquirir las competencias necesarias para enfrentar distintos escenarios y problemáticas para darles la mejor solución tecnológica. Me interesa mucho compartir conocimientos con otros colegas e incentivar el uso óptimo de las tecnologías.",
-         "ENG": "A FullStack developer with more than five years experience working on software and web development, using mainly technologies from Microsoft (.Net, NetCore) and javascript (node.js, express.js, react, next.js). I have worked in different businesses to acquire skills to face scenarios and requirements with the best tech solutions. I'm seeking to expand my knowledge and improve my current set of skills."
+         "ESP": "Como ingeniero de software llevo más de cinco años trabajando en desarrollo de software y web, principalmente con tecnologías <strong>Microsoft (Dotnet, SQL Server), javascript (node, express, react, next, nest), y junto con servicios cloud como AWS y Azure</strong>. Me he desempeñado en distintos rubros y negocios, logrando así adquirir las competencias necesarias para enfrentar distintos escenarios y problemáticas para darles la mejor solución tecnológica. Me interesa mucho compartir conocimientos con otros colegas e incentivar el uso óptimo de las tecnologías.",
+         "ENG": "As a software engineer with more than five years experience working on software and web development, using mainly technologies from <strong>Microsoft (Dotnet, SQL Server) and javascript (node.js, express.js, react, next.js) and cloud services as AWS and Azure</strong>. I have worked in different businesses to acquire skills to face scenarios and requirements with the best tech solutions. I'm seeking to expand my knowledge and improve my current set of skills."
       },
       "picturePath": "#",
       "contacts": [
@@ -149,8 +184,8 @@
          "currentJob": true,
          "functions":[
             {
-               "ESP":"Actividades de DevOps (configuración de pipelines ci/cd, configuración y despliegue de sitios y APIs legados)",
-               "ENG":"DevOps activities (ci/cd pipeline configuration, legacy systems configuration and deployment)"
+               "ESP":"Actividades de DevOps <strong>(configuración de pipelines ci/cd, configuración y despliegue de sitios y APIs legados)</strong>",
+               "ENG":"DevOps activities <strong>(ci/cd pipeline configuration, legacy systems configuration and deployment)</strong>"
             },
             {
                "ESP":"Desarrollo de soluciones de arquitectura de software para equipos de desarrollo",
@@ -161,12 +196,12 @@
                "ENG":"Frontend development (<strong>Angular 17</strong>, <strong>MVC4</strong>, <strong>Bootstrap</strong>)"
             },
             {
-               "ESP":"Desarrollo Backend (Net4.8, Net8, Python)",
-               "ENG":"Backend development (Net4.8, Net8, Python)"
+               "ESP":"Desarrollo Backend <strong>(Net4.8, Net8, Python)</strong>",
+               "ENG":"Backend development <strong>(Net4.8, Net8, Python)</strong>"
             },
             {
-               "ESP":"Modelamiento de datos y mantención a bases de datos (PostgreSQL, SQL server)",
-               "ENG":"Data modeling and databases support (PostgreSQL, SQL server)"
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server)</strong>",
+               "ENG":"Data modeling and databases support <strong>(PostgreSQL, SQL server)</strong>"
             },
             {
                "ESP":"Soporte a los sistemas de la compañia",
@@ -194,16 +229,16 @@
          "currentJob":false,
          "functions":[
             {
-               "ESP":"Desarrollo Frontend (React, Next.js, MVC4, Bootstrap, SCSS)",
-               "ENG":"Frontend development (React, Next.js, MVC4, Bootstrap, SCSS)"
+               "ESP":"Desarrollo Frontend <strong>(React, Next.js, MVC4, Bootstrap, SCSS)</strong>",
+               "ENG":"Frontend development <strong>(React, Next.js, MVC4, Bootstrap, SCSS)</strong>"
             },
             {
-               "ESP":"Desarrollo Backend (Dotnet, Nest.js, express.js, aws lambda, serveless python)",
-               "ENG":"Backend development (Dotnet, Nest.js, express.js, aws lambda, serveless python)"
+               "ESP":"Desarrollo Backend <strong>(Dotnet, Nest.js, express.js, aws lambda, serveless python)</strong>",
+               "ENG":"Backend development <strong>(Dotnet, Nest.js, express.js, aws lambda, serveless python)</strong>"
             },
             {
-               "ESP":"Modelamiento de datos y mantención a bases de datos (PostgreSQL, SQL server, aws RDS, aws DMS)",
-               "ENG":"Data modeling and databases support (PostgreSQL, SQL server, aws RDS, aws DMS)"
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server, aws RDS, aws DMS)</strong>",
+               "ENG":"Data modeling and databases support <strong>(PostgreSQL, SQL server, aws RDS, aws DMS)</strong>"
             },
             {
                "ESP":"Chapter Lead de un Scrum Chapter",
@@ -231,8 +266,8 @@
          "currentJob":false,
          "functions":[
 			{
-               "ESP":"Soporte a los sistemas legados de la compañia (Dotnet, Winforms, MVC4)",
-               "ENG":"Provide support to company legacy systems (Dotnet, Winforms, MVC4)"
+               "ESP":"Soporte a los sistemas legados de la compañia <strong>(Dotnet, Winforms, MVC4)</strong>",
+               "ENG":"Provide support to company legacy systems <strong>(Dotnet, Winforms, MVC4)</strong>"
             },
             {
                "ESP":"Metodología Scrum (equipo de 3 integrantes en configuracion de sprints de 2 semanas)",
@@ -256,16 +291,16 @@
          "currentJob":false,
          "functions":[
 			   {
-               "ESP":"Desarrollo de librerias (Dotnet)",
-               "ENG":"Libraries development (Dotnet)"
+               "ESP":"Desarrollo de librerias <strong>(Dotnet)</strong>",
+               "ENG":"Libraries development <strong>(Dotnet)</strong>"
             },
 			   {
                "ESP":"Configuración e Integración de dispositivos electronicos",
                "ENG":"Electronic devices Setup and Integration"
             },
 			   {
-               "ESP":"Desarrollo FullStack (Dotnet, MVC4, WinForms, Bootstrap, SQL Server)",
-               "ENG":"FullStack development (Dotnet, MVC4, WinForms, Bootstrap, SQL Server)"
+               "ESP":"Desarrollo FullStack <strong>(Dotnet, MVC4, WinForms, Bootstrap, SQL Server)</strong>",
+               "ENG":"FullStack development <strong>(Dotnet, MVC4, WinForms, Bootstrap, SQL Server)</strong>"
             },
 			   {
                "ESP":"Metodología Scrum (equipo de 4 integrantes en configuracion de sprints de 2 semanas)",
@@ -289,8 +324,8 @@
          "currentJob":false,
          "functions":[
 			   {
-               "ESP":"Mantención y soporte a los sistemas de la compañia (SQL server, WCF, Dotnet API REST)",
-               "ENG":"Maintenance and support to company systems (SQL server, WCF, Dotnet API REST)"
+               "ESP":"Mantención y soporte a los sistemas de la compañia <strong>(SQL server, WCF, Dotnet API REST)</strong>",
+               "ENG":"Maintenance and support to company systems <strong>(SQL server, WCF, Dotnet API REST)</strong>"
             },
             {
                "ESP":"Metodología Waterfall",
@@ -314,12 +349,12 @@
          "currentJob":false,
          "functions":[
             {
-               "ESP":"Desarrollo FullStack (Dotnet, MVC4, Jquery, Bootstrap, SQL Server)",
-               "ENG":"FullStack development (Dotnet, MVC4, Jquery, Bootstrap, SQL Server)"
+               "ESP":"Desarrollo FullStack <strong>(Dotnet, MVC4, Jquery, Bootstrap, SQL Server)</strong>",
+               "ENG":"FullStack development <strong>(Dotnet, MVC4, Jquery, Bootstrap, SQL Server)</strong>"
             },
 			   {
-               "ESP":"Modelamiento de datos y mantención a bases de datos (SQL server)",
-               "ENG":"Data modeling and databases support (SQL server)"
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(SQL server)</strong>",
+               "ENG":"Data modeling and databases support <strong>(SQL server)</strong>"
             },
             {
                "ESP":"Metodología Scrum (equipo de 5 integrantes en configuracion de sprints de 2 semanas)",
@@ -343,12 +378,12 @@
          "currentJob":false,
          "functions":[
             {
-               "ESP":"Mantención y soporte a los sistemas de la compañia (Dotnet, SQL server, Jquery)",
-               "ENG":"Maintenance and support to company systems (Dotnet, SQL server, Jquery)"
+               "ESP":"Mantención y soporte a los sistemas de la compañia <strong>(Dotnet, SQL server, Jquery)</strong>",
+               "ENG":"Maintenance and support to company systems <strong>(Dotnet, SQL server, Jquery)</strong>"
             },
 			   {
-               "ESP":"Modelamiento de datos y mantención a bases de datos (SQL server)",
-               "ENG":"Data modeling and databases support (SQL server)"
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(SQL server)</strong>",
+               "ENG":"Data modeling and databases support <strong>(SQL server)</strong>"
             },
             {
                "ESP":"Metodología ITIL para Service Desk (equipo de 4 integrantes)",
@@ -372,8 +407,8 @@
          "currentJob":false,
          "functions":[
             {
-               "ESP":"Desarrollo FullStack (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)",
-               "ENG":"FullStack development (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)"
+               "ESP":"Desarrollo FullStack <strong>(Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)</strong>",
+               "ENG":"FullStack development <strong>(Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)</strong>"
             },
             {
                "ESP":"Apoyo a la gestión de proyectos",
@@ -409,8 +444,8 @@
          "currentJob": false,
          "functions":[
             {
-               "ESP":"Desarrollo FullStack (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)",
-               "ENG":"FullStack development (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)"
+               "ESP":"Desarrollo FullStack <strong>(Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)</strong>",
+               "ENG":"FullStack development <strong>(Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)</strong>"
             },
             {
                "ESP":"Apoyo a la gestión de proyectos",
@@ -438,12 +473,12 @@
          "currentJob": false,
          "functions":[
             {
-               "ESP":"Desarrollo FullStack (Dotnet, MVC4, Oracle SQL)",
-               "ENG":"FullStack development (Dotnet, MVC4, Oracle SQL)"
+               "ESP":"Desarrollo FullStack <strong>(Dotnet, MVC4, Oracle SQL)</strong>",
+               "ENG":"FullStack development <strong>(Dotnet, MVC4, Oracle SQL)</strong>"
             },
             {
-               "ESP":"Desarrollo de librerias (Dotnet)",
-               "ENG":"Libraries development (Dotnet)"
+               "ESP":"Desarrollo de librerias <strong>(Dotnet)</strong>",
+               "ENG":"Libraries development <strong>(Dotnet)</strong>"
             },
 			   {
                "ESP":"Configuración e Integración de dispositivos electronicos",

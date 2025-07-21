@@ -4,10 +4,15 @@
 ```sh
 python -m venv venv
 ```
-## para activar virtualenv
+## para activar virtualenv en powershell
 ```sh
 venv\Scripts\Activate.ps1
 ```
+## para activar virtualenv en bash
+```sh
+source venv\Scripts\activate
+```
+
 ## y para desactivar
 ```sh
 deactivate

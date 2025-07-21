@@ -1,12 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{professionalInfo.name}} - {{professionalInfo.career}}</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-</head> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +11,7 @@
   <header>
     <!-- <img src="{{professionalInfo.picturePath}}" alt="Your Name" /> -->
     <h2>{{professionalInfo.name}}</h2>
-    <p class="profession">{{professionalInfo.career["ESP"]}}</p>
+    <p class="profession">{{professionalInfo.career[lang]}}</p>
     <div class="contact-info">
       {% for contactInfo in professionalInfo.contacts %}
       <span><i class="{{contactInfo.icon}}"></i> {{contactInfo.value}}</span>
@@ -30,7 +21,7 @@
   </header>
 
   <section id="education">
-    <h3>Education</h3>
+    <h3>{{sectionConfig.formation[lang]}}</h3>
     <ul>
       {% for institution in professionalInfo.formation %}
       <li>
@@ -49,7 +40,7 @@
   </section>
 
   <section id="skills">
-    <h3>Skills</h3>
+    <h3>{{sectionConfig.skills[lang]}}</h3>
         <ul>
             {% for skill in professionalInfo.skills %}
             <li>{{skill}}</li>
@@ -71,15 +62,15 @@
   </section> -->
 
   <section id="experience">
-    <h3>Work Experience</h3>
+    <h3>{{sectionConfig.workHistory[lang]}}</h3>
     <ul>
       {% for employ in employmentHistory %}
       <li>
-        <strong>{{employ.position["ESP"]}}</strong> - {{employ.client}}
-        <span class="experience"> | {{employ.dateRange["ESP"]}}</span>
+        <strong>{{employ.position[lang]}}</strong> - {{employ.client}}
+        <span class="experience"> | {{employ.dateRange[lang]}}</span>
         <ul>
           {% for function in employ.functions %}
-          <li>{{function["ESP"]}}</li>
+          <li>{{function[lang]}}</li>
           {% endfor %}
         </ul>
       </li>
@@ -89,7 +80,7 @@
   </section>
 
   <section id="references">
-    <h3>References</h3>
+    <h3>{{sectionConfig.references[lang]}}</h3>
     <ul>
       {% for reference in professionalInfo.references %}
       <li>

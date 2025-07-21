@@ -3,64 +3,68 @@ from typing import List
 class MultiLanguageText:
     ESP: str
     ENG: str
+    
+    def __init__(self, ESP: str, ENG: str) -> None:
+        self.ESP = ESP
+        self.ENG = ENG
 
 class EmploymentHistory:
     position: MultiLanguageText
     client: str
     company: str
-    date_range: MultiLanguageText
-    work_model: str
-    out_sourcing: bool
-    current_job: bool
+    dateRange: MultiLanguageText
+    workModel: str
+    outSourcing: bool
+    currentJob: bool
     functions: List[MultiLanguageText]
 
-    def __init__(self, position: MultiLanguageText, client: str, company: str, date_range: MultiLanguageText, out_sourcing: bool, current_job: bool, functions: List[MultiLanguageText], work_model: str) -> None:
+    def __init__(self, position: MultiLanguageText, client: str, company: str, dateRange: MultiLanguageText, outSourcing: bool, currentJob: bool, functions: List[MultiLanguageText], workModel: str) -> None:
         self.position = position
         self.client = client
         self.company = company
-        self.date_range = date_range
-        self.out_sourcing = out_sourcing
-        self.current_job = current_job
+        self.dateRange = dateRange
+        self.outSourcing = outSourcing
+        self.currentJob = currentJob
         self.functions = functions
-        self.work_model = work_model
+        self.workModel = workModel
 
 
 class Certification:
     title: str
-    educational_institution: str
-    certification_date: str
+    educationalInstitution: str
+    certificationDate: str
 
-    def __init__(self, title: str, educational_institution: str, certification_date: str) -> None:
+    def __init__(self, title: str, educationalInstitution: str, certificationDate: str) -> None:
         self.title = title
-        self.educational_institution = educational_institution
-        self.certification_date = certification_date
+        self.educationalInstitution = educationalInstitution
+        self.certificationDate = certificationDate
 
 
 class Formation:
     degree: str
-    educational_institution: str
-    end_date: str
-    has_degree: bool
+    educationalInstitution: str
+    endDate: str
+    hasDegree: bool
 
-    def __init__(self, degree: str, educational_institution: str, end_date: str, has_degree: bool) -> None:
+    def __init__(self, degree: str, educationalInstitution: str, endDate: str, hasDegree: bool) -> None:
         self.degree = degree
-        self.educational_institution = educational_institution
-        self.end_date = end_date
-        self.has_degree = has_degree
+        self.educationalInstitution = educationalInstitution
+        self.endDate = endDate
+        self.hasDegree = hasDegree
         
 
 class Reference:
-    contact_name: str
+    contactName: str
     position: str
     company: str
-    phone_number: str
+    phoneNumber: str
     email: str
 
-    def __init__(self, contact_name: str, position: str, company: str, phone_number: str, email: str) -> None:
-        self.contact_name = contact_name
+    def __init__(self, contactName: str, position: str, company: str, phoneNumber: str, email: str) -> None:
+        self.contactName = contactName
         self.position = position
         self.company = company
-        self.phone_number = phone_number
+        self.phoneNumber = phoneNumber
         self.email = email
         
         
@@ -85,12 +89,12 @@ class Languages:
         self.level = level
         self.certified = certified
 
-
+    
 class ProfessionalInfo:
     name: str
     career: MultiLanguageText
-    profile_summary: MultiLanguageText
-    picture_path: str
+    profileSummary: MultiLanguageText
+    picturePath: str
     contacts: List[ContactInfo]
     goals: List[MultiLanguageText]
     skills: List[str]
@@ -99,24 +103,48 @@ class ProfessionalInfo:
     languages: Languages
     refereces: List[Reference]
 
-    def __init__(self, name: str, career: MultiLanguageText, profile_summary: MultiLanguageText, goals: List[MultiLanguageText], picture_path: str, languages: Languages, skills: List[str], formation: List[Formation], certification: List[Certification], references: List[Reference]) -> None:
+    def __init__(self, name: str, career: MultiLanguageText, profileSummary: MultiLanguageText, goals: List[MultiLanguageText], picturePath: str, languages: Languages, skills: List[str], formation: List[Formation], certification: List[Certification], references: List[Reference]) -> None:
         self.name = name
         self.career = career
-        self.profile_summary = profile_summary
+        self.profileSummary = profileSummary
         self.goals = goals
-        self.picture_path = picture_path
+        self.picturePath = picturePath
         self.skills = skills
         self.formation = formation
         self.certification = certification
         self.languages = languages
         self.references = references
 
+class SectionConfig:
+    profile: MultiLanguageText
+    formation: MultiLanguageText
+    certification: MultiLanguageText
+    languages: MultiLanguageText
+    goals: MultiLanguageText
+    skills: MultiLanguageText
+    workHistory: MultiLanguageText
+    references: MultiLanguageText
+    
+    def __init__(self, profile: MultiLanguageText, formation: MultiLanguageText, certification: MultiLanguageText, languages: MultiLanguageText, goals: MultiLanguageText, skills: MultiLanguageText, workHistory: MultiLanguageText, references: MultiLanguageText) -> None:
+        self.profile = profile
+        self.formation = formation
+        self.certification = certification
+        self.languages = languages
+        self.goals = goals
+        self.skills = skills
+        self.workHistory = workHistory
+        self.references = references
+        
 
 class CV:
-    professional_info: ProfessionalInfo
-    employment_history: List[EmploymentHistory]
+    lang: str
+    sectionConfig: SectionConfig
+    professionalInfo: ProfessionalInfo
+    employmentHistory: List[EmploymentHistory]
 
-    def __init__(self, professional_info: ProfessionalInfo, employment_history: List[EmploymentHistory]) -> None:
-        self.professional_info = professional_info
-        self.employment_history = employment_history
+    def __init__(self, sectionConfig: List[MultiLanguageText], professionalInfo: ProfessionalInfo, employmentHistory: List[EmploymentHistory]) -> None:
+        self.lang: str = ""
+        self.sectionConfig = sectionConfig
+        self.professionalInfo = professionalInfo
+        self.employmentHistory = employmentHistory
 
