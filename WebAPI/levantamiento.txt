@@ -1,2 +1,5 @@
 - configuracion de idioma para titulos de template
 - en skills agregar atributos para iconos y nivel
+------
+
+-educacion de las reciente a la ultima
