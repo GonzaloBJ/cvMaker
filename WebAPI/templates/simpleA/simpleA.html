@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{professionalName}} - Full Stack Developer CV</title>
+</head>
+<body>
+
+    <header>
+        <img src="{{professionalData.profilePath}}" alt="Your Name" />
+        <h1>{{professionalData.name}}</h1>
+        <p>{{professionalData.career}}</p>
+    </header>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            {% for institution in professionalData.formation %}
+            <li>
+                <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
+                <span class="education"> | {{institution.endDate}}</span>
+            </li>
+            {% endfor %}
+
+            {% for certification in professionalData.certification %}
+            <li>
+                <strong>{{certification.title}}</strong> - {{certification.educationalInstitution}}
+                <span class="education"> | {{certification.certificationDate}}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <ul>
+            {% for employ in employmentHistory %}
+            <li>
+                <strong>{{employ.position["ESP"]}}</strong> - {{employ.client}}
+                <span class="experience"> | {{employ.startDate}} - {% if employ.currentJob == true %} Actualidad {% else %} {{employ.endDate}} {% endif %}</span>
+                <ul class="function">
+                    {% for function in employ.functions %}
+                    <li>{{function["ESP"]}}</li>
+                    {% endfor %}
+                </ul>
+                
+            </li>
+            <br>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            {% for skill in professionalData.skills %}
+            <li>{{skill}}</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <!-- <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li>
+                <strong>Project Name</strong>
+                <span class="projects"> | Technologies Used: React, Node.js, MongoDB</span>
+                <ul>
+                    <li>Description of the project and your role in it.</li>
+                </ul>
+            </li>
+        </ul>
+    </section> -->
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <ul>
+            <li>Email: {{professionalData.email}}</li>
+            <li>Phone: {{professionalData.phoneNumber}}</li>
+            <li>LinkedIn: {{professionalData.linkedIn}}</li>
+            <li>GitHub: github.com/yourusername</li>
+            <!-- Add more contact information as needed -->
+        </ul>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+{
+   "professionalInfo":{
+      "name":"Gonzalo Javier Barahona Jiménez",
+      "career": {
+         "ESP": "Ingeniero de Software",
+         "ENG": "Software Engineer"
+      },
+      "profileSummary": {
+         "ESP": "Soy desarrollador FullStack, llevo más de cinco años trabajando en desarrollo de software y web, principalmente con tecnologías Microsoft (.Net, NetCore, SQL Server), javascript/typescript (node, express, react, next, nest), y junto con servicios cloud como AWS y Azure. Me he desempeñado en distintos rubros y negocios, logrando así adquirir las competencias necesarias para enfrentar distintos escenarios y problemáticas para darles la mejor solución tecnológica. Me interesa mucho compartir conocimientos con otros colegas e incentivar el uso óptimo de las tecnologías.",
+         "ENG": "A FullStack developer with more than five years experience working on software and web development, using mainly technologies from Microsoft (.Net, NetCore) and javascript (node.js, express.js, react, next.js). I have worked in different businesses to acquire skills to face scenarios and requirements with the best tech solutions. I'm seeking to expand my knowledge and improve my current set of skills."
+      },
+      "picturePath": "#",
+      "contacts": [
+         {"icon": "fas fa-phone", "name": "phoneNumber", "value": "+56969009259"},
+         {"icon": "fas fa-envelope", "name":"email","value":"gonzalobarahonaj@gmail.com"},
+         {"icon": "fas fa-location-dot", "name": "address", "value": "Santiago. RM. Chile"},
+         {"icon": "fab fa-linkedin", "name": "linkedIn", "value": "https://linkedin.com/in/gonzalo-barahona-jiménez-822b9173"},
+         {"icon": "fab fa-github", "name":"github", "value": "https://github.com/GonzaloBJ/"}
+      ],
+      "goals": [
+         {
+            "ESP": "En <strong>Pentavida</strong>, logré desempearme como arquitecto de software diseñando soluciones de arquitectura a distintos equipos y sirviendo como consultor tecnico a estos.",
+            "ENG": ""
+         },
+         {
+            "ESP": "En <strong>Pentavida</strong>, logré integrar los test unitarios y herramientas de analisis de codigo a los flujos de CI/CD. de la compañia",
+            "ENG": ""
+         },
+         {
+            "ESP": "En <strong>TOCTOC.COM</strong>, logré automatizar y mejorar los procesos de migracion de datos (grandes volumenes de datos de bienes raices), dejando de lado las migraciones programadas de mas de 4 horas, reemplazandolas por procesos ETL automatizados de menos de 1 hora.",
+            "ENG": ""
+         },
+         {
+            "ESP": "En <strong>TOCTOC.COM</strong>, logré liderar un equipo bajo la modalidad de Chapter Lead de scrum.",
+            "ENG": ""
+         },
+         {
+            "ESP": "En <strong>Anticipa</strong>, participé de el ciclo completo del desarrollo de un software a pedido de un cliente (Correos de chile), desde los kickoffs, levantamiento de requerimientos, diseño, desarrollo, gestión de proyecto hasta la entrega de este.",
+            "ENG": ""
+         }
+      ],
+      "skills": [
+         "HTML",
+         "Dotnet (C#)",
+         "Javascript",
+         "Typescript",
+         "Python",
+         "Node",
+         "React",
+         "MVC 5",
+         "Next.js",
+         "Nest.js",
+         "Express.js",
+         "GraphQL",
+         "AWS RDS",
+         "AWS DMS",
+         "AWS SQS",
+         "AWS S3",
+         "Bootstrap",
+         "Material",
+         "CSS/SCSS",
+         "Azure SQL Database",
+         "SQL Server",
+         "PostgreSQL",
+         "OracleSQL",
+         "Scrum",
+         "Git",
+         "CI/CD",
+         "Jenkins Pipeline",
+         "Sonarqube",
+         "Unit Testing"
+      ],
+      "formation":[
+         {
+            "degree":"Ingeniero en Informática",
+            "educationalInstitution":"Duoc UC",
+            "endDate":"2017",
+            "hasDegree":true
+         },
+         {
+            "degree":"Analista Programador Computacional",
+            "educationalInstitution":"Duoc UC",
+            "endDate":"2015",
+            "hasDegree":true
+         }
+      ],
+      "certification":[
+         {
+            "title":"Microsoft Certified Azure Data Fundamentals",
+            "educationalInstitution":"Microsoft Learn",
+            "certificationDate":"2023"
+         },
+         {
+            "title":"Curso Inglés Intermedio Para Interacciones Laborales - Curso 2",
+            "educationalInstitution":"Pontificia Universidad Católica de Chile",
+            "certificationDate":"2023"
+         }
+      ],
+      "languages": [
+         {
+            "language": "Español",
+            "level": "native",
+            "certified": false
+         },
+         {
+            "language": "Ingles",
+            "level": "B2",
+            "certified": true
+         }
+      ],
+      "references":[
+		 {
+            "contactName":"Fernando Cepeda",
+            "position":"Lider equipo Tranformacion Digital",
+			   "company":"Pentavida",
+            "phoneNumber":"",
+            "email":"fcepeda@pentavida.cl"
+         },
+         {
+            "contactName":"Angelo Cabrera",
+            "position":"Dev Manager",
+			   "company":"TOCTOC.COM",
+            "phoneNumber":"+569 85802046",
+            "email":"angcabrera.icc@gmail.com"
+         },
+         {
+            "contactName":"Camilo Olivos",
+            "position":"Scrum Master",
+			   "company": "TOCTOC.COM",
+            "phoneNumber":"+569 84396371",
+            "email":"colivos17@gmail.com"
+         }
+      ]
+   },
+   "employmentHistory":[
+      {
+         "position":{
+            "ESP":"Ingeniero de Software",
+            "ENG":"Software Engineer"
+         },
+		   "client":"Pentavida",
+         "company":"Pentavida",
+         "dateRange": {
+            "ESP": "Junio 2023 - Junio 2025",
+            "ENG": "June 2023 - June 2025"
+         },
+         "workModel": "hybrid",
+		   "outSourcing": false,
+         "currentJob": true,
+         "functions":[
+            {
+               "ESP":"Actividades de DevOps (configuración de pipelines ci/cd, configuración y despliegue de sitios y APIs legados)",
+               "ENG":"DevOps activities (ci/cd pipeline configuration, legacy systems configuration and deployment)"
+            },
+            {
+               "ESP":"Desarrollo de soluciones de arquitectura de software para equipos de desarrollo",
+               "ENG":"Software Architecture solution development for develop teams"
+            },
+            {
+               "ESP":"Desarrollo Frontend (<strong>Angular 17</strong>, <strong>MVC4</strong>, <strong>Bootstrap</strong>)",
+               "ENG":"Frontend development (<strong>Angular 17</strong>, <strong>MVC4</strong>, <strong>Bootstrap</strong>)"
+            },
+            {
+               "ESP":"Desarrollo Backend (Net4.8, Net8, Python)",
+               "ENG":"Backend development (Net4.8, Net8, Python)"
+            },
+            {
+               "ESP":"Modelamiento de datos y mantención a bases de datos (PostgreSQL, SQL server)",
+               "ENG":"Data modeling and databases support (PostgreSQL, SQL server)"
+            },
+            {
+               "ESP":"Soporte a los sistemas de la compañia",
+               "ENG":"Provide support to company systems"
+            },
+            {
+               "ESP":"Metodología hibrida usando tablero Kanban, y algunas ceremonias de scrum (equipo de 4 integrantes)",
+               "ENG":"Hybrid methodology using Kanban table and some scrum ceremonies(4 members team)"
+            }
+         ]
+      },
+      {
+         "position":{
+            "ESP":"Desarrollador FullStack",
+            "ENG":"FullStack Developer"
+         },
+         "client":"TOCTOC.com",
+		   "company":"TOCTOC.com",
+         "dateRange": {
+            "ESP": "Octubre 2020 - Febrero 2023",
+            "ENG": "October 2020 - February 2023"
+         },
+         "workModel": "remote",
+		   "outSourcing": false,
+         "currentJob":false,
+         "functions":[
+            {
+               "ESP":"Desarrollo Frontend (React, Next.js, MVC4, Bootstrap, SCSS)",
+               "ENG":"Frontend development (React, Next.js, MVC4, Bootstrap, SCSS)"
+            },
+            {
+               "ESP":"Desarrollo Backend (Dotnet, Nest.js, express.js, aws lambda, serveless python)",
+               "ENG":"Backend development (Dotnet, Nest.js, express.js, aws lambda, serveless python)"
+            },
+            {
+               "ESP":"Modelamiento de datos y mantención a bases de datos (PostgreSQL, SQL server, aws RDS, aws DMS)",
+               "ENG":"Data modeling and databases support (PostgreSQL, SQL server, aws RDS, aws DMS)"
+            },
+            {
+               "ESP":"Chapter Lead de un Scrum Chapter",
+               "ENG":"Chapter Lead of Scrum Chapter"
+            },
+            {
+               "ESP":"Metodología Scrum (equipo de 5 integrantes en configuracion de sprints de 2 semanas)",
+               "ENG":"Scrum methodology (5 members team in 2 weeks sprints setup)"
+            }
+         ]
+      },
+	  {
+         "position":{
+            "ESP":"Ingeniero de Software",
+            "ENG":"Software Engineer"
+         },
+		   "client": "CitiGroup Latam",
+         "company":"Kibernum ",
+         "dateRange": {
+            "ESP": "Junio 2020 - Octubre 2020",
+            "ENG": "June 2020 - October 2020"
+         },
+         "workModel": "remote",
+		   "outSourcing": true,
+         "currentJob":false,
+         "functions":[
+			{
+               "ESP":"Soporte a los sistemas legados de la compañia (Dotnet, Winforms, MVC4)",
+               "ENG":"Provide support to company legacy systems (Dotnet, Winforms, MVC4)"
+            },
+            {
+               "ESP":"Metodología Scrum (equipo de 3 integrantes en configuracion de sprints de 2 semanas)",
+               "ENG":"Scrum methodology (3 members team in 2 weeks sprints setup)"
+            }
+         ]
+      },
+	  {
+         "position":{
+            "ESP":"Ingeniero de Software",
+            "ENG":"Software Engineer"
+         },
+		   "client": "Brinks Chile",
+         "company":"Xinerlink ",
+         "dateRange": {
+            "ESP": "Septiembre 2019 - Febrero 2020",
+            "ENG": "September 2019 - February 2020"
+         },
+         "workModel": "on-site",
+		   "outSourcing": true,
+         "currentJob":false,
+         "functions":[
+			   {
+               "ESP":"Desarrollo de librerias (Dotnet)",
+               "ENG":"Libraries development (Dotnet)"
+            },
+			   {
+               "ESP":"Configuración e Integración de dispositivos electronicos",
+               "ENG":"Electronic devices Setup and Integration"
+            },
+			   {
+               "ESP":"Desarrollo FullStack (Dotnet, MVC4, WinForms, Bootstrap, SQL Server)",
+               "ENG":"FullStack development (Dotnet, MVC4, WinForms, Bootstrap, SQL Server)"
+            },
+			   {
+               "ESP":"Metodología Scrum (equipo de 4 integrantes en configuracion de sprints de 2 semanas)",
+               "ENG":"Scrum methodology (4 members team in 2 weeks sprints setup)"
+            }
+         ]
+      },
+	  {
+         "position":{
+            "ESP":"Desarrollador",
+            "ENG":"Developer"
+         },
+		   "client": "SMU S.A.",
+         "company":"Trebol-IT",
+         "dateRange": {
+            "ESP": "Abril 2019 - Junio 2019",
+            "ENG": "April 2019 - June 2019"
+         },
+         "workModel": "on-site",
+		   "outSourcing": true,
+         "currentJob":false,
+         "functions":[
+			   {
+               "ESP":"Mantención y soporte a los sistemas de la compañia (SQL server, WCF, Dotnet API REST)",
+               "ENG":"Maintenance and support to company systems (SQL server, WCF, Dotnet API REST)"
+            },
+            {
+               "ESP":"Metodología Waterfall",
+               "ENG":"Waterfall methodology"
+            }
+         ]
+      },
+      {
+         "position":{
+            "ESP":"Desarrollador FullStack",
+            "ENG":"FullStack Developer"
+         },
+		   "client": "E-Cert Chile",
+         "company":"Kibernum",
+         "dateRange": {
+            "ESP": "Enero 2019 - Marzo 2019",
+            "ENG": "January 2019 - March 2019"
+         },
+         "workModel": "on-site",
+		   "outSourcing": true,
+         "currentJob":false,
+         "functions":[
+            {
+               "ESP":"Desarrollo FullStack (Dotnet, MVC4, Jquery, Bootstrap, SQL Server)",
+               "ENG":"FullStack development (Dotnet, MVC4, Jquery, Bootstrap, SQL Server)"
+            },
+			   {
+               "ESP":"Modelamiento de datos y mantención a bases de datos (SQL server)",
+               "ENG":"Data modeling and databases support (SQL server)"
+            },
+            {
+               "ESP":"Metodología Scrum (equipo de 5 integrantes en configuracion de sprints de 2 semanas)",
+               "ENG":"Scrum methodology (5 members team in 2 weeks sprints setup)"
+            }
+         ]
+      },
+      {
+         "position":{
+            "ESP":"Desarrollador",
+            "ENG":"Developer"
+         },
+		   "client": "Servicio Agrícola y Ganadero (SAG)",
+         "company":"Connectis",
+         "dateRange": {
+            "ESP": "Septiembre 2018 - Diciembre 2018",
+            "ENG": "September 2018 - Dicember 2018"
+         },
+         "workModel": "on-site",
+		   "outSourcing": true,
+         "currentJob":false,
+         "functions":[
+            {
+               "ESP":"Mantención y soporte a los sistemas de la compañia (Dotnet, SQL server, Jquery)",
+               "ENG":"Maintenance and support to company systems (Dotnet, SQL server, Jquery)"
+            },
+			   {
+               "ESP":"Modelamiento de datos y mantención a bases de datos (SQL server)",
+               "ENG":"Data modeling and databases support (SQL server)"
+            },
+            {
+               "ESP":"Metodología ITIL para Service Desk (equipo de 4 integrantes)",
+               "ENG":"ITIL methodology for Service Desk (4 members team)"
+            }
+         ]
+      },
+      {
+         "position":{
+            "ESP":"Desarrollador FullStack",
+            "ENG":"FullStack Developer"
+         },
+		   "client": "Anticipa",
+         "company":"Anticipa",
+         "dateRange": {
+            "ESP": "Noviembre 2017 - Septiembre 2018",
+            "ENG": "November 2017 - September 2018"
+         },
+         "workModel": "on-site",
+		   "outSourcing": false,
+         "currentJob":false,
+         "functions":[
+            {
+               "ESP":"Desarrollo FullStack (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)",
+               "ENG":"FullStack development (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)"
+            },
+            {
+               "ESP":"Apoyo a la gestión de proyectos",
+               "ENG":"Proyect Manager support"
+            },
+            {
+               "ESP":"Outsourcing para varios clientes",
+               "ENG":"Multiple clients Outsourcing"
+            },
+            {
+               "ESP":"Gestión de procesos de negocio (BPM)",
+               "ENG":"Business process management (BPM)"
+            },
+            {
+               "ESP":"Metodología Waterfall",
+               "ENG":"Waterfall methodology"
+            }
+         ]
+      },
+      {
+         "position":{
+            "ESP":"Desarrollador",
+            "ENG":"Developer"
+         },
+		   "client": "Ministerio de vivienda y urbanismo (MINVU)",
+         "company":"Emergya Chile",
+         "dateRange": {
+            "ESP": "Diciembre 2016 - Agosto 2017",
+            "ENG": "Dicember 2016 - Agust 2017"
+         },
+         "workModel": "on-site",
+		   "outSourcing": true,
+         "currentJob": false,
+         "functions":[
+            {
+               "ESP":"Desarrollo FullStack (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)",
+               "ENG":"FullStack development (Dotnet, MVC4, WCF, Jquery, JS, Bootstrap, CSS, SQL Server)"
+            },
+            {
+               "ESP":"Apoyo a la gestión de proyectos",
+               "ENG":"Proyect Manager support"
+            },
+            {
+               "ESP":"Metodología Waterfall",
+               "ENG":"Waterfall methodology"
+            }
+         ]
+      },
+      {
+         "position":{
+            "ESP":"Desarrollador",
+            "ENG":"Developer"
+         },
+		   "client": "I2D Ingeniería",
+         "company":"I2D Ingeniería",
+         "dateRange": {
+            "ESP": "Junio 2015 - Agosto 2015",
+            "ENG": "June 2015 - Agust 2015"
+         },
+         "workModel": "remote",
+		   "outSourcing": false,
+         "currentJob": false,
+         "functions":[
+            {
+               "ESP":"Desarrollo FullStack (Dotnet, MVC4, Oracle SQL)",
+               "ENG":"FullStack development (Dotnet, MVC4, Oracle SQL)"
+            },
+            {
+               "ESP":"Desarrollo de librerias (Dotnet)",
+               "ENG":"Libraries development (Dotnet)"
+            },
+			   {
+               "ESP":"Configuración e Integración de dispositivos electronicos",
+               "ENG":"Electronic devices Setup and Integration"
+            },
+            {
+               "ESP":"Metodología Waterfall",
+               "ENG":"Waterfall methodology"
+            }
+         ]
+      }
+   ]
+}

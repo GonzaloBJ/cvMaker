@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{professionalInfo.name}} - {{professionalInfo.career}}</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{professionalInfo.name}} - Full Stack Developer CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header>
+    <!-- <img src="{{professionalInfo.picturePath}}" alt="Your Name" /> -->
+    <h2>{{professionalInfo.name}}</h2>
+    <p class="profession">{{professionalInfo.career["ESP"]}}</p>
+    <div class="contact-info">
+      {% for contactInfo in professionalInfo.contacts %}
+      <span><i class="{{contactInfo.icon}}"></i> {{contactInfo.value}}</span>
+      <br>
+      {% endfor %}
+    </div>
+  </header>
+
+  <section id="education">
+    <h3>Education</h3>
+    <ul>
+      {% for institution in professionalInfo.formation %}
+      <li>
+          <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
+          <span class="education"> | {{institution.endDate}}</span>
+      </li>
+      {% endfor %}
+
+      {% for certification in professionalInfo.certification %}
+      <li>
+          <strong>{{certification.title}}</strong> - {{certification.educationalInstitution}}
+          <span class="education"> | {{certification.certificationDate}}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h3>Skills</h3>
+        <ul>
+            {% for skill in professionalInfo.skills %}
+            <li>{{skill}}</li>
+            {% endfor %}
+        </ul>
+  </section>
+
+  <!-- <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <strong>Project Name</strong>
+        <span class="projects"> | Technologies Used: React, Node.js, MongoDB</span>
+        <ul>
+          <li>Developed full-stack features for user management.</li>
+        </ul>
+      </li>
+    </ul>
+  </section> -->
+
+  <section id="experience">
+    <h3>Work Experience</h3>
+    <ul>
+      {% for employ in employmentHistory %}
+      <li>
+        <strong>{{employ.position["ESP"]}}</strong> - {{employ.client}}
+        <span class="experience"> | {{employ.dateRange["ESP"]}}</span>
+        <ul>
+          {% for function in employ.functions %}
+          <li>{{function["ESP"]}}</li>
+          {% endfor %}
+        </ul>
+      </li>
+      <br>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="references">
+    <h3>References</h3>
+    <ul>
+      {% for reference in professionalInfo.references %}
+      <li>
+          <strong>{{reference.contactName}}</strong> - {{reference.position}} {{reference.company}}
+          <ul>
+            <li>{{reference.phoneNumber}}</li>
+            <li>{{reference.email}}</li>
+          </ul>
+      </li>
+      <br>
+      {% endfor %}
+    </ul>
+  </section>
+
+</body>
+</html>
