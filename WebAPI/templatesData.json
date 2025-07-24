@@ -1,8 +1,8 @@
 [
    {
-      "name": "BasicoATS",
-      "htmlPath": "./templates/basic/basicTemplate.html",
-      "stylePath": "./templates/basic/basicStyles.css",
+      "name": "BasicATS",
+      "htmlPath": "./templates/basicATS/basicATS.html",
+      "stylePath": "./templates/basicATS/basicATS.css",
       "description": "pensado para cumplir con el formato ATS"
    },
    {

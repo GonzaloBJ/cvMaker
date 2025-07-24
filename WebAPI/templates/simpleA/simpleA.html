@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{professionalName}} - Full Stack Developer CV</title>
+    <title>{{professionalInfo.name}} - Full Stack Developer CV</title>
 </head>
 <body>
 
     <header>
-        <img src="{{professionalData.profilePath}}" alt="Your Name" />
-        <h1>{{professionalData.name}}</h1>
-        <p>{{professionalData.career}}</p>
+        <!-- <img src="{{professionalInfo.picturePath}}" alt="Your Name" /> -->
+        <h2>{{professionalInfo.name}}</h2>
+        <p class="profession">{{professionalInfo.career[lang]}}</p>
+        <div class="contact-info">
+            <ul>
+            {% for contactInfo in professionalInfo.contacts %}
+            <li>{{contactInfo.value}}</li>
+            {% endfor %}
+            </ul>
+        </div>
     </header>
 
     <section id="education">
-        <h2>Education</h2>
+        <h3>{{sectionConfig.formation[lang]}}</h3>
         <ul>
-            {% for institution in professionalData.formation %}
+            {% for institution in professionalInfo.formation %}
             <li>
                 <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
                 <span class="education"> | {{institution.endDate}}</span>
             </li>
             {% endfor %}
 
-            {% for certification in professionalData.certification %}
+            {% for certification in professionalInfo.certification %}
             <li>
                 <strong>{{certification.title}}</strong> - {{certification.educationalInstitution}}
                 <span class="education"> | {{certification.certificationDate}}</span>
@@ -31,32 +38,31 @@
             {% endfor %}
         </ul>
     </section>
-
-    <section id="experience">
-        <h2>Work Experience</h2>
+    
+    <section id="skills">
+        <h3>{{sectionConfig.skills[lang]}}</h3>
         <ul>
-            {% for employ in employmentHistory %}
-            <li>
-                <strong>{{employ.position["ESP"]}}</strong> - {{employ.client}}
-                <span class="experience"> | {{employ.startDate}} - {% if employ.currentJob == true %} Actualidad {% else %} {{employ.endDate}} {% endif %}</span>
-                <ul class="function">
-                    {% for function in employ.functions %}
-                    <li>{{function["ESP"]}}</li>
-                    {% endfor %}
-                </ul>
-                
-            </li>
-            <br>
+            {% for skill in professionalInfo.skills %}
+            <li>{{skill}}</li>
             {% endfor %}
         </ul>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
+    <section id="experience">
+        <h3>{{sectionConfig.workHistory[lang]}}</h3>
         <ul>
-            {% for skill in professionalData.skills %}
-            <li>{{skill}}</li>
-            {% endfor %}
+          {% for employ in employmentHistory %}
+          <li>
+            <strong>{{employ.position[lang]}}</strong> - {{employ.client}}
+            <span class="experience"> | {{employ.dateRange[lang]}}</span>
+            <ul>
+              {% for function in employ.functions %}
+              <li>{{function[lang]}}</li>
+              {% endfor %}
+            </ul>
+          </li>
+          <br>
+          {% endfor %}
         </ul>
     </section>
 
@@ -73,14 +79,19 @@
         </ul>
     </section> -->
 
-    <section id="contact">
-        <h2>Contact Information</h2>
+    <section id="references">
+        <h3>{{sectionConfig.references[lang]}}</h3>
         <ul>
-            <li>Email: {{professionalData.email}}</li>
-            <li>Phone: {{professionalData.phoneNumber}}</li>
-            <li>LinkedIn: {{professionalData.linkedIn}}</li>
-            <li>GitHub: github.com/yourusername</li>
-            <!-- Add more contact information as needed -->
+          {% for reference in professionalInfo.references %}
+          <li>
+              <strong>{{reference.contactName}}</strong> - {{reference.position}} {{reference.company}}
+              <ul>
+                <li>{{reference.phoneNumber}}</li>
+                <li>{{reference.email}}</li>
+              </ul>
+          </li>
+          <br>
+          {% endfor %}
         </ul>
     </section>
 
