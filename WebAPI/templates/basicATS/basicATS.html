@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>CV</title>
-  <link rel="stylesheet" href="basicATS.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- <link rel="stylesheet" href="basicATS.css" /> -->
 </head>
 <body>
 
 <header>
   <h1>{{professionalInfo.name}}</h1>
-  <p class="job-title"><strong>{{professionalInfo.career[lang}}</strong></p>
+  <p class="job-title"><strong>{{professionalInfo.career[lang]}}</strong></p>
   <div class="contact-info">
       {% for contactInfo in professionalInfo.contacts %}
       <span><i class="{{contactInfo.icon}}"></i> {{contactInfo.value}}</span>
@@ -19,12 +20,9 @@
 </header>
 
 <section>
-  <div class="titulo-con-linea">
-    <h2>Resumen Profesional</h2>
-    <hr />
-  </div>
+  <h2>Resumen Profesional</h2>
   <p>
-   {{profileSummary[lang]}}
+   {{professionalInfo.profileSummary[lang]}}
   </p>
 </section>
 
@@ -33,10 +31,10 @@
     <h2>Habilidades Funcionales</h2>
     <hr />
   </div>
-  <ul>
+  <ul class="inline-list">
     {% for skill in professionalInfo.skills %}
-	<li>{{skill}}</li>
-	{% endfor %}
+    <li><span class="li-bullet">&bull;&ensp;</span>{{skill}}</li>
+    {% endfor %}
   </ul>
 </section>
 
