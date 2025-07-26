@@ -1,5 +1,7 @@
-- configuracion de idioma para titulos de template
 - en skills agregar atributos para iconos y nivel
+- agregar detalles por experiencia
+- incorporar estilo de sublista en listados
+
 ------
 
 -educacion de las reciente a la ultima

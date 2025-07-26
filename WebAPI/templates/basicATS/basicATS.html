@@ -2,17 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>CV María José González</title>
-  <link rel="stylesheet" href="basic.css" />
+  <title>CV</title>
+  <link rel="stylesheet" href="basicATS.css" />
 </head>
 <body>
 
 <header>
-  <h1>María José González</h1>
-  <p class="job-title"><strong>Especialista en gestión de proyectos</strong></p>
+  <h1>{{professionalInfo.name}}</h1>
+  <p class="job-title"><strong>{{professionalInfo.career[lang}}</strong></p>
   <div class="contact-info">
-    <p>Teléfono: 655 78 87 89</p>
-    <p>Email: mariajosegonzalez@gmail.com</p>
+      {% for contactInfo in professionalInfo.contacts %}
+      <span><i class="{{contactInfo.icon}}"></i> {{contactInfo.value}}</span>
+      <br>
+      {% endfor %}
   </div>
 </header>
 
@@ -22,11 +24,7 @@
     <hr />
   </div>
   <p>
-    Profesional con más de 20 años de experiencia en el área de la gestión de proyectos relacionados al sector de finanzas (Santander) y Administración pública, concretamente en el área de sanidad trabajando para el Gobierno de Madrid.<br>
-    Amparada por una amplia preparación técnica, con gran disponibilidad de aprendizaje sobre temas en las nuevas tecnologías, las nuevas formas de organización (Management 3.0), sin dejar de lado el conocimiento y experiencia previa acumulada.<br>
-    Beneficio de una gran capacidad de observación, autodiagnóstico y orientación al cliente, que me permite generar sólidas soluciones, intento hacerlo siempre desde una mirada de servicio, equilibrio entre lo técnico y el equipo humano.<br>
-    Me considero una persona motivada por el trabajo en equipo fruto de la cooperación, el diálogo abierto y el respeto entre las personas.<br>
-    Siempre inquieta, curiosa, motivada por las personas a través de la empatía y cercanía. Cada proyecto me desafía y me aporta.
+   {{profileSummary[lang]}}
   </p>
 </section>
 
@@ -36,16 +34,9 @@
     <hr />
   </div>
   <ul>
-    <li>Gestión de proyectos integrales</li>
-    <li>Valoración económica</li>
-    <li>Resolución de problemas técnicos</li>
-    <li>Integración de herramientas</li>
-    <li>Linux y Windows, Cloud Services</li>
-    <li>Servidor de base de datos</li>
-    <li>Metodología Ágil (SCRUM)</li>
-    <li>Habilidades comunicativas y de interlocución</li>
-    <li>Proactividad y dinamismo</li>
-    <li>Trabajo en equipo</li>
+    {% for skill in professionalInfo.skills %}
+	<li>{{skill}}</li>
+	{% endfor %}
   </ul>
 </section>
 
@@ -55,7 +46,9 @@
     <hr />
   </div>
   <ul class="lista-principal">
-    <li>En Gobierno de Madrid, responsable tanto a nivel técnico como de coordinación de proyectos cruciales para la Admón.</li>
+    {% for goal in professionalInfo.goals %}
+    <li>{{goal[lang]}}</li>
+    {% endfor %}
     <li><strong>Proyectos destacados Gobierno de Madrid</strong></li>
 	<ul class="sublista">
 		<li><strong>Campaña de Prevención 2012:</strong> Migración de toda la infraestructura a Server 2012, instalación de nuevas aplicaciones, renovación tecnológica.</li>
