@@ -1,0 +1,128 @@
+{
+   "lang": "ESP",
+   "sectionConfig": {
+      "profile":{
+         "ESP": "Perfil",
+         "ENG": "Profile"
+      },
+      "formation":{
+         "ESP": "Educación",
+         "ENG": "Education"
+      },
+      "certification":{
+         "ESP": "Certificaciones",
+         "ENG": "Certifications"
+      },
+      "languages":{
+         "ESP": "Lenguajes",
+         "ENG": "Languages"
+      },
+      "goals":{
+         "ESP": "Logros",
+         "ENG": "Goals"
+      },
+      "skills":{
+         "ESP": "Aptitudes",
+         "ENG": "Skills"
+      },
+      "workHistory":{
+         "ESP": "Historial Laboral",
+         "ENG": "Work Experience"
+      },
+      "references":{
+         "ESP": "Referencias",
+         "ENG": "References"
+      }
+   },
+   "professionalInfo":{
+      "name":"Fernanda Camila Urrutia Serrano",
+      "career": {
+         "ESP": "Ingeniera en Informática",
+         "ENG": "Information Technologies Engineer"
+      },
+      "profileSummary": {
+         "ESP": "Estudiante de Ingeniería en Informática, con buen manejo interpersonal y enfoque en trabajar en equipo.",
+         "ENG": ""
+      },
+      "picturePath": "#",
+      "contacts": [
+         {"icon": "fas fa-phone", "name": "phoneNumber", "value": "+56950987240"},
+         {"icon": "fas fa-envelope", "name":"email","value":"urrutia.fer4180@gmail.com"},
+         {"icon": "fas fa-location-dot", "name": "address", "value": "Santiago. RM. Chile"}
+      ],
+      "goals": [
+         {
+            "ESP": "Ejemplo",
+            "ENG": ""
+         }
+      ],
+      "skills": [
+         "HTML",
+         "Javascript",
+         "Typescript",
+         "Python",
+         "Node",
+         "GCP",
+         "SQL Server",
+         "Scrum"
+      ],
+      "formation":[
+         {
+            "degree":"Ingeniera en Informática",
+            "educationalInstitution":"Universidad Mayor",
+            "endDate":"2025",
+            "hasDegree":false
+         }
+      ],
+      "certification":[
+      ],
+      "languages": [
+         {
+            "language": "Español",
+            "level": "Native",
+            "certified": false,
+            "certificationName":""
+         }
+      ],
+      "references":[
+		   {
+            "contactName":"Marcela",
+            "position":"Lider equipo gobierno de datos",
+			   "company":"Cencosud",
+            "phoneNumber":"",
+            "email":""
+         }
+      ]
+   },
+   "employmentHistory":[
+      {
+         "position":{
+            "ESP":"Analista de Gobierno de Datos",
+            "ENG":""
+         },
+		   "client":"Cencosud S.A.",
+         "company":"Soluciones Avos Tech Chile",
+         "dateRange": {
+            "ESP": "Junio 2025 - Julio 2025",
+            "ENG": "June 2025 - July 2025"
+         },
+         "workModel": "hybrid",
+		   "outSourcing": true,
+         "currentJob": false,
+         "functions":[
+            {
+               "ESP":"Analisis de dados",
+               "ENG":""
+            },
+            {
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server)</strong>",
+               "ENG":"Data modeling and databases support <strong>(PostgreSQL, SQL server)</strong>"
+            },
+            {
+               "ESP":"Metodología hibrida usando tablero Kanban, y algunas ceremonias de scrum (equipo de 4 integrantes)",
+               "ENG":"Hybrid methodology using Kanban table and some scrum ceremonies(4 members team)"
+            }
+         ]
+      }
+   ]
+}

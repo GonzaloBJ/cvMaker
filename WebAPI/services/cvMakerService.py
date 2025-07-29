@@ -47,8 +47,12 @@ class cvMakerService():
         except Exception:
             raise
     
-    def get_cv_context():
+    def get_cv_context(context_person: str):
         default_path = "./cvData.json"
+        if context_person == "gb":
+            default_path = "./cvData.json"
+        if context_person == "fu":
+            default_path = "./cvDataFer.json"
         try:
             with open(default_path, 'r', encoding='utf-8') as cvJson:
                 cv_context = json.load(cvJson)

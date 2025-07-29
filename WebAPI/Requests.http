@@ -1,10 +1,20 @@
 
 
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleCustomA&lang=ESP
+ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleCustomA&lang=ESP&context=gb
 ###
 
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleA&lang=ESP
+ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleA&lang=ESP&context=gb
 ###
 
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=BasicATS&lang=ESP
+ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=BasicATS&lang=ESP&context=gb
+###
+
+### FER
+GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleCustomA&lang=ESP&context=fu
+###
+
+ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleA&lang=ESP&context=fu
+###
+
+ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=BasicATS&lang=ESP&context=fu
 ###

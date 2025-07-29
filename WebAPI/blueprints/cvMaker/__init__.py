@@ -10,6 +10,7 @@ def cv_from_json():
     try:
         template_name = request.args.get('template', 'basic')
         language_str = request.args.get('lang', 'ESP')
+        context_person = request.args.get('context', 'gb')
         
         try:
             language_enum = ELanguages[language_str]
@@ -19,7 +20,7 @@ def cv_from_json():
         cvMaker_service = cvMakerService()
         
         output_pdf = './cv_generated.pdf'
-        cv_context = cvMakerService.get_cv_context()
+        cv_context = cvMakerService.get_cv_context(context_person)
         cv_context["lang"] = language_enum.name
         
         cv_template = cvMakerService.get_template(template_name)
