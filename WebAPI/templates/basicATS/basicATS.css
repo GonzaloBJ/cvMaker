@@ -28,8 +28,13 @@ body {
       margin: 4px 0;
     }
     .job-title strong {
-	  color: grey;
-	}
+	    color: grey;
+    }
+
+    .job-date {
+      display: block;
+      text-align: right;
+    }
 	
 	.titulo-con-linea {
 	  display: flex;

@@ -14,7 +14,7 @@
     <p class="profession">{{professionalInfo.career[lang]}}</p>
     <div class="contact-info">
       {% for contactInfo in professionalInfo.contacts %}
-      <span><i class="{{contactInfo.icon}}"></i> {{contactInfo.value}}</span>
+      <span><i class="{{contactInfo.icon}}">&#32;</i>{{contactInfo.value}}</span>
       <br>
       {% endfor %}
     </div>
@@ -54,20 +54,30 @@
     <ul>
       {% for employ in employmentHistory %}
       <li>
-        <strong>{{employ.position[lang]}}</strong> - {{employ.client}}
-        {% if employ.outSourcing == true}
-         {{employ.client}}
-        {% endif %} 
-        <span class="experience"> | {{employ.dateRange[lang]}}</span>
-
-        {% if employ.workModel == "hybrid"}
-        <span class="experience"> Hibrido </span>
-        {% elif employ.workModel == "remote"}
-        <span class="experience"> Remoto}</span>
-        {% elif employ.workModel == "on-site"}
-        <span class="experience"> Oficina}</span>
-        {% endif %}
-
+        <!-- <span></span> -->
+        <div class="double-column">
+          <div class="main-text">
+            <span><strong>{{employ.position[lang]}}</strong>&ensp;{{employ.client}}
+              {% if employ.outSourcing %}
+              &ensp;&#124;&ensp;{{employ.company}}
+              {% endif %}
+            </span>
+          </div>
+          <div class="right-text">
+            <span class="experience">
+              <i class="fa-solid fa-calendar-days">&ensp;</i>{{employ.dateRange[lang]}}
+              &emsp;
+              <i class="fas fa-location-dot">&ensp;</i>
+              {% if employ.workModel == "hybrid" %}
+              Hibrido
+              {% elif employ.workModel == "remote"%}
+              Remoto
+              {% elif employ.workModel == "on-site"%}
+              Oficina
+              {% endif %}
+            </span>
+          </div>
+        </div>
         <ul>
           {% for function in employ.functions %}
           <li>{{function[lang]}}</li>
@@ -79,37 +89,51 @@
     </ul>
   </section>
 
-  <section id="education">
-    <h3>{{sectionConfig.formation[lang]}}</h3>
-    <ul>
-      {% for institution in professionalInfo.formation %}
-      <li>
-          <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
-          <span class="education"> | {{institution.endDate}}</span>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-
   <section id="certification">
     <h3>{{sectionConfig.certification[lang]}}</h3>
     <ul>
       {% for certification in professionalInfo.certification %}
       <li>
-          <strong>{{certification.title}}</strong> - {{certification.educationalInstitution}}
-          <span class="education"> | {{certification.certificationDate}}</span>
+        <div class="double-column">
+          <div class="main-text">
+            <span><strong>{{certification.title}}</strong>&#32;&#45;&#32;{{certification.educationalInstitution}}</span>
+          </div>
+          <div class="right-text">
+            <span><i class="fa-solid fa-calendar-days">&ensp;</i>{{certification.certificationDate}}</span>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="education">
+    <h3>{{sectionConfig.formation[lang]}}</h3>
+    <ul>
+      {% for institution in professionalInfo.formation %}
+      <li>
+        <div class="double-column">
+          <div class="main-text">
+            <span><strong>{{institution.degree}}</strong>&ensp;&#45;&ensp;{{institution.educationalInstitution}}</span>
+          </div>
+          <div class="right-text">
+            <span><i class="fa-solid fa-calendar-days">&ensp;</i>{{institution.endDate}}</span>
+          </div>
+        </div>
       </li>
       {% endfor %}
     </ul>
   </section>
 
   <section id="lenguages">
-    <h3>{{sectionConfig.lenguages[lang]}}</h3>
+    <h3>{{sectionConfig.languages[lang]}}</h3>
     <ul>
       {% for language in professionalInfo.languages %}
       <li>
-          <strong>{{language.language}}</strong> - {{language.level}}
-          <span class="education"> | {{language.certificationName}}</span>
+          <strong>{{language.language}}</strong>&ensp;&#45;&ensp;{{language.level}}
+          {% if language.certified %}
+          <span>&ensp;&#124;&ensp;{{language.certificationName}}</span>
+          {% endif %}
       </li>
       {% endfor %}
     </ul>
@@ -120,10 +144,14 @@
     <ul>
       {% for reference in professionalInfo.references %}
       <li>
-          <strong>{{reference.contactName}}</strong> - {{reference.position}} {{reference.company}}
+          <strong>{{reference.contactName}}</strong>&ensp;{{reference.position}}&ensp;&#124;&ensp;{{reference.company}}
           <ul>
-            <li>{{reference.phoneNumber}}</li>
-            <li>{{reference.email}}</li>
+            {% if reference.phoneNumber != "" %}
+            <li><span><i class="fas fa-phone">&ensp;</i>{{reference.phoneNumber}}</span></li>
+            {% endif %}
+            {% if reference.email != "" %}
+            <li><span><i class="fas fa-envelope">&ensp;</i>{{reference.email}}</span></li>
+            {% endif %}
           </ul>
       </li>
       <br>

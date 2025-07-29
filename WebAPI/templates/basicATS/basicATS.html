@@ -61,7 +61,11 @@
     <hr />
   </div>
   {% for employ in employmentHistory %}
-  <p><strong>{{employ.client}}</strong> - <span class="job-title">Madrid, {{employ.dateRange[lang]}}</span></p>
+  <p><strong>{{employ.client}}
+  {% if employ.outSourcing %}
+   - {{employ.company}}
+  {% endif %}
+  </strong><strong class="job-date">Madrid, {{employ.dateRange[lang]}}</strong></p>
   <p><strong>{{employ.position[lang]}}</strong></p>
   <p>Actualmente soy consultora TIC para múltiples áreas en Santander, donde he participado en proyectos de infraestructura, desarrollo, implantación y mantenimiento. Este entorno está formado por 25 personas, formando parte de un subgrupo de 5 personas dedicado a la arquitectura.</p>
 

@@ -134,7 +134,7 @@
       "languages": [
          {
             "language": "Español",
-            "level": "native",
+            "level": "Native",
             "certified": false,
             "certificationName":""
          },
@@ -369,7 +369,7 @@
             "ESP":"Desarrollador",
             "ENG":"Developer"
          },
-		   "client": "Servicio Agrícola y Ganadero (SAG)",
+		   "client": "Servicio Agrícola y Ganadero",
          "company":"Connectis",
          "dateRange": {
             "ESP": "Septiembre 2018 - Diciembre 2018",
@@ -435,7 +435,7 @@
             "ESP":"Desarrollador",
             "ENG":"Developer"
          },
-		   "client": "Ministerio de vivienda y urbanismo (MINVU)",
+		   "client": "Ministerio de Vivienda y Urbanismo",
          "company":"Emergya Chile",
          "dateRange": {
             "ESP": "Diciembre 2016 - Agosto 2017",
