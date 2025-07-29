@@ -60,27 +60,38 @@
     <h2>Experiencia Profesional</h2>
     <hr />
   </div>
-  <p><strong>Santander (Indra)</strong> – <span class="job-title">Madrid, 01/12 – Actualidad</span></p>
-  <p><strong>Dept. C Solutions & Corporate Investing Banking Engineering - Technical Solutions</strong></p>
+  {% for employ in employmentHistory %}
+  <p><strong>{{employ.client}}</strong> - <span class="job-title">Madrid, {{employ.dateRange[lang]}}</span></p>
+  <p><strong>{{employ.position[lang]}}</strong></p>
   <p>Actualmente soy consultora TIC para múltiples áreas en Santander, donde he participado en proyectos de infraestructura, desarrollo, implantación y mantenimiento. Este entorno está formado por 25 personas, formando parte de un subgrupo de 5 personas dedicado a la arquitectura.</p>
 
   <p><strong>Gestión de responsabilidades principales:</strong></p>
   <ul>
-    <li>Gestión de proyectos integrales, así como la consultoría, la elaboración de documentación técnica y funcional.</li>
-    <li>Evaluación de nuevas tecnologías, rediseño de arquitecturas y consolidación de servidores.</li>
-    <li>Automatización de procesos.</li>
-    <li>Elaboración de análisis de mejoras desde el punto de vista técnico.</li>
+    {% for function in employ.functions %}
+    <li>{{function[lang]}}</li>
+    {% endfor %}
   </ul>
 
   <p><strong>Otros logros:</strong></p>
   <ul>
     <li>Definición, entrega e integración de entre 10 - 15 proyectos simultáneos para distintos equipos dentro de Santander.</li>
     <li>Evaluación técnica de arquitecturas tecnológicas según necesidades de negocio y su viabilidad de implementación.</li>
-    <li>Automatización de procesos en sistemas: Calcular los tamaños necesarios en disco para migración a Oracle.</li>
-    <li>Implementación de mejoras en migración de servidores, verificación de requisitos, conexiones, dependencias.</li>
-    <li>Gestión de entorno de preproducción, análisis de impacto y de mejoras para aplicaciones con base de datos Oracle.</li>
-    <li>Generación de documentación técnica, cronograma de actividades, gestión de dependencias, y validaciones.</li>
-    <li>Atención y soporte al cliente interno, análisis de alcance, alta capacidad para resolver problemas y resolución de conflictos.</li>
+  </ul>
+  {% endfor %}
+</section>
+
+<section>
+  <div class="titulo-con-linea">
+    <h2>Educación</h2>
+    <hr />
+  </div>
+  <ul>
+    {% for institution in professionalInfo.formation %}
+    <li>
+        <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
+        <span> | {{institution.endDate}}</span>
+    </li>
+    {% endfor %}
   </ul>
 </section>
 

@@ -20,23 +20,11 @@
     </div>
   </header>
 
-  <section id="education">
-    <h3>{{sectionConfig.formation[lang]}}</h3>
-    <ul>
-      {% for institution in professionalInfo.formation %}
-      <li>
-          <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
-          <span class="education"> | {{institution.endDate}}</span>
-      </li>
-      {% endfor %}
-
-      {% for certification in professionalInfo.certification %}
-      <li>
-          <strong>{{certification.title}}</strong> - {{certification.educationalInstitution}}
-          <span class="education"> | {{certification.certificationDate}}</span>
-      </li>
-      {% endfor %}
-    </ul>
+  <section id="profile">
+    <h3>{{sectionConfig.profile[lang]}}</h3>
+    <p>
+    {{professionalInfo.profileSummary[lang]}}
+    </p>
   </section>
 
   <section id="skills">
@@ -67,7 +55,19 @@
       {% for employ in employmentHistory %}
       <li>
         <strong>{{employ.position[lang]}}</strong> - {{employ.client}}
+        {% if employ.outSourcing == true}
+         {{employ.client}}
+        {% endif %} 
         <span class="experience"> | {{employ.dateRange[lang]}}</span>
+
+        {% if employ.workModel == "hybrid"}
+        <span class="experience"> Hibrido </span>
+        {% elif employ.workModel == "remote"}
+        <span class="experience"> Remoto}</span>
+        {% elif employ.workModel == "on-site"}
+        <span class="experience"> Oficina}</span>
+        {% endif %}
+
         <ul>
           {% for function in employ.functions %}
           <li>{{function[lang]}}</li>
@@ -75,6 +75,42 @@
         </ul>
       </li>
       <br>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="education">
+    <h3>{{sectionConfig.formation[lang]}}</h3>
+    <ul>
+      {% for institution in professionalInfo.formation %}
+      <li>
+          <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
+          <span class="education"> | {{institution.endDate}}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="certification">
+    <h3>{{sectionConfig.certification[lang]}}</h3>
+    <ul>
+      {% for certification in professionalInfo.certification %}
+      <li>
+          <strong>{{certification.title}}</strong> - {{certification.educationalInstitution}}
+          <span class="education"> | {{certification.certificationDate}}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section id="lenguages">
+    <h3>{{sectionConfig.lenguages[lang]}}</h3>
+    <ul>
+      {% for language in professionalInfo.languages %}
+      <li>
+          <strong>{{language.language}}</strong> - {{language.level}}
+          <span class="education"> | {{language.certificationName}}</span>
+      </li>
       {% endfor %}
     </ul>
   </section>

@@ -135,12 +135,14 @@
          {
             "language": "Español",
             "level": "native",
-            "certified": false
+            "certified": false,
+            "certificationName":""
          },
          {
             "language": "Ingles",
             "level": "B2",
-            "certified": true
+            "certified": true,
+            "certificationName":"Pontificia Universidad Católica de Chile"
          }
       ],
       "references":[

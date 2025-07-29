@@ -1,7 +1,6 @@
 - en skills agregar atributos para iconos y nivel
 - agregar detalles por experiencia
 - incorporar estilo de sublista en listados
-
-------
-
--educacion de las reciente a la ultima
+- agregar location a los trabajos
+- revisar estilo de titulos con linea
+- permitir multiples dataJson
