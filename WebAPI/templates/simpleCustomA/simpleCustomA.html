@@ -9,7 +9,9 @@
 <body>
 
   <header>
-    <!-- <img src="{{professionalInfo.picturePath}}" alt="Your Name" /> -->
+    {% if professionalInfo.picturePath != "#" %}
+    <img src="{{professionalInfo.picturePath}}" alt="Your Name" />
+    {% endif %}
     <h2>{{professionalInfo.name}}</h2>
     <p class="profession">{{professionalInfo.career[lang]}}</p>
     <div class="contact-info">
@@ -141,22 +143,18 @@
 
   <section id="references">
     <h3>{{sectionConfig.references[lang]}}</h3>
+    {% for reference in professionalInfo.references %}
+    <strong>{{reference.contactName}}</strong>&ensp;{{reference.position}}&ensp;&#124;&ensp;{{reference.company}}
     <ul>
-      {% for reference in professionalInfo.references %}
-      <li>
-          <strong>{{reference.contactName}}</strong>&ensp;{{reference.position}}&ensp;&#124;&ensp;{{reference.company}}
-          <ul>
-            {% if reference.phoneNumber != "" %}
-            <li><span><i class="fas fa-phone">&ensp;</i>{{reference.phoneNumber}}</span></li>
-            {% endif %}
-            {% if reference.email != "" %}
-            <li><span><i class="fas fa-envelope">&ensp;</i>{{reference.email}}</span></li>
-            {% endif %}
-          </ul>
-      </li>
-      <br>
-      {% endfor %}
+      {% if reference.phoneNumber != "" %}
+      <li><span><i class="fas fa-phone">&ensp;</i>{{reference.phoneNumber}}</span></li>
+      {% endif %}
+      {% if reference.email != "" %}
+      <li><span><i class="fas fa-envelope">&ensp;</i>{{reference.email}}</span></li>
+      {% endif %}
     </ul>
+    <br>
+    {% endfor %}
   </section>
 
 </body>

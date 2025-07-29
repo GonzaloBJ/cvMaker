@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- <link rel="stylesheet" href="basicATS.css" /> -->
+</head>
+<body>
+
+<header>
+  <h1>{{professionalInfo.name}}</h1>
+  <p class="job-title"><strong>{{professionalInfo.career[lang]}}</strong></p>
+  <div class="contact-info">
+      {% for contactInfo in professionalInfo.contacts %}
+      <span><i class="{{contactInfo.icon}}"></i> {{contactInfo.value}}</span>
+      <br>
+      {% endfor %}
+  </div>
+</header>
+
+<section>
+  <h2>Resumen Profesional</h2>
+  <p>
+   {{professionalInfo.profileSummary[lang]}}
+  </p>
+</section>
+
+<section>
+  <div class="titulo-con-linea">
+    <h2>Habilidades Funcionales</h2>
+    <hr />
+  </div>
+  <ul class="inline-list">
+    {% for skill in professionalInfo.skills %}
+    <li><span class="li-bullet">&bull;&ensp;</span>{{skill}}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <div class="titulo-con-linea">
+    <h2>Selección de Logros Profesionales</h2>
+    <hr />
+  </div>
+  <ul class="lista-principal">
+    {% for goal in professionalInfo.goals %}
+    <li>{{goal[lang]}}</li>
+    {% endfor %}
+    <li><strong>Proyectos destacados Gobierno de Madrid</strong></li>
+	<ul class="sublista">
+		<li><strong>Campaña de Prevención 2012:</strong> Migración de toda la infraestructura a Server 2012, instalación de nuevas aplicaciones, renovación tecnológica.</li>
+		<li><strong>Receta Electrónica:</strong> Implantación desde 0 de la infraestructura y servicios de Receta Electrónica. Integración con resto de sistemas de Sanidad Madrid.</li>
+	</ul>
+  </ul>
+</section>
+
+<section>
+  <div class="titulo-con-linea">
+    <h2>Experiencia Profesional</h2>
+    <hr />
+  </div>
+  {% for employ in employmentHistory %}
+  <p><strong>{{employ.client}}
+  {% if employ.outSourcing %}
+   - {{employ.company}}
+  {% endif %}
+  </strong><strong class="job-date">Madrid, {{employ.dateRange[lang]}}</strong></p>
+  <p><strong>{{employ.position[lang]}}</strong></p>
+  <p>Actualmente soy consultora TIC para múltiples áreas en Santander, donde he participado en proyectos de infraestructura, desarrollo, implantación y mantenimiento. Este entorno está formado por 25 personas, formando parte de un subgrupo de 5 personas dedicado a la arquitectura.</p>
+
+  <p><strong>Gestión de responsabilidades principales:</strong></p>
+  <ul>
+    {% for function in employ.functions %}
+    <li>{{function[lang]}}</li>
+    {% endfor %}
+  </ul>
+
+  <p><strong>Otros logros:</strong></p>
+  <ul>
+    <li>Definición, entrega e integración de entre 10 - 15 proyectos simultáneos para distintos equipos dentro de Santander.</li>
+    <li>Evaluación técnica de arquitecturas tecnológicas según necesidades de negocio y su viabilidad de implementación.</li>
+  </ul>
+  {% endfor %}
+</section>
+
+<section>
+  <div class="titulo-con-linea">
+    <h2>Educación</h2>
+    <hr />
+  </div>
+  <ul>
+    {% for institution in professionalInfo.formation %}
+    <li>
+        <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
+        <span> | {{institution.endDate}}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+</body>
+</html>

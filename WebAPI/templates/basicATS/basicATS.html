@@ -27,10 +27,7 @@
 </section>
 
 <section>
-  <div class="titulo-con-linea">
-    <h2>Habilidades Funcionales</h2>
-    <hr />
-  </div>
+  <h2 class="sectionTitle">Habilidades Funcionales</h2>
   <ul class="inline-list">
     {% for skill in professionalInfo.skills %}
     <li><span class="li-bullet">&bull;&ensp;</span>{{skill}}</li>
@@ -39,10 +36,7 @@
 </section>
 
 <section>
-  <div class="titulo-con-linea">
-    <h2>Selección de Logros Profesionales</h2>
-    <hr />
-  </div>
+  <h2 class="sectionTitle">Selección de Logros Profesionales</h2>
   <ul class="lista-principal">
     {% for goal in professionalInfo.goals %}
     <li>{{goal[lang]}}</li>
@@ -56,47 +50,99 @@
 </section>
 
 <section>
-  <div class="titulo-con-linea">
-    <h2>Experiencia Profesional</h2>
-    <hr />
-  </div>
+  <h2 class="sectionTitle">Experiencia Profesional</h2>
   {% for employ in employmentHistory %}
-  <p><strong>{{employ.client}}
-  {% if employ.outSourcing %}
-   - {{employ.company}}
-  {% endif %}
-  </strong><strong class="job-date">Madrid, {{employ.dateRange[lang]}}</strong></p>
-  <p><strong>{{employ.position[lang]}}</strong></p>
-  <p>Actualmente soy consultora TIC para múltiples áreas en Santander, donde he participado en proyectos de infraestructura, desarrollo, implantación y mantenimiento. Este entorno está formado por 25 personas, formando parte de un subgrupo de 5 personas dedicado a la arquitectura.</p>
-
-  <p><strong>Gestión de responsabilidades principales:</strong></p>
+  <div class="double-column">
+    <div class="main-text">
+      <span><strong>{{employ.client}}</strong>
+        {% if employ.outSourcing %}
+        &ensp;{{employ.company}}
+        {% endif %}
+      </span>
+    </div>
+    <div class="right-text">
+      <span>
+        <strong>
+        {% if employ.workModel == "hybrid" %}
+        Hibrido
+        {% elif employ.workModel == "remote"%}
+        Remoto
+        {% elif employ.workModel == "on-site"%}
+        Oficina
+        {% endif %}
+        &#44;&ensp;{{employ.dateRange[lang]}}
+      </strong>
+      </span>
+    </div>
+  </div>
+  <span><strong>{{employ.position[lang]}}</strong>
   <ul>
     {% for function in employ.functions %}
     <li>{{function[lang]}}</li>
     {% endfor %}
   </ul>
-
-  <p><strong>Otros logros:</strong></p>
-  <ul>
-    <li>Definición, entrega e integración de entre 10 - 15 proyectos simultáneos para distintos equipos dentro de Santander.</li>
-    <li>Evaluación técnica de arquitecturas tecnológicas según necesidades de negocio y su viabilidad de implementación.</li>
-  </ul>
+  <br>
   {% endfor %}
 </section>
 
 <section>
-  <div class="titulo-con-linea">
-    <h2>Educación</h2>
-    <hr />
+  <h2 class="sectionTitle">Certificados</h2>
+  {% for certification in professionalInfo.certification %}
+  <div class="double-column">
+    <div class="main-text">
+      <span><strong>{{certification.title}}</strong></span>
+    </div>
+    <div class="right-text">
+      <span><strong>{{certification.educationalInstitution}}&#44;&ensp;{{certification.certificationDate}}</strong></span>
+    </div>
   </div>
-  <ul>
-    {% for institution in professionalInfo.formation %}
-    <li>
-        <strong>{{institution.degree}}</strong> - {{institution.educationalInstitution}}
-        <span> | {{institution.endDate}}</span>
-    </li>
-    {% endfor %}
-  </ul>
+  {% endfor %}
+</section>
+
+<section>
+  <h2 class="sectionTitle">Educación</h2>
+  {% for institution in professionalInfo.formation %}
+  <div class="double-column">
+    <div class="main-text">
+      <span><strong>{{institution.degree}}</strong></span>
+    </div>
+    <div class="right-text">
+      <span><strong>{{institution.educationalInstitution}}&#44;&ensp;{{institution.endDate}}</strong></span>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section>
+  <h2 class="sectionTitle">Lenguajes</h2>
+  {% for language in professionalInfo.languages %}
+  <div class="double-column">
+    <div class="main-text">
+      <span><strong>{{language.language}}</strong></span>
+    </div>
+    <div class="right-text">
+      <span><strong>{{language.level}}
+        {% if language.certified %}
+        &#44;&ensp;{{language.certificationName}}
+        {% endif %}
+      </strong></span>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section>
+  <h2 class="sectionTitle">Referencias</h2>
+  {% for reference in professionalInfo.references %}
+  <span><strong>{{reference.contactName}}</strong>&ensp;{{reference.position}}&ensp;&#124;&ensp;{{reference.company}}</span>
+  {% if reference.phoneNumber != "" %}
+  <p>{{reference.phoneNumber}}</p>
+  {% endif %}
+  {% if reference.email != "" %}
+  <p>{{reference.email}}</p>
+  {% endif %}
+  <br>
+  {% endfor %}
 </section>
 
 </body>
