@@ -38,19 +38,6 @@
     </ul>
   </section>
 
-  <!-- <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Project Name</strong>
-        <span class="projects"> | Technologies Used: React, Node.js, MongoDB</span>
-        <ul>
-          <li>Developed full-stack features for user management.</li>
-        </ul>
-      </li>
-    </ul>
-  </section> -->
-
   <section id="experience">
     <h3>{{sectionConfig.workHistory[lang]}}</h3>
     <ul>
@@ -91,6 +78,7 @@
     </ul>
   </section>
 
+  {% if professionalInfo.certification %}
   <section id="certification">
     <h3>{{sectionConfig.certification[lang]}}</h3>
     <ul>
@@ -108,6 +96,7 @@
       {% endfor %}
     </ul>
   </section>
+  {% endif %}
 
   <section id="education">
     <h3>{{sectionConfig.formation[lang]}}</h3>
@@ -127,6 +116,7 @@
     </ul>
   </section>
 
+  {% if professionalInfo.languages %}
   <section id="lenguages">
     <h3>{{sectionConfig.languages[lang]}}</h3>
     <ul>
@@ -140,7 +130,9 @@
       {% endfor %}
     </ul>
   </section>
+  {% endif %}
 
+  {% if professionalInfo.references %}
   <section id="references">
     <h3>{{sectionConfig.references[lang]}}</h3>
     {% for reference in professionalInfo.references %}
@@ -156,6 +148,7 @@
     <br>
     {% endfor %}
   </section>
+  {% endif %}
 
 </body>
 </html>

@@ -51,10 +51,6 @@
          {"icon": "fas fa-location-dot", "name": "address", "value": "Santiago. RM. Chile"}
       ],
       "goals": [
-         {
-            "ESP": "Ejemplo",
-            "ENG": ""
-         }
       ],
       "skills": [
          "HTML",
@@ -78,8 +74,9 @@
       ],
       "languages": [
          {
-            "language": "Español",
-            "level": "Native",
+            
+            "language": "Inglés",
+            "level": "B1",
             "certified": false,
             "certificationName":""
          }

@@ -35,19 +35,21 @@
   </ul>
 </section>
 
+{% if professionalInfo.goals %}
 <section>
   <h2 class="sectionTitle">Selección de Logros Profesionales</h2>
   <ul class="lista-principal">
     {% for goal in professionalInfo.goals %}
     <li>{{goal[lang]}}</li>
     {% endfor %}
-    <li><strong>Proyectos destacados Gobierno de Madrid</strong></li>
+    <!-- <li><strong>Proyectos destacados Gobierno de Madrid</strong></li>
 	<ul class="sublista">
 		<li><strong>Campaña de Prevención 2012:</strong> Migración de toda la infraestructura a Server 2012, instalación de nuevas aplicaciones, renovación tecnológica.</li>
 		<li><strong>Receta Electrónica:</strong> Implantación desde 0 de la infraestructura y servicios de Receta Electrónica. Integración con resto de sistemas de Sanidad Madrid.</li>
-	</ul>
+	</ul> -->
   </ul>
 </section>
+{% endif %}
 
 <section>
   <h2 class="sectionTitle">Experiencia Profesional</h2>
@@ -85,6 +87,7 @@
   {% endfor %}
 </section>
 
+{% if professionalInfo.certification %}
 <section>
   <h2 class="sectionTitle">Certificados</h2>
   {% for certification in professionalInfo.certification %}
@@ -98,6 +101,7 @@
   </div>
   {% endfor %}
 </section>
+{% endif %}
 
 <section>
   <h2 class="sectionTitle">Educación</h2>
@@ -113,6 +117,7 @@
   {% endfor %}
 </section>
 
+{% if professionalInfo.languages %}
 <section>
   <h2 class="sectionTitle">Lenguajes</h2>
   {% for language in professionalInfo.languages %}
@@ -130,7 +135,9 @@
   </div>
   {% endfor %}
 </section>
+{% endif %}
 
+{% if professionalInfo.references %}
 <section>
   <h2 class="sectionTitle">Referencias</h2>
   {% for reference in professionalInfo.references %}
@@ -144,6 +151,7 @@
   <br>
   {% endfor %}
 </section>
+{% endif %}
 
 </body>
 </html>
