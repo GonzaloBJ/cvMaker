@@ -18,9 +18,9 @@
       "description": "plantilla simple pero con aspecto mejorado"
    },
    {
-      "name": "SimpleB",
-      "htmlPath": "./templates/simpleB/simpleB.html",
-      "stylePath": "./templates/simpleB/simpleB.css",
-      "description": "plantilla simple"
+      "name": "DoubleColumnA",
+      "htmlPath": "./templates/doubleColumnA/doubleColumnA.html",
+      "stylePath": "./templates/doubleColumnA/doubleColumnA.css",
+      "description": "plantilla con informacion en 2 columnas"
    }
 ]

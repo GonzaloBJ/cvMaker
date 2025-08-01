@@ -1,0 +1,154 @@
+body {
+  font-family: 'Arial', sans-serif;
+  /* background-color: #f4f4f4; */
+  color: #333;
+  margin: 20px 0px 20px 0px;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header img {
+  border-radius: 50%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  color: #2c3e50;
+}
+
+header h2 {
+  color: #2c3e50;
+  border-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin-bottom: 5px;
+}
+
+header .profession {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #3498db;
+  margin: 5px 0 15px 0;
+}
+
+header .contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+header .contact-info span {
+  display: flex;
+  align-items: center;
+  font-size: 0.95em;
+}
+
+header .contact-info i {
+  margin-right: 8px;
+  color: #3498db;
+}
+
+h2, h3 {
+  color: #3498db;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 10px 20px 10px 20px;
+  /* background-color: #fff; */
+  /* border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.education, .experience, .projects {
+  margin-left: 20px;
+}
+
+#experience ul li ul {
+  list-style-type: disc;
+  margin-left: 40px;
+}
+
+#experience ul li ul li {
+  background: none;
+  padding: 0;
+  border: none;
+  margin: 5px 0;
+  border-radius: 0;
+}
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#skills li {
+  background: #3498db;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 3px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.profile p{
+  text-align: justify;
+}
+
+.double-column {
+  position: relative;
+  height: 1.5em;
+  padding-bottom: 5px;
+}
+
+.main-text {
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+}
+
+.right-text {
+  position: absolute;
+  right: 0;
+  white-space: nowrap;
+  opacity: 0.9;
+  /* font-size: medium; */
+}
+
+.resume-info {
+  background-color: #3498db ;
+  color: #fff !important; 
+  width: 35%;
+  /* height: 100%; */
+}
+
+.resume-info h2, h3 {
+  color: #fff !important; 
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
+
+.resume-data {
+  background-color: #fff;
+  color: #333;
+  width: 65%;
+}
