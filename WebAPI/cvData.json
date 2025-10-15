@@ -41,8 +41,8 @@
          "ENG": "Software Engineer"
       },
       "profileSummary": {
-         "ESP": "Como ingeniero de software llevo más de cinco años trabajando en desarrollo de software y web, principalmente con tecnologías <strong>Microsoft (Dotnet, SQL Server), javascript (node, express, react, next, nest), y junto con servicios cloud como AWS y Azure</strong>. Me he desempeñado en distintos rubros y negocios, logrando así adquirir las competencias necesarias para enfrentar distintos escenarios y problemáticas para darles la mejor solución tecnológica. Me interesa mucho compartir conocimientos con otros colegas e incentivar el uso óptimo de las tecnologías.",
-         "ENG": "As a software engineer with more than five years experience working on software and web development, using mainly technologies from <strong>Microsoft (Dotnet, SQL Server) and javascript (node.js, express.js, react, next.js) and cloud services as AWS and Azure</strong>. I have worked in different businesses to acquire skills to face scenarios and requirements with the best tech solutions. I'm seeking to expand my knowledge and improve my current set of skills."
+         "ESP": "Ingeniero de software con diez años de experiencia en desarrollo de software y web, principalmente con tecnologías <strong>Microsoft (Dotnet, SQL Server), javascript (node, express, react, next, nest), y junto con servicios cloud como AWS y Azure</strong>. Me he desempeñado en distintos rubros y negocios, logrando así adquirir las competencias necesarias para enfrentar distintos escenarios y problemáticas para darles la mejor solución tecnológica. Me interesa mucho compartir conocimientos con otros colegas e incentivar el uso óptimo de las tecnologías.",
+         "ENG": "A software engineer with teen years experience on software and web development, using mainly technologies from <strong>Microsoft (Dotnet, SQL Server) and javascript (node.js, express.js, react, next.js) and cloud services as AWS and Azure</strong>. I have worked in different businesses to acquire skills to face scenarios and requirements with the best tech solutions. I'm seeking to expand my knowledge and improve my current set of skills."
       },
       "picturePath": "#",
       "contacts": [
@@ -80,6 +80,7 @@
          "Javascript",
          "Typescript",
          "Python",
+         "Flask",
          "Node",
          "React",
          "MVC 5",

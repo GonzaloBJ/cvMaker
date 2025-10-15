@@ -19,13 +19,15 @@ def cv_from_json():
         
         cvMaker_service = cvMakerService()
         
-        output_pdf = './cv_generated.pdf'
         cv_context = cvMakerService.get_cv_context(context_person)
         cv_context["lang"] = language_enum.name
         
         cv_template = cvMakerService.get_template(template_name)
+        
+        output_pdf = './cv_' + cv_template.name + '_'+ context_person + '_' + language_enum.name + '.pdf'
        
         cv_object = cvMaker_service.make_pdf_cv(cv_template, cv_context, output_pdf)
+        
         if cv_object is None:
             return jsonify(message="object from json file failure"), 400
         

@@ -4,3 +4,5 @@
 - agregar location a los trabajos
 - revisar estilo de titulos con linea
 - permitir multiples dataJson
+- permitir elegir colores en request
+- origenes de dataJson por archivo de configuracion
