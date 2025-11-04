@@ -1,8 +1,6 @@
 body {
   font-family: "calibri", "arial", sans-serif;
   margin: 40px;
-  /* background-color: #f9f9f9; */
-  color: #333;
 }
 
 header {
@@ -35,18 +33,13 @@ section {
   margin: 4px 0;
 }
 
-.job-title strong {
-  color: grey;
-}
-
 .job-date {
   display: block;
   text-align: right;
 }
 
 .main-list {
-  list-style-type: disc;   
-  color: #333;
+  list-style-type: disc;
   padding-left: 20px;
 }
 
@@ -58,13 +51,11 @@ section {
 
 .inline-list li {
   display: inline-block;
-  
   width: 250px;
 }
 
 .inline-list {
-  list-style-type: none;   
-  color: #333;
+  list-style-type: none;
   padding-left: 20px;
 }
 
@@ -73,7 +64,7 @@ section {
 }
 
 .sectionTitle {
-  border-bottom: 2px solid #8a1f41;
+  border-bottom: 2px solid;
   padding-bottom: 5px;
 }
 

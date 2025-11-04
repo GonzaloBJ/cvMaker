@@ -1,8 +1,11 @@
-- en skills agregar atributos para iconos y nivel
+? en skills agregar atributos para iconos y nivel
+? agregar location a los trabajos
+
 - agregar detalles por experiencia
 - incorporar estilo de sublista en listados
-- agregar location a los trabajos
 - revisar estilo de titulos con linea
-- permitir multiples dataJson
-- permitir elegir colores en request
 - origenes de dataJson por archivo de configuracion
+- para los templatesData las rutas se deben construir desde el root
+
+- completar fullAts y 2columnas
+- 

@@ -21,7 +21,12 @@ class cvMakerService():
             ##config_path = '/usr/local/bin/wkhtmltopdf'
             config = pdfkit.configuration(wkhtmltopdf=config_path)
             
-            pdfkit.from_string(template_str, output_pdf, configuration=config, css=cv_template.stylePath)
+            css_files = [
+                cv_template.stylePath,
+                cv_template.colorSchemePath
+            ]
+            
+            pdfkit.from_string(template_str, output_pdf, configuration=config, css=css_files)
             
             return DefaultResponse(id= 0, message= "CV Generado exitosamente", data= template_str)
         except Exception:
@@ -32,7 +37,7 @@ class cvMakerService():
         self.cvMaker_repo.generate_pdf_from_json_file('','')
         
 
-    def get_template( name: str):
+    def get_template( name: str, colorScheme:str):
         default_path = "./templatesData.json"
         try:
             with open(default_path, 'r', encoding='utf-8') as cvJson:
@@ -42,6 +47,8 @@ class cvMakerService():
 
                 if template: 
                     cvTemplate = CVTemplate(**template)
+                    cvTemplate.colorSchemePath = cvTemplate.rootPath + colorScheme + '.scheme.css'
+                    
                     return cvTemplate
                 else: raise IndexError('template no encontrado')
         except Exception:

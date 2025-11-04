@@ -11,6 +11,7 @@ def cv_from_json():
         template_name = request.args.get('template', 'basic')
         language_str = request.args.get('lang', 'ESP')
         context_person = request.args.get('context', 'gb')
+        colorScheme = request.args.get('color', 'lightBlue')
         
         try:
             language_enum = ELanguages[language_str]
@@ -22,7 +23,7 @@ def cv_from_json():
         cv_context = cvMakerService.get_cv_context(context_person)
         cv_context["lang"] = language_enum.name
         
-        cv_template = cvMakerService.get_template(template_name)
+        cv_template = cvMakerService.get_template(template_name, colorScheme)
         
         output_pdf = './cv_' + cv_template.name + '_'+ context_person + '_' + language_enum.name + '.pdf'
        

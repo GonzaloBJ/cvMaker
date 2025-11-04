@@ -1,0 +1,23 @@
+body {
+    color: #333;
+}
+
+.main-list {
+    color: #333;
+}
+
+.inline-list {
+    color: #333;
+}
+
+.inline-list li {
+    color: #333;
+}
+
+.sectionTitle {
+    border-color: #3498db;
+}
+
+.job-title strong{
+    color: #333;
+}

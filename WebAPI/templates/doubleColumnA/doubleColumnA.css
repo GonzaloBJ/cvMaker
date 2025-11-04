@@ -1,7 +1,5 @@
 body {
   font-family: 'Arial', sans-serif;
-  /* background-color: #f4f4f4; */
-  color: #333;
   margin: 20px 0px 20px 0px;
   line-height: 1.6;
 }
@@ -18,12 +16,7 @@ header img {
   margin-bottom: 15px;
 }
 
-header h1 {
-  color: #2c3e50;
-}
-
 header h2 {
-  color: #2c3e50;
   border-bottom: 0px;
   padding-top: 5px;
   padding-bottom: 0px;
@@ -33,7 +26,6 @@ header h2 {
 header .profession {
   font-size: 1.2em;
   font-weight: bold;
-  color: #3498db;
   margin: 5px 0 15px 0;
 }
 
@@ -52,12 +44,11 @@ header .contact-info span {
 
 header .contact-info i {
   margin-right: 8px;
-  color: #3498db;
 }
 
 h2, h3 {
-  color: #3498db;
-  border-bottom: 2px solid #3498db;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
   padding-bottom: 5px;
 }
 
@@ -101,8 +92,6 @@ li {
 }
 
 #skills li {
-  background: #3498db;
-  color: #fff;
   padding: 6px 12px;
   border-radius: 20px;
   margin: 3px;
@@ -135,20 +124,17 @@ li {
 }
 
 .resume-info {
-  background-color: #3498db ;
-  color: #fff !important; 
   width: 35%;
   /* height: 100%; */
 }
 
 .resume-info h2, h3 {
   color: #fff !important; 
-  border-bottom: 2px solid #fff;
+  border-bottom-width : 2px;
+  border-bottom-style: solid;
   padding-bottom: 5px;
 }
 
 .resume-data {
-  background-color: #fff;
-  color: #333;
   width: 65%;
 }

@@ -83,18 +83,15 @@
          "Flask",
          "Node",
          "React",
-         "Redux",
          "MVC 5",
          "Next.js",
          "Nest.js",
          "Express.js",
-         "GraphQL (.net)",
+         "GraphQL",
          "AWS RDS",
          "AWS DMS",
          "AWS SQS",
          "AWS S3",
-         "AWS DynamoDB",
-         "AWS Lambda",
          "Bootstrap",
          "Material",
          "CSS/SCSS",
@@ -104,16 +101,10 @@
          "OracleSQL",
          "Scrum",
          "Git",
-         "GitHub",
-         "GitFlow",
          "CI/CD",
          "Jenkins Pipeline",
          "Sonarqube",
-         "Jest",
-         "Jasmine",
-         "Xunit",
-         "Nunit",
-         "MsTest"
+         "Unit Testing"
       ],
       "formation":[
          {
@@ -198,24 +189,20 @@
                "ENG":"Software Architecture solution development for develop teams"
             },
             {
-               "ESP":"Desarrollo Frontend (<strong>Angular 17, React 18, MVC4, Bootstrap</strong>)",
+               "ESP":"Desarrollo Frontend (<strong>Angular 17</strong>, <strong>MVC4</strong>, <strong>Bootstrap</strong>)",
                "ENG":"Frontend development (<strong>Angular 17</strong>, <strong>MVC4</strong>, <strong>Bootstrap</strong>)"
             },
             {
-               "ESP":"Desarrollo Backend <strong>(Net4.8, Net8, Python flask, aws lambda, serveless python)</strong>",
+               "ESP":"Desarrollo Backend <strong>(Net4.8, Net8, Python)</strong>",
                "ENG":"Backend development <strong>(Net4.8, Net8, Python)</strong>"
             },
             {
-               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server, aws RDS, aws dynomoDB, aws DMS)</strong>",
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server)</strong>",
                "ENG":"Data modeling and databases support <strong>(PostgreSQL, SQL server)</strong>"
             },
             {
                "ESP":"Soporte a los sistemas de la compañia",
                "ENG":"Provide support to company systems"
-            },
-            {
-               "ESP":"DevOps con Github <strong>(actions, gitflow)</strong> y AWS",
-               "ENG":""
             },
             {
                "ESP":"Metodología hibrida usando tablero Kanban, y algunas ceremonias de scrum (equipo de 4 integrantes)",
@@ -247,16 +234,12 @@
                "ENG":"Backend development <strong>(Dotnet, Nest.js, express.js, aws lambda, serveless python)</strong>"
             },
             {
-               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server, aws RDS, aws dynomoDB, aws DMS)</strong>",
+               "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server, aws RDS, aws DMS)</strong>",
                "ENG":"Data modeling and databases support <strong>(PostgreSQL, SQL server, aws RDS, aws DMS)</strong>"
             },
             {
                "ESP":"Chapter Lead de un Scrum Chapter",
                "ENG":"Chapter Lead of Scrum Chapter"
-            },
-            {
-               "ESP":"DevOps con Github <strong>(actions, gitflow)</strong> y AWS",
-               "ENG":""
             },
             {
                "ESP":"Metodología Scrum (equipo de 5 integrantes en configuracion de sprints de 2 semanas)",

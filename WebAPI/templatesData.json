@@ -1,26 +1,42 @@
 [
    {
       "name": "BasicATS",
+      "rootPath": "./templates/basicATS/",
       "htmlPath": "./templates/basicATS/basicATS.html",
       "stylePath": "./templates/basicATS/basicATS.css",
+      "colorSchemePath": "./templates/basicATS/darkRed.scheme.css",
       "description": "pensado para cumplir con el formato ATS"
    },
    {
+      "name": "FullATS",
+      "rootPath": "./templates/fullATS/",
+      "htmlPath": "./templates/fullATS/fullATS.html",
+      "stylePath": "./templates/fullATS/fullATS.css",
+      "colorSchemePath": "./templates/fullATS/darkRed.scheme.css",
+      "description": "formato ATS"
+   },
+   {
       "name": "SimpleA",
+      "rootPath": "./templates/simpleA/",
       "htmlPath": "./templates/simpleA/simpleA.html",
       "stylePath": "./templates/simpleA/simpleA.css",
+      "colorSchemePath": "./templates/simpleA/lightBlue.scheme.css",
       "description": "plantilla simple"
    },
    {
       "name": "SimpleCustomA",
+      "rootPath": "./templates/simpleCustomA/",
       "htmlPath": "./templates/simpleCustomA/simpleCustomA.html",
       "stylePath": "./templates/simpleCustomA/simpleCustomA.css",
+      "colorSchemePath": "./templates/simpleCustomA/lightBlue.scheme.css",
       "description": "plantilla simple pero con aspecto mejorado"
    },
    {
       "name": "DoubleColumnA",
+      "rootPath": "./templates/doubleColumnA/",
       "htmlPath": "./templates/doubleColumnA/doubleColumnA.html",
       "stylePath": "./templates/doubleColumnA/doubleColumnA.css",
+      "colorSchemePath": "./templates/doubleColumnA/lightBlue.scheme.css",
       "description": "plantilla con informacion en 2 columnas"
    }
 ]
