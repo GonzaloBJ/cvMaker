@@ -57,7 +57,7 @@ class cvMakerService():
     def get_cv_context(context_person: str):
         default_path = "./cvData.json"
         if context_person == "gb":
-            default_path = "./cvData.json"
+            default_path = "./cvDataBAK.json"
         if context_person == "fu":
             default_path = "./cvDataFer.json"
         try:

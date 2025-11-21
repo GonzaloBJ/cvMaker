@@ -25,9 +25,10 @@ class EmploymentHistory:
     work_model: WorkModel
     out_sourcing: bool
     current_job: bool
+    description: str
     functions: List[Career]
 
-    def __init__(self, position: Career, client: str, company: str, date_range: Career, work_model: WorkModel, out_sourcing: bool, current_job: bool, functions: List[Career]) -> None:
+    def __init__(self, position: Career, client: str, company: str, date_range: Career, work_model: WorkModel, out_sourcing: bool, current_job: bool, description:str, functions: List[Career]) -> None:
         self.position = position
         self.client = client
         self.company = company
@@ -35,6 +36,7 @@ class EmploymentHistory:
         self.work_model = work_model
         self.out_sourcing = out_sourcing
         self.current_job = current_job
+        self.description = description
         self.functions = functions
 
 

@@ -1,25 +1,13 @@
-### GB
-### SimpleCustomA
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleCustomA&lang=ESP&context=gb&color=lightBlue
-
-### SimpleA
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleA&lang=ESP&context=gb&color=lightBlue
-
-### BasicATS
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=BasicATS&lang=ESP&context=gb&color=lightBlue
-
-### FullATS
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=FullATS&lang=ESP&context=gb&color=lightBlue
-
-### DoubleColumnA
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=DoubleColumnA&lang=ESP&context=gb&color=darkRed
-
-### FU
-GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleCustomA&lang=ESP&context=fu
-###
-
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=SimpleA&lang=ESP&context=fu
-###
-
- GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=BasicATS&lang=ESP&context=fu
-###
+## HTTP Requests 
+ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo
+ ?template=SimpleCustomA
+#  ?template=SimpleA
+#  ?template=BasicATS
+#  ?template=FullATS
+#  ?template=DoubleColumnA
+ &lang=ESP
+#  &lang=ENG
+ &context=gb
+#  &context=fu
+ &color=lightBlue
+#  &color=darkRed

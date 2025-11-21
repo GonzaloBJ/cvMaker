@@ -187,7 +187,7 @@
          },
          "workModel": "hybrid",
 		   "outSourcing": false,
-         "currentJob": true,
+         "currentJob": false,
          "functions":[
             {
                "ESP":"Actividades de DevOps <strong>(configuración de pipelines ci/cd, configuración y despliegue de sitios y APIs legados)</strong>",
