@@ -29,7 +29,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Ruta para archivos PDF generados.
     * [❌] Renombrar archivo con el formato: `cv_nombrepersona_idioma_ddmmyyyy.pdf`.
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
-    * [❌] Cambiar formato del `Resquests.http`. 
+    * [✅] Cambiar formato del `Resquests.http`. 
 * **Testing:**
     * [❌] Remover `generate_test`.
     * [❌] Agregar test unitarios.
