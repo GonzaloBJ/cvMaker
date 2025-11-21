@@ -1,16 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask
 from blueprints.cvMaker import cvMaker
-from config import HOST, PORT
+from config import HOST, PORT, ENVIRONMENT
 
 app = Flask(__name__)
 
 app.register_blueprint(cvMaker)
   
-@app.route("/")
-async def home():
-    return jsonify({"message": "Hello Bigger Applications!"})
+print(f"Starting server in {ENVIRONMENT} mode...")
 
 if __name__ == "__main__":
- app.run(host=HOST, port=PORT)
+ app.run(host=HOST, port=PORT, debug=(ENVIRONMENT=='development'))
 
     

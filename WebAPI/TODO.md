@@ -13,7 +13,9 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
     * [❌] `Registry` para `templatesData.json` y `cvData`.
     * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
-    * [❌] En `models` cambiar `cvmodel` por `cvData`.
+    * [✅] En `models` cambiar `cvmodel` por `cvData`.
+    * [❌] Refactorizar la implementacion del `cvMakerService` por repository y limpiar blueprint.
+    * [❌] Actualizar `utils`.
 * **Contenido y Datos (CV):**
     * [❌] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
     * [❌] Agregar `location` (ubicación) a los trabajos en la experiencia.
@@ -26,12 +28,13 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Incorporar estilo de sublista en listados (Tarea completada).
     * [❌] Revisar estilo de títulos con línea.
 * **Flujo de Trabajo:**
-    * [❌] Ruta para archivos PDF generados.
-    * [❌] Renombrar archivo con el formato: `cv_nombrepersona_idioma_ddmmyyyy.pdf`.
+    * [✅] Ruta para archivos PDF generados.
+    * [✅] Renombrar archivo con el formato: `cv_nombrepersona_idioma_ddmmyyyy.pdf`.
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
-    * [✅] Cambiar formato del `Resquests.http`. 
+    * [✅] Cambiar formato del `Resquests.http`.
+    * [✅] Remover `__init__.py` innecesarios.
 * **Testing:**
-    * [❌] Remover `generate_test`.
+    * [✅] Remover `generate_test`.
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
     * [❌] Limpiar `.gitignore` para una gestión de archivos adecuada.

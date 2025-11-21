@@ -1,14 +1,15 @@
+from datetime import datetime
 import json
-#from config import ROOT_DIR
+import os
 from models.cvMakerModel import CVTemplate
-from repositories.cvMakerRepository import cvMakerRepository
 from blueprints.cvMaker.models import DefaultResponse
 import jinja2
 import pdfkit
 
+from utils import convert_person_fullname_to_short, convert_str_to_normalized
+
 class cvMakerService():
     def __init__(self):
-        self.cvMaker_repo = cvMakerRepository()
         self.template_loader = jinja2.FileSystemLoader('./')
         self.template_env = jinja2.Environment(loader=self.template_loader)
 
@@ -32,11 +33,6 @@ class cvMakerService():
         except Exception:
             raise
         
-        
-    def generate_test(self):
-        self.cvMaker_repo.generate_pdf_from_json_file('','')
-        
-
     def get_template( name: str, colorScheme:str):
         default_path = "./templatesData.json"
         try:
@@ -67,3 +63,25 @@ class cvMakerService():
                 return cv_context
         except Exception:
             raise
+        
+    def get_cv_file_path(cv_template_name: str, person_name: str, language_enum_name: str, file_extention: str):
+        current_date_corelative = datetime.now().strftime("%d%m%Y")
+        
+        output_file_name = fr"CV_{person_name}_{language_enum_name}_{current_date_corelative}.{file_extention}"
+        print("file name:", output_file_name)
+        
+        output_path = ".//outputCV"
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
+            
+        output_path = fr"{output_path}//{output_file_name}"
+        return output_path
+    
+    def get_formatted_person_name(person_name: str):
+        try:
+            short_name = convert_person_fullname_to_short(person_name)
+            name = convert_str_to_normalized(short_name)
+            return name
+        except Exception:
+            raise        
+        
