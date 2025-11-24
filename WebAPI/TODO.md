@@ -39,7 +39,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
     * [❌] Limpiar `.gitignore` para una gestión de archivos adecuada.
-    * [❌] Buscar y reemplazar formato de `readme` (refinar el estilo y contenido).
+    * [✅] Buscar y reemplazar formato de `readme` (refinar el estilo y contenido).
     * [❌] Validar y documentar uso de `setup.sh`.
 
 ---

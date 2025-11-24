@@ -28,7 +28,7 @@ class cvMakerService():
             
             pdfkit.from_string(template_str, output_pdf, configuration=config, css=css_files)
             
-            return DefaultResponse(id= 0, message= "CV Generado exitosamente", data= template_str)
+            return DefaultResponse(status= "correcto", message= "CV Generado exitosamente", html= template_str, file= output_pdf)
         except Exception:
             raise
         

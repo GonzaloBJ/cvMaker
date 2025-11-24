@@ -1,5 +1,6 @@
 from flask import jsonify, request
 from flask import Blueprint
+from blueprints.cvMaker.models import DefaultResponse
 from enums.cvMaker import EFileExtentions, ELanguages
 from services.cvMakerService import cvMakerService
 
@@ -33,13 +34,12 @@ def cv_from_json():
         cv_object = cvMaker_service.make_pdf_cv(cv_template, cv_context, output_pdf)
         
         if cv_object is None:
-            return jsonify(message="El documento no pudo ser generado."), 400
+            return jsonify(DefaultResponse(status= "Error", message= "El documento no pudo ser generado.")), 400
         
         response = cv_object.to_dict() if hasattr(cv_object, 'to_dict') else cv_object
         return response
     except Exception as e:
-        exceptionMessage = f"Error: {e}"
-        return jsonify(message=exceptionMessage), 500
+        return jsonify(DefaultResponse(status= "Error", message= e)), 500
 
 if __name__ == "__main__":
     cvMaker.run(debug=True)

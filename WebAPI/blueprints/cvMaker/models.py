@@ -2,13 +2,15 @@ from pydantic import BaseModel
 from typing import Any
 
 class DefaultResponse(BaseModel):
-    id: int | None
+    status: str | None
     message: str | None
-    data: Any | None
+    file: str | None
+    html: Any | None
     
     def to_dict(self):
         return {
-            'id': self.id,
+            'status': self.status,
             'message': self.message,
-            'data': self.data,
+            'file': self.file,
+            'html': self.html,
         }
