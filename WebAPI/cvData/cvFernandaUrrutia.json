@@ -59,8 +59,10 @@
          "Python",
          "Node",
          "GCP",
+         "Power BI",
          "SQL Server",
-         "Scrum"
+         "Scrum",
+         "Scrum Master"
       ],
       "formation":[
          {
@@ -100,24 +102,29 @@
 		   "client":"Cencosud S.A.",
          "company":"Soluciones Avos Tech Chile",
          "dateRange": {
-            "ESP": "Junio 2025 - Julio 2025",
-            "ENG": "June 2025 - July 2025"
+            "ESP": "Junio 2025 - Noviembre 2025",
+            "ENG": "June 2025 - November 2025"
          },
          "workModel": "hybrid",
 		   "outSourcing": true,
          "currentJob": false,
+         "description": "Trabajo enfocado en el análisis y modelamiento de datos, además de la gestión de tareas como Scrum Master dentro del equipo de gobierno de datos.",
          "functions":[
             {
                "ESP":"Analisis de dados",
-               "ENG":""
+               "ENG":"Data Analysis"
+            },
+            {
+               "ESP":"Gestión de tareas como Scrum Master",
+               "ENG":"Task management as Scrum Master"
             },
             {
                "ESP":"Modelamiento de datos y mantención a bases de datos <strong>(PostgreSQL, SQL server)</strong>",
                "ENG":"Data modeling and databases support <strong>(PostgreSQL, SQL server)</strong>"
             },
             {
-               "ESP":"Metodología hibrida usando tablero Kanban, y algunas ceremonias de scrum (equipo de 4 integrantes)",
-               "ENG":"Hybrid methodology using Kanban table and some scrum ceremonies(4 members team)"
+               "ESP":"Metodología hibrida usando tablero Kanban, y algunas ceremonias de scrum (equipo de 7 integrantes)",
+               "ENG":"Hybrid methodology using Kanban table and some scrum ceremonies(7 members team)"
             }
          ]
       }

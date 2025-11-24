@@ -49,9 +49,3 @@ python main.py
 ## _*el servidor donde este alojado el servicio requiere de odbc para usar como provedor_
 https://learn.microsoft.com/es-es/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16#download-for-windows
 
-
-## metodos de la api
-```
-http://127.0.0.1:5000/cvMaker/cvDesdeArchivo?template=simpleB
-```
-

@@ -1,7 +1,8 @@
 from datetime import datetime
 import json
 import os
-from models.cvMakerModel import CVTemplate
+from config import CVS_DATA_SOURCE, HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH, TEMPLATES_SOURCE
+from models.cvMakerModel import CVTemplate, CVDataSource
 from blueprints.cvMaker.models import DefaultResponse
 import jinja2
 import pdfkit
@@ -18,9 +19,7 @@ class cvMakerService():
             template = self.template_env.get_template(cv_template.htmlPath)
             template_str = template.render(cv_context)
             
-            config_path = 'C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
-            ##config_path = '/usr/local/bin/wkhtmltopdf'
-            config = pdfkit.configuration(wkhtmltopdf=config_path)
+            config = pdfkit.configuration(wkhtmltopdf=HTML_TO_PDF_CONFIG)
             
             css_files = [
                 cv_template.stylePath,
@@ -34,9 +33,8 @@ class cvMakerService():
             raise
         
     def get_template( name: str, colorScheme:str):
-        default_path = "./templatesData.json"
         try:
-            with open(default_path, 'r', encoding='utf-8') as cvJson:
+            with open(TEMPLATES_SOURCE, 'r', encoding='utf-8') as cvJson:
                 cvTemplates = json.load(cvJson)
                 
                 template = next((item for item in cvTemplates if item["name"] == name), None)
@@ -46,21 +44,23 @@ class cvMakerService():
                     cvTemplate.colorSchemePath = cvTemplate.rootPath + colorScheme + '.scheme.css'
                     
                     return cvTemplate
-                else: raise IndexError('template no encontrado')
+                else: raise IndexError(f"template {name} no encontrado")
         except Exception:
             raise
     
-    def get_cv_context(context_person: str):
-        default_path = "./cvData.json"
-        if context_person == "gb":
-            default_path = "./cvDataBAK.json"
-        if context_person == "fu":
-            default_path = "./cvDataFer.json"
+    def get_cv_context(person_acronym: str):
         try:
-            with open(default_path, 'r', encoding='utf-8') as cvJson:
-                cv_context = json.load(cvJson)
+            with open(CVS_DATA_SOURCE, 'r', encoding='utf-8') as cv_data_config:
+                cv_data_source_json = json.load(cv_data_config)
+                cv_person_data = next((item for item in cv_data_source_json if item["personAcronym"] == person_acronym), None)
                 
-                return cv_context
+                if cv_person_data: 
+                    cv_data_source = CVDataSource(**cv_person_data)
+                    
+                    with open(cv_data_source.dataPath, 'r', encoding='utf-8') as cv_data:
+                        cv_context = json.load(cv_data)
+                        return cv_context
+                else: raise IndexError(f"datos de {person_acronym} no encontrados")
         except Exception:
             raise
         
@@ -68,13 +68,11 @@ class cvMakerService():
         current_date_corelative = datetime.now().strftime("%d%m%Y")
         
         output_file_name = fr"CV_{person_name}_{language_enum_name}_{current_date_corelative}.{file_extention}"
-        print("file name:", output_file_name)
         
-        output_path = ".//outputCV"
-        if not os.path.exists(output_path):
-            os.makedirs(output_path)
+        if not os.path.exists(OUTPUT_DIR_PATH):
+            os.makedirs(OUTPUT_DIR_PATH)
             
-        output_path = fr"{output_path}//{output_file_name}"
+        output_path = fr"{OUTPUT_DIR_PATH}//{output_file_name}"
         return output_path
     
     def get_formatted_person_name(person_name: str):

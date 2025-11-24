@@ -1,0 +1,17 @@
+[
+    {
+        "personAcronym": "gb",
+        "personName": "Gonzalo Barahona",
+        "dataPath": "./cvData/cvGonzaloBarahona.json"
+    },
+    {
+        "personAcronym": "gb_alt",
+        "personName": "Gonzalo Barahona",
+        "dataPath": "./cvData/cvGonzaloBarahona.json"
+    },
+    {
+        "personAcronym": "fu",
+        "personName": "Fernanda Urrutia",
+        "dataPath": "./cvData/cvFernandaUrrutia.json"
+    }
+]

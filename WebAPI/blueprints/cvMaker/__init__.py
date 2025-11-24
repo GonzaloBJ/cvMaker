@@ -10,7 +10,7 @@ def cv_from_json():
     try:
         template_name = request.args.get('template', 'basic')
         language_str = request.args.get('lang', 'ESP')
-        context_person = request.args.get('context', 'gb')
+        person_acronym = request.args.get('person', 'gb')
         colorScheme = request.args.get('color', 'lightBlue')
         # Get language enum or default
         try:
@@ -20,7 +20,7 @@ def cv_from_json():
         
         cvMaker_service = cvMakerService()
         # Get CV context data
-        cv_context = cvMakerService.get_cv_context(context_person)
+        cv_context = cvMakerService.get_cv_context(person_acronym)
         # Add language to context
         cv_context["lang"] = language_enum.name
         # Get CV selected template

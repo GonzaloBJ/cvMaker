@@ -12,3 +12,12 @@ PORT = getenv("PORT")
 AUTH_TOKEN = getenv("AUTH_TOKEN")
 
 ROOT_DIR = path.dirname(path.abspath(__file__))
+
+# cvMaker rutas
+CVS_DATA_SOURCE = "./cvDataSource.json"
+TEMPLATES_SOURCE = "./templatesData.json"
+OUTPUT_DIR_PATH = ".//outputCV"
+
+# pdfkit
+# HTML_TO_PDF_CONFIG = '/usr/local/bin/wkhtmltopdf'
+HTML_TO_PDF_CONFIG = getenv("HTML_TO_PDF_CONFIG") 

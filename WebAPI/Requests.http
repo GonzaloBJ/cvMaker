@@ -7,7 +7,7 @@
 #  ?template=DoubleColumnA
  &lang=ESP
 #  &lang=ENG
- &context=gb
-#  &context=fu
+# &person=gb
+ &person=fu
  &color=lightBlue
 #  &color=darkRed
