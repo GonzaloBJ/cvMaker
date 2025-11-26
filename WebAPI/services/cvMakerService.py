@@ -1,8 +1,9 @@
 from datetime import datetime
 import json
 import os
-from config import CVS_DATA_SOURCE, HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH, TEMPLATES_SOURCE
-from models.cvMakerModel import CVTemplate, CVDataSource
+from config import CVS_DATA_SOURCE, HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH, TEMPLATES_CONFIG_SOURCE, TEMPLATES_SOURCE
+from models.cvDataModel import Root
+from models.cvMakerModel import CVTemplate, CVDataSource, CVTemplateConfig
 from blueprints.cvMaker.models import DefaultResponse
 import jinja2
 import pdfkit
@@ -32,7 +33,7 @@ class cvMakerService():
         except Exception:
             raise
         
-    def get_template( name: str, colorScheme:str):
+    def get_template( name: str, colorScheme:str) -> CVTemplate:
         try:
             with open(TEMPLATES_SOURCE, 'r', encoding='utf-8') as cvJson:
                 cvTemplates = json.load(cvJson)
@@ -48,26 +49,35 @@ class cvMakerService():
         except Exception:
             raise
     
-    def get_cv_context(person_acronym: str):
+    def get_cv_data(person_acronym: str)-> Root:
         try:
-            with open(CVS_DATA_SOURCE, 'r', encoding='utf-8') as cv_data_config:
-                cv_data_source_json = json.load(cv_data_config)
-                cv_person_data = next((item for item in cv_data_source_json if item["personAcronym"] == person_acronym), None)
+            with open(CVS_DATA_SOURCE, 'r', encoding='utf-8') as cv_data_sources:
+                cv_data_sources_json = json.load(cv_data_sources)
+                cv_person_data = next((item for item in cv_data_sources_json if item["personAcronym"] == person_acronym), None)
                 
                 if cv_person_data: 
                     cv_data_source = CVDataSource(**cv_person_data)
                     
-                    with open(cv_data_source.dataPath, 'r', encoding='utf-8') as cv_data:
-                        cv_context = json.load(cv_data)
-                        return cv_context
+                    with open(cv_data_source.dataPath, 'r', encoding='utf-8') as cv_data_json:
+                        cv_data = Root.from_dict(json.load(cv_data_json))
+                        return cv_data
                 else: raise IndexError(f"datos de {person_acronym} no encontrados")
         except Exception:
             raise
         
-    def get_cv_file_path(cv_template_name: str, person_name: str, language_enum_name: str, file_extention: str):
+    def get_cv_template_config() -> CVTemplateConfig:
+        try:
+            with open(TEMPLATES_CONFIG_SOURCE, 'r', encoding='utf-8') as cv_template_config_str:
+                cv_template_config = CVTemplateConfig.from_dict((json.load(cv_template_config_str)))
+                
+                return cv_template_config
+        except Exception:
+            raise
+        
+    def get_cv_file_path(person_name: str, language_enum_name: str, file_extention: str):
         current_date_corelative = datetime.now().strftime("%d%m%Y")
         
-        output_file_name = fr"CV_{person_name}_{language_enum_name}_{current_date_corelative}.{file_extention}"
+        output_file_name = fr"CV_{person_name}_{language_enum_name}_{current_date_corelative}{file_extention}"
         
         if not os.path.exists(OUTPUT_DIR_PATH):
             os.makedirs(OUTPUT_DIR_PATH)

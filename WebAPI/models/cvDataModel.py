@@ -1,162 +1,224 @@
-from enum import Enum
 from typing import List
+from typing import Any
+from dataclasses import dataclass
 
-
+@dataclass
 class Career:
-    esp: str
-    eng: str
+    ESP: str
+    ENG: str
 
-    def __init__(self, esp: str, eng: str) -> None:
-        self.esp = esp
-        self.eng = eng
+    @staticmethod
+    def from_dict(obj: Any) -> 'Career':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return Career(_ESP, _ENG)
 
-
-class WorkModel(Enum):
-    HYBRID = "hybrid"
-    ON_SITE = "on-site"
-    REMOTE = "remote"
-
-
-class EmploymentHistory:
-    position: Career
-    client: str
-    company: str
-    date_range: Career
-    work_model: WorkModel
-    out_sourcing: bool
-    current_job: bool
-    description: str
-    functions: List[Career]
-
-    def __init__(self, position: Career, client: str, company: str, date_range: Career, work_model: WorkModel, out_sourcing: bool, current_job: bool, description:str, functions: List[Career]) -> None:
-        self.position = position
-        self.client = client
-        self.company = company
-        self.date_range = date_range
-        self.work_model = work_model
-        self.out_sourcing = out_sourcing
-        self.current_job = current_job
-        self.description = description
-        self.functions = functions
-
-
+@dataclass
 class Certification:
     title: str
-    educational_institution: str
-    certification_date: int
+    educationalInstitution: str
+    certificationDate: str
 
-    def __init__(self, title: str, educational_institution: str, certification_date: int) -> None:
-        self.title = title
-        self.educational_institution = educational_institution
-        self.certification_date = certification_date
+    @staticmethod
+    def from_dict(obj: Any) -> 'Certification':
+        _title = str(obj.get("title"))
+        _educationalInstitution = str(obj.get("educationalInstitution"))
+        _certificationDate = str(obj.get("certificationDate"))
+        return Certification(_title, _educationalInstitution, _certificationDate)
 
-
+@dataclass
 class Contact:
     icon: str
     name: str
     value: str
 
-    def __init__(self, icon: str, name: str, value: str) -> None:
-        self.icon = icon
-        self.name = name
-        self.value = value
+    @staticmethod
+    def from_dict(obj: Any) -> 'Contact':
+        _icon = str(obj.get("icon"))
+        _name = str(obj.get("name"))
+        _value = str(obj.get("value"))
+        return Contact(_icon, _name, _value)
 
+@dataclass
+class DateRange:
+    ESP: str
+    ENG: str
 
+    @staticmethod
+    def from_dict(obj: Any) -> 'DateRange':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return DateRange(_ESP, _ENG)
+
+@dataclass
+class Description:
+    ESP: str
+    ENG: str
+
+    @staticmethod
+    def from_dict(obj: Any) -> 'Description':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return Description(_ESP, _ENG)
+    
+@dataclass
+class Position:
+    ESP: str
+    ENG: str
+
+    @staticmethod
+    def from_dict(obj: Any) -> 'Position':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return Position(_ESP, _ENG)
+
+@dataclass
+class Function:
+    ESP: str
+    ENG: str
+
+    @staticmethod
+    def from_dict(obj: Any) -> 'Function':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return Function(_ESP, _ENG)
+
+@dataclass
+class EmploymentHistory:
+    position: Position
+    client: str
+    company: str
+    dateRange: DateRange
+    workModel: str
+    outSourcing: bool
+    currentJob: bool
+    description: Description
+    functions: List[Function]
+
+    @staticmethod
+    def from_dict(obj: Any) -> 'EmploymentHistory':
+        _position = Position.from_dict(obj.get("position"))
+        _client = str(obj.get("client"))
+        _company = str(obj.get("company"))
+        _dateRange = DateRange.from_dict(obj.get("dateRange"))
+        _workModel = str(obj.get("workModel"))
+        _outSourcing = bool(obj.get("outSourcing"))
+        _currentJob = bool(obj.get("currentJob"))
+        _description = Description.from_dict(obj.get("description"))
+        _functions = [Function.from_dict(y) for y in obj.get("functions")]
+        return EmploymentHistory(_position, _client, _company, _dateRange, _workModel, _outSourcing, _currentJob, _description, _functions)
+
+@dataclass
 class Formation:
     degree: str
-    educational_institution: str
-    end_date: int
-    has_degree: bool
+    educationalInstitution: str
+    endDate: str
+    hasDegree: bool
 
-    def __init__(self, degree: str, educational_institution: str, end_date: int, has_degree: bool) -> None:
-        self.degree = degree
-        self.educational_institution = educational_institution
-        self.end_date = end_date
-        self.has_degree = has_degree
+    @staticmethod
+    def from_dict(obj: Any) -> 'Formation':
+        _degree = str(obj.get("degree"))
+        _educationalInstitution = str(obj.get("educationalInstitution"))
+        _endDate = str(obj.get("endDate"))
+        _hasDegree = bool(obj.get("hasDegree"))
+        return Formation(_degree, _educationalInstitution, _endDate, _hasDegree)
 
 
+@dataclass
+class Goal:
+    ESP: str
+    ENG: str
+
+    @staticmethod
+    def from_dict(obj: Any) -> 'Goal':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return Goal(_ESP, _ENG)
+
+@dataclass
 class Language:
     language: str
     level: str
     certified: bool
+    certificationName: str
 
-    def __init__(self, language: str, level: str, certified: bool) -> None:
-        self.language = language
-        self.level = level
-        self.certified = certified
+    @staticmethod
+    def from_dict(obj: Any) -> 'Language':
+        _language = str(obj.get("language"))
+        _level = str(obj.get("level"))
+        _certified = bool(obj.get("certified")) 
+        _certificationName = str(obj.get("certificationName"))
+        return Language(_language, _level, _certified, _certificationName)
 
+@dataclass
+class ProfileSummary:
+    ESP: str
+    ENG: str
 
+    @staticmethod
+    def from_dict(obj: Any) -> 'ProfileSummary':
+        _ESP = str(obj.get("ESP"))
+        _ENG = str(obj.get("ENG"))
+        return ProfileSummary(_ESP, _ENG)
+
+@dataclass
 class Reference:
-    contact_name: str
+    contactName: str
     position: str
     company: str
-    phone_number: str
+    phoneNumber: str
     email: str
 
-    def __init__(self, contact_name: str, position: str, company: str, phone_number: str, email: str) -> None:
-        self.contact_name = contact_name
-        self.position = position
-        self.company = company
-        self.phone_number = phone_number
-        self.email = email
+    @staticmethod
+    def from_dict(obj: Any) -> 'Reference':
+        _contactName = str(obj.get("contactName"))
+        _position = str(obj.get("position"))
+        _company = str(obj.get("company"))
+        _phoneNumber = str(obj.get("phoneNumber"))
+        _email = str(obj.get("email"))
+        return Reference(_contactName, _position, _company, _phoneNumber, _email)
 
-
+@dataclass
 class ProfessionalInfo:
     name: str
     career: Career
-    profile_summary: Career
-    picture_path: str
+    profileSummary: ProfileSummary
+    picturePath: str
     contacts: List[Contact]
-    goals: List[Career]
+    goals: List[Goal]
     skills: List[str]
     formation: List[Formation]
     certification: List[Certification]
     languages: List[Language]
     references: List[Reference]
 
-    def __init__(self, name: str, career: Career, profile_summary: Career, picture_path: str, contacts: List[Contact], goals: List[Career], skills: List[str], formation: List[Formation], certification: List[Certification], languages: List[Language], references: List[Reference]) -> None:
-        self.name = name
-        self.career = career
-        self.profile_summary = profile_summary
-        self.picture_path = picture_path
-        self.contacts = contacts
-        self.goals = goals
-        self.skills = skills
-        self.formation = formation
-        self.certification = certification
-        self.languages = languages
-        self.references = references
+    @staticmethod
+    def from_dict(obj: Any) -> 'ProfessionalInfo':
+        _name = str(obj.get("name"))
+        _career = Career.from_dict(obj.get("career"))
+        _profileSummary = ProfileSummary.from_dict(obj.get("profileSummary"))
+        _picturePath = str(obj.get("picturePath"))
+        _contacts = [Contact.from_dict(y) for y in obj.get("contacts")]
+        _goals = [Goal.from_dict(y) for y in obj.get("goals")]
+        _skills = [y for y in obj.get("skills")]
+        _formation = [Formation.from_dict(y) for y in obj.get("formation")]
+        _certification = [Certification.from_dict(y) for y in obj.get("certification")]
+        _languages = [Language.from_dict(y) for y in obj.get("languages")]
+        _references = [Reference.from_dict(y) for y in obj.get("references")]
+        return ProfessionalInfo(_name, _career, _profileSummary, _picturePath, _contacts, _goals, _skills, _formation, _certification, _languages, _references)
 
 
-class SectionConfig:
-    profile: Career
-    formation: Career
-    certification: Career
-    languages: Career
-    goals: Career
-    skills: Career
-    work_history: Career
-    references: Career
-
-    def __init__(self, profile: Career, formation: Career, certification: Career, languages: Career, goals: Career, skills: Career, work_history: Career, references: Career) -> None:
-        self.profile = profile
-        self.formation = formation
-        self.certification = certification
-        self.languages = languages
-        self.goals = goals
-        self.skills = skills
-        self.work_history = work_history
-        self.references = references
-
-
+@dataclass
 class Root:
-    lang: str
-    section_config: SectionConfig
-    professional_info: ProfessionalInfo
-    employment_history: List[EmploymentHistory]
+    professionalInfo: ProfessionalInfo
+    employmentHistory: List[EmploymentHistory]
 
-    def __init__(self, lang: str, section_config: SectionConfig, professional_info: ProfessionalInfo, employment_history: List[EmploymentHistory]) -> None:
-        self.lang = lang
-        self.section_config = section_config
-        self.professional_info = professional_info
-        self.employment_history = employment_history
+    @staticmethod
+    def from_dict(obj: Any) -> 'Root':
+        _professionalInfo = ProfessionalInfo.from_dict(obj.get("professionalInfo"))
+        _employmentHistory = [EmploymentHistory.from_dict(y) for y in obj.get("employmentHistory")]
+        return Root(_professionalInfo, _employmentHistory)
+
+# Example Usage
+# jsonstring = json.loads(myjsonstring)
+# root = Root.from_dict(jsonstring)

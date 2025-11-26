@@ -1,4 +1,39 @@
 {
+  "lang": "ESP",
+  "sectionConfig": {
+    "profile": {
+      "ESP": "Perfil",
+      "ENG": "Profile"
+    },
+    "formation": {
+      "ESP": "Educación",
+      "ENG": "Education"
+    },
+    "certification": {
+      "ESP": "Certificaciones",
+      "ENG": "Certifications"
+    },
+    "languages": {
+      "ESP": "Lenguajes",
+      "ENG": "Languages"
+    },
+    "goals": {
+      "ESP": "Logros",
+      "ENG": "Goals"
+    },
+    "skills": {
+      "ESP": "Aptitudes",
+      "ENG": "Skills"
+    },
+    "workHistory": {
+      "ESP": "Historial Laboral",
+      "ENG": "Work Experience"
+    },
+    "references": {
+      "ESP": "Referencias",
+      "ENG": "References"
+    }
+  },
   "professionalInfo": {
     "name": "Gonzalo Javier Barahona Jiménez",
     "career": {

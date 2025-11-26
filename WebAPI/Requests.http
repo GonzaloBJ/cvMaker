@@ -1,11 +1,11 @@
 ## HTTP Requests 
  GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo
  ?template=SimpleCustomA
-#  ?template=SimpleA
-#  ?template=BasicATS
-#  ?template=FullATS
-#  ?template=DoubleColumnA
- &lang=ESP
+# ?template=SimpleA
+# ?template=BasicATS
+# ?template=FullATS
+# ?template=DoubleColumnA
+ &lang=ENG
 #  &lang=ENG
 # &person=gb
  &person=gb

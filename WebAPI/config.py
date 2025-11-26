@@ -16,6 +16,7 @@ ROOT_DIR = path.dirname(path.abspath(__file__))
 # cvMaker rutas
 CVS_DATA_SOURCE = "./cvDataSource.json"
 TEMPLATES_SOURCE = "./templatesData.json"
+TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
 OUTPUT_DIR_PATH = ".//outputCV"
 
 # pdfkit

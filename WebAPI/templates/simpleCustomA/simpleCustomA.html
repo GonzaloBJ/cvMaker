@@ -58,11 +58,11 @@
               &emsp;
               <i class="fas fa-location-dot">&ensp;</i>
               {% if employ.workModel == "hybrid" %}
-              Hibrido
+              {{ "Hibrido" if lang == "ESP" else "Hybrid" }}
               {% elif employ.workModel == "remote"%}
-              Remoto
+              {{ "Remoto" if lang == "ESP" else "Remote" }}
               {% elif employ.workModel == "on-site"%}
-              Oficina
+              {{ "Presencial" if lang == "ESP" else "On-site" }}
               {% endif %}
             </span>
           </div>

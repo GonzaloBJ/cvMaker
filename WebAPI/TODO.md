@@ -21,6 +21,9 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
     * [❌] Agregar `location` (ubicación) a los trabajos en la experiencia.
     * [❌] Agregar detalles por experiencia (descripciones más ricas).
+    * [❌] En la sección `skills` agregar atributo **grupos** para ordenar las skills.
+    * [❌] En los ragnos de fechas cambiar a `[mm, yyyy]` y dividir por inicio y fin.
+    * [❌] Agregar lenguajes a `workModel`.
 * **Implementación de Templates:**
     * [❌] Completar los templates `fullAts` y `2columnas`.
     * [❌] Crear template básico con referencia de `templateATS.txt`.
@@ -34,6 +37,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
     * [✅] Cambiar formato del `Resquests.http`.
     * [✅] Remover `__init__.py` innecesarios.
+    * [✅] Mover configuracion de templates (sections, language, contacs icons, ).
 * **Testing:**
     * [✅] Remover `generate_test`.
     * [❌] Agregar test unitarios.
