@@ -9,7 +9,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 
 * **Configuración y Modelos:**
     * [✅] Orígenes de `dataJson` por archivo de configuración.
-    * [❌] Para los `templatesData` las rutas se deben construir desde una ruta *root* + *path*.
+    * [✅] Para los `templatesData` las rutas se deben construir desde una ruta *root* + *path*.
     * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
     * [❌] `Registry` para `templatesData.json` y `cvData`.
     * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
@@ -27,7 +27,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 * **Implementación de Templates:**
     * [❌] Completar los templates `fullAts` y `2columnas`.
     * [❌] Crear template básico con referencia de `templateATS.txt`.
-    * [❌] Crear carpeta `colorScheme` para cada template.
+    * [✅] Crear carpeta `colorScheme` para cada template.
 * **Mejoras Visuales:**
     * [❌] Incorporar estilo de sublista en listados (Tarea completada).
     * [❌] Revisar estilo de títulos con línea.
