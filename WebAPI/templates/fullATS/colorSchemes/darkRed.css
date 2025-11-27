@@ -1,0 +1,20 @@
+body {
+    color: #333;
+    background-color:  #fff!important;
+}
+
+.job-title strong {
+    color: grey!important;
+}
+
+.titulo-con-linea hr {
+    border-top-color: #8a1f41!important;
+}
+
+.main-list {
+    color: #333!important;
+}
+
+.inline-list {  
+    color: #333!important;
+}

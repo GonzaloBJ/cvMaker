@@ -7,6 +7,8 @@ class ELanguages(Enum):
 class EFileExtentions(Enum):
     PDF = ".pdf"
     DOCX = ".docx" 
+    HTML = ".html"
+    CSS = ".css"
     
 class EWorkModel(Enum):
     HYBRID = "hybrid"

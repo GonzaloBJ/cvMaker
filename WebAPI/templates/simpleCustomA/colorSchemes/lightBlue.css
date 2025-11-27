@@ -1,0 +1,33 @@
+body {
+    color: #333!important;
+}
+
+header h1 {
+    color: #333!important;
+}
+  
+header h2 {
+    color: #333!important;
+}
+
+header .profession {
+    color: #3498db!important;
+}
+
+header .contact-info i {
+    color: #3498db!important;
+}
+  
+h2, h3 {
+    color: #3498db!important;
+    border-bottom-color: #3498db!important;
+}
+
+section {
+    background-color: #fff!important;
+}
+
+#skills li {
+    background: #3498db!important;
+    color: #fff!important;
+}

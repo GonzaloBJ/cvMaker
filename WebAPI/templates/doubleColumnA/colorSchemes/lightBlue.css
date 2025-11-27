@@ -1,0 +1,44 @@
+body {
+    color: #333!important;
+}
+
+header h1 {
+    color: #333!important;
+}
+
+header h2 {
+    color: #333!important;
+}
+
+header .profession {
+    color: #3498db!important;
+}
+
+header .contact-info i {
+    color: #3498db!important;
+}
+
+h2, h3 {
+    color: #3498db!important;
+    border-bottom-color: #3498db!important;
+}
+
+#skills li {
+    background: #3498db!important;
+    color: #fff!important;
+}
+
+.resume-info {
+    background-color: #3498db!important;
+    color: #fff !important; 
+}
+
+.resume-info h2, h3 {
+    color: #fff !important; 
+    border-bottom-color: #fff!important;
+}
+
+.resume-data {
+    background-color: #fff!important;
+    color: #333!important;
+}

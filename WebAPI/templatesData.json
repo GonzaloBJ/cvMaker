@@ -1,42 +1,32 @@
 [
    {
-      "name": "BasicATS",
+      "name": "basicATS",
       "rootPath": "./templates/basicATS/",
-      "htmlPath": "./templates/basicATS/basicATS.html",
-      "stylePath": "./templates/basicATS/basicATS.css",
-      "colorSchemePath": "./templates/basicATS/darkRed.scheme.css",
+      "colorSchemesPath": "colorSchemes/",
       "description": "pensado para cumplir con el formato ATS"
    },
    {
-      "name": "FullATS",
+      "name": "fullATS",
       "rootPath": "./templates/fullATS/",
-      "htmlPath": "./templates/fullATS/fullATS.html",
-      "stylePath": "./templates/fullATS/fullATS.css",
-      "colorSchemePath": "./templates/fullATS/darkRed.scheme.css",
+      "colorSchemesPath": "colorSchemes/",
       "description": "formato ATS"
    },
    {
-      "name": "SimpleA",
+      "name": "simpleA",
       "rootPath": "./templates/simpleA/",
-      "htmlPath": "./templates/simpleA/simpleA.html",
-      "stylePath": "./templates/simpleA/simpleA.css",
-      "colorSchemePath": "./templates/simpleA/lightBlue.scheme.css",
+      "colorSchemesPath": "colorSchemes/",
       "description": "plantilla simple"
    },
    {
-      "name": "SimpleCustomA",
+      "name": "simpleCustomA",
       "rootPath": "./templates/simpleCustomA/",
-      "htmlPath": "./templates/simpleCustomA/simpleCustomA.html",
-      "stylePath": "./templates/simpleCustomA/simpleCustomA.css",
-      "colorSchemePath": "./templates/simpleCustomA/lightBlue.scheme.css",
+      "colorSchemesPath": "colorSchemes/",
       "description": "plantilla simple pero con aspecto mejorado"
    },
    {
-      "name": "DoubleColumnA",
+      "name": "doubleColumnA",
       "rootPath": "./templates/doubleColumnA/",
-      "htmlPath": "./templates/doubleColumnA/doubleColumnA.html",
-      "stylePath": "./templates/doubleColumnA/doubleColumnA.css",
-      "colorSchemePath": "./templates/doubleColumnA/lightBlue.scheme.css",
+      "colorSchemesPath": "colorSchemes/",
       "description": "plantilla con informacion en 2 columnas"
    }
 ]

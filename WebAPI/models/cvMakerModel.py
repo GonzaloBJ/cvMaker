@@ -1,22 +1,29 @@
 from typing import Any
 from dataclasses import dataclass
 
+from enums.cvMaker import EFileExtentions
+
 @dataclass
 class CVTemplate:
     name: str
     rootPath:str
-    htmlPath: str
-    stylePath: str
-    colorSchemePath: str
+    colorSchemesPath: str
     description: str
 
-    def __init__(self, name: str, rootPath:str, htmlPath: str, stylePath: str, colorSchemePath: str, description: str) -> None:
+    def __init__(self, name: str, rootPath:str, colorSchemesPath: str, description: str) -> None:
         self.name = name
         self.rootPath = rootPath
-        self.htmlPath = htmlPath
-        self.stylePath = stylePath
-        self.colorSchemePath = colorSchemePath
+        self.colorSchemesPath = colorSchemesPath
         self.description = description
+        
+    def get_html_path(self) -> str:
+        return f"{self.rootPath}{self.name}{EFileExtentions.HTML.value}"
+            
+    def set_color_scheme_css_path(self, color_scheme: str) -> None:
+        self.colorSchemesPath = f"{self.rootPath}{self.colorSchemesPath}{color_scheme}{EFileExtentions.CSS.value}"
+    
+    def get_css_path(self) -> str:
+        return f"{self.rootPath}{self.name}{EFileExtentions.CSS.value}"
 
 @dataclass
 class CVDataSource:
