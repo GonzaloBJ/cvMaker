@@ -1,6 +1,6 @@
 # 🚀 CV Maker
 
-Este proyecto es una API construida con **Python** y **Flask**, preparada para ejecutarse en un entorno virtual y conectarse a SQL Server mediante **ODBC**.
+Este proyecto es una API construida con **Python** y **Flask**, preparada para ejecutarse en un entorno virtual.
 En base a un template y datos de cv elegidos, construye un CV en PDF y HMTL.  
 Incluye instrucciones completas para instalación, configuración y ejecución.
 
@@ -8,9 +8,8 @@ Incluye instrucciones completas para instalación, configuración y ejecución.
 
 ## 📦 Requisitos
 
-- Python 3.10+  
-- pip  
-- (Opcional) ODBC Driver para SQL Server (según tu entorno)
+- Python 3.10^
+- wkthmltopdf
 
 ---
 
@@ -21,17 +20,21 @@ Incluye instrucciones completas para instalación, configuración y ejecución.
 python -m venv venv
 ```
 
-### 2️⃣ Activar en PowerShell
+### 2️⃣ Activar ambiente virtual
+Activar en PowerShell
 ```sh
 venv\Scripts\Activate.ps1
 ```
-
-### 3️⃣ Activar en Bash
+Activar en Bash (Windows)
 ```sh
 source venv/Scripts/activate
 ```
+Activar en Bash (Linux)
+```sh
+source venv/bin/activate
+```
 
-### 4️⃣ Desactivar entorno virtual
+### 3️⃣ Desactivar entorno virtual
 ```sh
 deactivate
 ```
@@ -60,19 +63,22 @@ python -m pip freeze > requirements.txt
 ```
 
 ## ▶️ Ejecutar la API
+Ejecutar api directamente
+```sh
+flask run
+```
 Ejecutar Flask Server
 ```sh
-flask --app main run
+flask --app app run
+```
+Ejecutar Flask Server con refresco de cambios
+```sh
+flask --app app run --debug
 ```
 Ejecutar archivo Python directamente
 ```sh
-python main.py
+python app.py
 ```
-
-## 🧩 Requisito para conexión con SQL Server (ODBC)
-Si el servicio se aloja en un servidor Windows y usa SQL Server, es necesario instalar el driver ODBC:
-
-🔗 https://learn.microsoft.com/es-es/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver16#download-for-windows
 
 ## 📚 Documentación de Endpoints
 

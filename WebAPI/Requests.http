@@ -2,9 +2,9 @@
 GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo
 #?template=simpleCustomA
 #?template=simpleA
-#?template=basicATS
+?template=basicATS
 #?template=fullATS
-?template=doubleColumnA
+#?template=doubleColumnA
  &lang=ESP
 #  &lang=ENG
 # &person=gb
