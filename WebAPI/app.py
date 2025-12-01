@@ -21,7 +21,7 @@ def create_app():
     app = Flask(__name__)
 
     # Inject CVMakerService instance into app config
-    ##app.config["cv_maker_service"] = CVMakerService()
+    app.config["cv_maker_service"] = CVMakerService()
     ##app.service = CVMakerService()
     # Register blueprints
     app.register_blueprint(cvMaker)

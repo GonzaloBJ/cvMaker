@@ -1,10 +1,11 @@
 from dataclasses import asdict
-from flask import jsonify, request
+from flask import current_app, jsonify, request
 from flask import Blueprint
 from blueprints.cvMaker.models import DefaultResponse
 from enums.cvMaker import EColorScheme, EFileExtentions, ELanguages
 from models.cvMakerModel import CVTemplateConfig
 from services.CVMakerService import CVMakerService
+##from services.CVMakerService import CVMakerService
 
 cvMaker = Blueprint('cvMaker',__name__,  url_prefix='/cvMaker')
 
@@ -17,9 +18,9 @@ def cv_from_json():
         person_acronym_param = request.args.get('person', 'gb')
         color_scheme_param = request.args.get('color', 'lightBlue')
         # Get injected cvMakerService 
-        ##cvMaker_service = current_app.config["cv_maker_service"]
+        cv_maker_service: CVMakerService = current_app.config["cv_maker_service"]
         ##cvMaker_service = current_app.service
-        cv_maker_service = CVMakerService()
+        ##cv_maker_service = CVMakerService()
         # Get language enum or default
         try:
             language_enum = ELanguages[language_param]
