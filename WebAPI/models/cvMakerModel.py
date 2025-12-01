@@ -26,6 +26,15 @@ class CVTemplate:
         return f"{self.rootPath}{self.name}{EFileExtentions.CSS.value}"
 
 @dataclass
+class RenderedTemplate:
+    html_template_str: str
+    css_files: list[str]
+    
+    def __init__(self, html_template_str: str, css_files: list[str]) -> None:
+        self.html_template_str = html_template_str
+        self.css_files = css_files
+
+@dataclass
 class CVDataSource:
     personAcronym: str
     personName: str

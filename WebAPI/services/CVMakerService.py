@@ -1,54 +1,51 @@
+from dataclasses import asdict
 from datetime import datetime
 import json
 import os
-from config import CVS_DATA_SOURCE, HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH, TEMPLATES_CONFIG_SOURCE, TEMPLATES_SOURCE
+from config import CVS_DATA_SOURCE, HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH
+from enums.cvMaker import EFileExtentions
 from models.cvDataModel import Root
-from models.cvMakerModel import CVTemplate, CVDataSource, CVTemplateConfig
+from models.cvMakerModel import CVDataSource, CVTemplateConfig
 from blueprints.cvMaker.models import DefaultResponse
-import jinja2
 import pdfkit
 
+from repository.CVTemplateRepository import CVTemplateRepository
 from utils import convert_person_fullname_to_short, convert_str_to_normalized
 
 class CVMakerService():
     def __init__(self):
-        self.template_loader = jinja2.FileSystemLoader('./') # todo: set /templates/
-        self.template_env = jinja2.Environment(loader=self.template_loader)
-
-    def make_pdf_cv(self, cv_template: CVTemplate, cv_context: any, output_pdf: str) -> DefaultResponse:
-        try:
-            cv_template_html_path:str = cv_template.get_html_path()
-            cv_template_css_path: str = cv_template.get_css_path()
-            
-            template = self.template_env.get_template(cv_template_html_path)
-            template_str = template.render(cv_context)
-            
-            config = pdfkit.configuration(wkhtmltopdf=HTML_TO_PDF_CONFIG)
-            
-            css_files = [
-                cv_template.colorSchemesPath,
-                cv_template_css_path
-            ]
-            
-            pdfkit.from_string(template_str, output_pdf, configuration=config, css=css_files)
-           
-            return DefaultResponse(status= "correcto", message= "CV Generado exitosamente", html= template_str, file= output_pdf)
+        
+        self.cv_template_repo = CVTemplateRepository()
+        
+    def make_from_file(self, language_name: str, color_scheme: str, person_acronym_param: str, template_name_param: str) :
+        try:            
+            # Get CV context data
+            cv_data = self.get_cv_data(person_acronym_param)
+            # Get CV template configuration
+            cv_template_config: CVTemplateConfig = self.cv_template_repo.get_config(language_name)
+             # Merge context data and template configuration
+            cv_context = asdict(cv_template_config) | asdict(cv_data)
+            # Get CV selected template
+            cv_template = self.cv_template_repo.get_by_name_and_color(template_name_param, color_scheme)
+            # Get rendered template
+            cv_rendered_template = self.cv_template_repo.get_rendered_template(cv_template, cv_context) 
+            # Get formatted person name
+            formatted_person_name = self.get_formatted_person_name(cv_data.professionalInfo.name)
+            # Generate output PDF file name
+            output_pdf = self.get_cv_file_path(formatted_person_name, language_name, EFileExtentions.PDF.value)
+            # Generate PDF CV by specified template and context
+            cv_object = self.make_pdf_cv(cv_rendered_template.html_template_str, cv_rendered_template.css_files, output_pdf)
+            return cv_object
         except Exception:
             raise
-        
-    def get_template(self, name: str, color_scheme:str) -> CVTemplate:
-        try:
-            with open(TEMPLATES_SOURCE, 'r', encoding='utf-8') as cvJson:
-                cv_templates = json.load(cvJson)
-                
-                template = next((item for item in cv_templates if item["name"] == name), None)
 
-                if template: 
-                    cv_template = CVTemplate(**template)
-                    cv_template.set_color_scheme_css_path(color_scheme)
-                    
-                    return cv_template
-                else: raise IndexError(f"Template {name} no encontrado.")
+    def make_pdf_cv(self, cv_rendered_template: str, css_files: list[str], output_pdf: str) -> DefaultResponse:
+        try:
+            config = pdfkit.configuration(wkhtmltopdf=HTML_TO_PDF_CONFIG)
+                        
+            pdfkit.from_string(cv_rendered_template, output_pdf, configuration=config, css=css_files)
+           
+            return DefaultResponse(status= "correcto", message= "CV Generado exitosamente", html= cv_rendered_template, file= output_pdf)
         except Exception:
             raise
     
@@ -65,15 +62,6 @@ class CVMakerService():
                         cv_data = Root.from_dict(json.load(cv_data_json))
                         return cv_data
                 else: raise IndexError(f"Datos de {person_acronym} no encontrados.")
-        except Exception:
-            raise
-        
-    def get_cv_template_config(self) -> CVTemplateConfig:
-        try:
-            with open(TEMPLATES_CONFIG_SOURCE, 'r', encoding='utf-8') as cv_template_config_str:
-                cv_template_config = CVTemplateConfig.from_dict((json.load(cv_template_config_str)))
-                
-                return cv_template_config
         except Exception:
             raise
         

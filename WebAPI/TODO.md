@@ -17,6 +17,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Refactorizar la implementacion del `cvMakerService` por repository y limpiar blueprint.
     * [❌] Actualizar `utils`.
     * [✅] Refactor de clases, constantes, variables para uso de convencion.
+    * [❌] Actualizar metodos para usar clases de entrada.
 * **Contenido y Datos (CV):**
     * [❌] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
     * [❌] Agregar `location` (ubicación) a los trabajos en la experiencia.
