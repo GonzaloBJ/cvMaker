@@ -31,7 +31,7 @@ def cv_from_json():
             color_scheme = EColorScheme.LIGHT_BLUE.value
             
         # Generate CV
-        cv_object = cv_maker_service.make_from_file(language_enum.name, color_scheme, person_acronym_param, template_name_param)
+        cv_object = cv_maker_service.make_cv_from_file(language_enum.name, color_scheme, person_acronym_param, template_name_param)
         if cv_object is None:
             print("cv_object es None")
             return jsonify(DefaultResponse(status= "Error", message= "El documento no pudo ser generado.", file=None, html=None).model_dump()), 400

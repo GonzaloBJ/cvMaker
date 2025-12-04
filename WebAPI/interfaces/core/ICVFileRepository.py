@@ -1,22 +1,12 @@
 from abc import ABC, abstractmethod
 
+from blueprints.cvMaker.models import DefaultResponse
+
 class ICVFileRepository(ABC):
     @abstractmethod
-    def get_all(self, limit):
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_by_id(self, id):
-        raise NotImplementedError
-
-    @abstractmethod
-    def create(self, item):
-        raise NotImplementedError
-
-    @abstractmethod
-    def update(self, item):
-        raise NotImplementedError
-
-    @abstractmethod
-    def delete(self, id):
-        raise NotImplementedError
+    def make_pdf_from_html(self, cv_rendered_template: str, css_files: list[str], output_pdf: str) -> DefaultResponse:
+        pass
+    
+    @abstractmethod    
+    def get_cv_file_path(self, person_name: str, language_enum_name: str, file_extention: str) -> str:
+        pass
