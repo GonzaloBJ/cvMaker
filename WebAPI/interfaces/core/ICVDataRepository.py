@@ -1,22 +1,8 @@
 from abc import ABC, abstractmethod
 
+from models.cvDataModel import Root
+
 class ICVDataRepository(ABC):
     @abstractmethod
-    def get_all(self, limit):
-        raise NotImplementedError
-
-    @abstractmethod
-    def get_by_id(self, id):
-        raise NotImplementedError
-
-    @abstractmethod
-    def create(self, item):
-        raise NotImplementedError
-
-    @abstractmethod
-    def update(self, item):
-        raise NotImplementedError
-
-    @abstractmethod
-    def delete(self, id):
-        raise NotImplementedError
+    def get_by_acronym(self, person_acronym: str) -> Root:
+        pass

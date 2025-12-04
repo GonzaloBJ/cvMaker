@@ -8,6 +8,7 @@ from models.cvMakerModel import CVTemplate, CVTemplateConfig, RenderedTemplate
 
 class CVTemplateRepository(ICVTemplateRepository):
     def __init__(self):
+        super().__init__()
         self.template_loader = jinja2.FileSystemLoader('./') # todo: set /templates/
         self.template_env = jinja2.Environment(loader=self.template_loader)
     

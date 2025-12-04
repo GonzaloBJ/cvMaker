@@ -1,26 +1,25 @@
 from dataclasses import asdict
 from datetime import datetime
-import json
 import os
-from config import CVS_DATA_SOURCE, HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH
+from config import HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH
 from enums.cvMaker import EFileExtentions
-from models.cvDataModel import Root
-from models.cvMakerModel import CVDataSource, CVTemplateConfig
+from models.cvMakerModel import CVTemplateConfig
 from blueprints.cvMaker.models import DefaultResponse
 import pdfkit
 
+from repository.CVDataRepository import CVDataRepository
 from repository.CVTemplateRepository import CVTemplateRepository
 from utils import convert_person_fullname_to_short, convert_str_to_normalized
 
 class CVMakerService():
     def __init__(self):
-        
         self.cv_template_repo = CVTemplateRepository()
+        self.cv_data_repo = CVDataRepository()
         
     def make_from_file(self, language_name: str, color_scheme: str, person_acronym_param: str, template_name_param: str) :
         try:            
             # Get CV context data
-            cv_data = self.get_cv_data(person_acronym_param)
+            cv_data = self.cv_data_repo.get_by_acronym(person_acronym_param)
             # Get CV template configuration
             cv_template_config: CVTemplateConfig = self.cv_template_repo.get_config(language_name)
              # Merge context data and template configuration
@@ -46,22 +45,6 @@ class CVMakerService():
             pdfkit.from_string(cv_rendered_template, output_pdf, configuration=config, css=css_files)
            
             return DefaultResponse(status= "correcto", message= "CV Generado exitosamente", html= cv_rendered_template, file= output_pdf)
-        except Exception:
-            raise
-    
-    def get_cv_data(self, person_acronym: str) -> Root:
-        try:
-            with open(CVS_DATA_SOURCE, 'r', encoding='utf-8') as cv_data_sources:
-                cv_data_sources_json = json.load(cv_data_sources)
-                cv_person_data = next((item for item in cv_data_sources_json if item["personAcronym"] == person_acronym), None)
-                
-                if cv_person_data: 
-                    cv_data_source = CVDataSource(**cv_person_data)
-                    
-                    with open(cv_data_source.dataPath, 'r', encoding='utf-8') as cv_data_json:
-                        cv_data = Root.from_dict(json.load(cv_data_json))
-                        return cv_data
-                else: raise IndexError(f"Datos de {person_acronym} no encontrados.")
         except Exception:
             raise
         
