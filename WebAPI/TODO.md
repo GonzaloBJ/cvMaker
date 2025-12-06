@@ -26,9 +26,11 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 * **Mejoras Visuales:**
     * [❌] Incorporar estilo de sublista en listados (Tarea completada).
     * [❌] Revisar estilo de títulos con línea.
+    * [❌] En interfaz de api cambiar texto de `consejo`, ajustar tamaño de la seccion `cvgenerado`.
 * **Flujo de Trabajo:**
     * [✅] Incorporar `vista` para interfaz de API.
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
+    * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl`.
 * **Testing:**
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
