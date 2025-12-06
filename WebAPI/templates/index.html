@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>API CVMaker</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    body{margin:0;background:linear-gradient(180deg,#071028 0%, #0b1220 100%);color:#e6eef6;padding:24px}
+    .wrap{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    header h1{font-size:20px;margin:0}
+    .controls{display:flex;gap:8px;align-items:center}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);margin-bottom:14px}
+
+    form{display:flex;flex-wrap:wrap;gap:10px}
+    label{font-size:12px;color:var(--muted)}
+    input[type=text], input[type=number], select, input[type=date]{background:var(--glass);border:1px solid rgba(255,255,255,0.04);color:inherit;padding:8px;border-radius:8px;min-width:140px}
+    button{background:var(--accent);color:#012;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .small-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px}
+
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:14px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:10px;border-bottom:1px dashed rgba(255,255,255,0.03);text-align:left;font-size:14px}
+    th{font-size:13px;color:var(--muted)}
+    tfoot td{font-weight:700}
+
+    .summary{display:flex;flex-direction:column;gap:10px}
+    .summary .line{display:flex;justify-content:space-between;padding:8px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent)}
+    .category-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .hint{font-size:12px;color:var(--muted)}
+
+    @media (max-width:900px){.grid{grid-template-columns:1fr;}.controls{flex-direction:column;align-items:flex-start}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Shortcut API CVMaker</h1>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h3>CV Desde Archivo</h3>
+        <form id="formAdd">
+          <div>
+            <label>Persona</label><br>
+            <select id="person">
+              <option value="gb">Gonzalo Barahona</option>
+              <option value="gb_alt">Gonzalo Barahona (Alt)</option>
+              <option value="fu">Fernanda Urrutia</option>
+            </select>
+          </div>
+          <div>
+            <label>Plantilla</label><br>
+            <select id="template">
+              <option value="basicATS">Basic ATS</option>
+              <option value="fullATS">Full ATS</option>
+              <option value="simpleA">Simple A</option>
+              <option value="simpleACustom">Simple A (Custom)</option>
+              <option value="doubleColumnA">Double Column A</option>
+            </select>
+          </div>
+          <div>
+            <label>Esquema de Color</label><br>
+            <select id="color">
+              <option value="lightBlue">Light Blue</option>
+              <option value="darkRed">Dark Red</option>
+            </select>
+          </div>
+          <div>
+            <label>Idioma</label><br>
+            <select id="lang">
+              <option value="ESP">Español</option>
+              <option value="ENG">English</option>
+            </select>
+          </div>
+          <div style="align-self:end">
+            <button id="addBtn" type="submit">Generar CV</button>
+          </div>
+        </form>
+
+        <hr style="border:none;height:8px">
+        <div class="hint">Consejo: registra <strong>Arriendo</strong> y <strong>Pago Tarjeta de Crédito</strong> como gastos fijos al inicio del mes para cuadrar mejor.</div>
+      </section>
+
+      <aside class="card summary">
+        <section class="card" id="pdfSection" hidden>
+            <h3>CV Generado</h3>
+            <embed id="pdfViewer" type="application/pdf" width="600" height="400" style="color:#fff;" src=""/>
+        </section>
+      </aside>
+    </div>
+
+  </div>
+
+  <script>
+    function loadData(){
+      const raw = localStorage.getItem(getKey());
+      return raw? JSON.parse(raw): [];
+    }
+    function saveData(arr){localStorage.setItem(getKey(), JSON.stringify(arr));}
+
+    function render(){
+      const data = loadData();
+    }
+
+    function numberFormat(n){return Number(n).toLocaleString('es-CL')}
+
+    // add form
+    document.getElementById('formAdd').addEventListener('submit', (ev)=>{
+      ev.preventDefault();
+      const template = document.getElementById('template').value;
+      const lang = document.getElementById('lang').value;
+      const person = document.getElementById('person').value;
+      const color = document.getElementById('color').value;
+
+      if(!template||!person) { 
+        alert('Ingresa plantila y persona'); 
+        return 
+      }
+
+      const baseUrl = 'http://127.0.0.1:5000/cvMaker/cvDesdeArchivo';
+      const params = new URLSearchParams();
+      params.append('template', template);
+      params.append('lang', lang);
+      params.append('person', person);
+      params.append('color', color);
+
+      const url = `${baseUrl}?${params.toString()}`;
+
+      fetch(url)
+        .then(response => {
+            // Check if the request was successful (status code 200-299)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle the fetched data
+            const rutaPdf = data.file.toString()
+            .replace('//', '/').replace('//', '/').replace('./', '/');
+            
+            document.getElementById('pdfViewer').src = rutaPdf;
+            document.getElementById('pdfSection').hidden = false;
+
+            // const embedPdfViewer = document.getElementById("pdfViewer");
+            // setTimeout(() => {
+            //     embedPdfViewer.focus();
+            // }, 100);
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the fetch operation
+            console.error('Error fetching data:', error);
+        });
+    });
+  </script>
+</body>
+</html>

@@ -21,11 +21,13 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Agregar lenguajes a `workModel`.
 * **Implementación de Templates:**
     * [❌] Completar los templates `fullAts` y `2columnas`.
+    * [❌] Los templates `fullAts` y `basicAts` deben contener los titulos de las secciones por variable.
     * [❌] Crear template básico con referencia de `templateATS.txt`.
 * **Mejoras Visuales:**
     * [❌] Incorporar estilo de sublista en listados (Tarea completada).
     * [❌] Revisar estilo de títulos con línea.
 * **Flujo de Trabajo:**
+    * [✅] Incorporar `vista` para interfaz de API.
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
 * **Testing:**
     * [❌] Agregar test unitarios.

@@ -17,7 +17,7 @@ ROOT_DIR = path.dirname(path.abspath(__file__))
 CVS_DATA_SOURCE = "./cvDataSource.json"
 TEMPLATES_SOURCE = "./templatesData.json"
 TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
-OUTPUT_DIR_PATH = ".//outputCV"
+OUTPUT_DIR_PATH = ".//static//outputCV"
 
 # pdfkit
 # HTML_TO_PDF_CONFIG = '/usr/local/bin/wkhtmltopdf'

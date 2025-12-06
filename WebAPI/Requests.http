@@ -1,4 +1,6 @@
-## HTTP Requests 
+## HTTP Requests
+
+### CV desde archivo
 GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo
 #?template=simpleCustomA
 #?template=simpleA
@@ -11,3 +13,6 @@ GET http://127.0.0.1:5000/cvMaker/cvDesdeArchivo
  &person=gb
  &color=lightBlue
 #  &color=darkRed
+
+### Index
+GET http://127.0.0.1:5000/cvMaker
