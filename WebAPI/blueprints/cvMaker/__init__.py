@@ -1,6 +1,7 @@
 from flask import current_app, jsonify, render_template, request
 from flask import Blueprint
 from blueprints.cvMaker.models import DefaultResponse
+from config import API_INTERFACE_PATH
 from enums.cvMaker import EColorScheme, ELanguages
 from services.CVMakerService import CVMakerService
 
@@ -9,7 +10,7 @@ cvMaker = Blueprint('cvMaker',__name__,  url_prefix='/cvMaker')
 @cvMaker.route('/', methods=['GET'])
 def home():
     # render_template busca 'index.html' automáticamente dentro de la carpeta 'templates'
-    return render_template('index.html')
+    return render_template(API_INTERFACE_PATH)
 
 @cvMaker.route('/cvDesdeArchivo', methods=['GET'])
 def cv_from_json():

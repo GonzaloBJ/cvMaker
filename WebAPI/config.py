@@ -18,6 +18,7 @@ CVS_DATA_SOURCE = "./cvDataSource.json"
 TEMPLATES_SOURCE = "./templatesData.json"
 TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
 OUTPUT_DIR_PATH = ".//static//outputCV"
+API_INTERFACE_PATH = ".//index2.html"
 
 # pdfkit
 # HTML_TO_PDF_CONFIG = '/usr/local/bin/wkhtmltopdf'
