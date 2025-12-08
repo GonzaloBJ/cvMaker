@@ -14,11 +14,11 @@ AUTH_TOKEN = getenv("AUTH_TOKEN")
 ROOT_DIR = path.dirname(path.abspath(__file__))
 
 # cvMaker rutas
-CVS_DATA_SOURCE = "./cvDataSource.json"
+CV_DATA_SOURCES = "./cvDataSource.json"
 TEMPLATES_SOURCE = "./templatesData.json"
 TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
 OUTPUT_DIR_PATH = ".//static//outputCV"
-API_INTERFACE_PATH = ".//index2.html"
+API_INTERFACE_PATH = ".//index.html"
 
 # pdfkit
 # HTML_TO_PDF_CONFIG = '/usr/local/bin/wkhtmltopdf'

@@ -13,10 +13,11 @@ class CVMakerService():
         self.cv_data_repo = CVDataRepository()
         self.cv_file_repo = CVFileRepository()
         
-    def make_cv_from_file(self, language_name: str, color_scheme: str, person_acronym_param: str, template_name_param: str) :
+    def make_cv_from_file(self, language_name: str, color_scheme: str, person_acronym: str, template_name_param: str) :
         try:            
             # Get CV context data
-            cv_data = self.cv_data_repo.get_by_acronym(person_acronym_param)
+            cv_data_path = self.cv_data_repo.get_path_by_person_acronym(person_acronym)
+            cv_data = self.cv_data_repo.get_cv_data_by_path(cv_data_path)
             # Get CV template configuration
             cv_template_config: CVTemplateConfig = self.cv_template_repo.get_config(language_name)
              # Merge context data and template configuration
