@@ -4,6 +4,9 @@ from blueprints.cvMaker.models import DefaultResponse
 from config import API_INTERFACE_PATH
 from enums.cvMaker import EColorScheme, ELanguages
 from services.CVMakerService import CVMakerService
+from strategies.CVDataFromInternalFileStrategy import CVDataFromInternalFileStrategy
+from strategies.CVTemplateFromInternalFileStrategy import CVTemplateFromInternalFileStrategy
+from strategies.CVToPDFDocumentStrategy import CVToPDFDocumentStrategy
 
 cvMaker = Blueprint('cvMaker',__name__,  url_prefix='/cvMaker')
 
@@ -23,7 +26,11 @@ def cv_from_json():
         
         # Get injected cvMakerService 
         cv_maker_service: CVMakerService = current_app.config["cv_maker_service"]
-        print("cv_maker_service in cv_from_json:", cv_maker_service)
+        cv_maker_service.set_strategy(
+            cv_data_strategy=CVDataFromInternalFileStrategy(), 
+            cv_output_document_strategy=CVToPDFDocumentStrategy(), 
+            cv_template_strategy=CVTemplateFromInternalFileStrategy()
+            )
         # Get language enum or default
         try:
             language_enum = ELanguages[language_param]
@@ -37,7 +44,7 @@ def cv_from_json():
             color_scheme = EColorScheme.LIGHT_BLUE.value
             
         # Generate CV
-        cv_object = cv_maker_service.make_cv_from_file(language_enum.name, color_scheme, person_acronym_param, template_name_param)
+        cv_object = cv_maker_service.make_cv_from_template(language_enum.name, color_scheme, person_acronym_param, template_name_param)
         if cv_object is None:
             print("cv_object es None")
             return jsonify(DefaultResponse(status= "Error", message= "El documento no pudo ser generado.", file=None, html=None).model_dump()), 400

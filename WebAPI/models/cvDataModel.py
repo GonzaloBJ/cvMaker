@@ -209,15 +209,15 @@ class ProfessionalInfo:
 
 
 @dataclass
-class Root:
+class CVData:
     professionalInfo: ProfessionalInfo
     employmentHistory: List[EmploymentHistory]
 
     @staticmethod
-    def from_dict(obj: Any) -> 'Root':
+    def from_dict(obj: Any) -> 'CVData':
         _professionalInfo = ProfessionalInfo.from_dict(obj.get("professionalInfo"))
         _employmentHistory = [EmploymentHistory.from_dict(y) for y in obj.get("employmentHistory")]
-        return Root(_professionalInfo, _employmentHistory)
+        return CVData(_professionalInfo, _employmentHistory)
 
 # Example Usage
 # jsonstring = json.loads(myjsonstring)

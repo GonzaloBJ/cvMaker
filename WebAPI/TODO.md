@@ -8,12 +8,12 @@ Este archivo sirve como un registro centralizado de las funcionalidades, mejoras
 Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 
 * **Configuración y Modelos:**
+    * [✅] `Registry` para `templatesData.json` y `cvData`.
+    * [✅] refactorizar `cvFileRepository` a `cvOutputStategy` para tener distintas salidas de archivo(pdf, html, word).
     * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
-    * [❌] `Registry` para `templatesData.json` y `cvData`.
     * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
     * [❌] Actualizar metodos para usar clases de entrada.
-    * [❌] refactorizar `cvFileRepository` a `cvOutputStategy` para tener distintas salidas de archivo(pdf, html, word).
-
+    * [❌] refactorizar `template_loader` para que tome las rutas del directorio `/templates`.
 * **Contenido y Datos (CV):**
     * [❌] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
     * [❌] Agregar `location` (ubicación) a los trabajos en la experiencia.
@@ -26,9 +26,9 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Los templates `fullAts` y `basicAts` deben contener los titulos de las secciones por variable.
     * [❌] Crear template básico con referencia de `templateATS.txt`.
 * **Mejoras Visuales:**
+    * [✅] En interfaz de api cambiar texto de `consejo`, ajustar tamaño de la seccion `cvgenerado`.
     * [❌] Incorporar estilo de sublista en listados (Tarea completada).
     * [❌] Revisar estilo de títulos con línea.
-    * [✅] En interfaz de api cambiar texto de `consejo`, ajustar tamaño de la seccion `cvgenerado`.
 * **Flujo de Trabajo:**
     * [✅] Incorporar `vista` para interfaz de API.
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.

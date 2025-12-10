@@ -3,11 +3,11 @@ from typing import Any
 from flask import json
 import jinja2
 from config import TEMPLATES_CONFIG_SOURCE, TEMPLATES_SOURCE
-from interfaces.core.ICVTemplateRepository import ICVTemplateRepository
+from interfaces.strategy.ICVTemplateStrategy import ICVTemplateStrategy
 from models.cvMakerModel import CVTemplate, CVTemplateConfig, RenderedTemplate
 
 
-class CVTemplateRepository(ICVTemplateRepository):
+class CVTemplateFromInternalFileStrategy(ICVTemplateStrategy):
     def __init__(self):
         super().__init__()
         self.FILE_ENCODING = encodings.utf_8.getregentry().name

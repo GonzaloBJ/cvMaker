@@ -3,7 +3,7 @@ from typing import Any
 
 from models.cvMakerModel import CVTemplate, CVTemplateConfig, RenderedTemplate
 
-class ICVTemplateRepository(ABC):
+class ICVTemplateStrategy(ABC):
     @abstractmethod
     def get_config(self, language_name: str) -> CVTemplateConfig:
         # raise NotImplementedError
