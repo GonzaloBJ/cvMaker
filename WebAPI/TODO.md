@@ -1,20 +1,16 @@
-# 🚀 Gestión de Tareas (TODO)
+# ☑️ Gestión de Tareas (TODO)
 
-Este archivo sirve como un registro centralizado de las funcionalidades, mejoras y correcciones pendientes para el proyecto. Utilizamos la sintaxis de casillas de verificación de Markdown para un seguimiento rápido y visual.
-
----
-
-## 📋 Lista de Tareas Pendientes
 Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 
 * **Configuración y Modelos:**
     * [✅] `Registry` para `templatesData.json` y `cvData`.
     * [✅] refactorizar `cvFileRepository` a `cvOutputStategy` para tener distintas salidas de archivo(pdf, html, word).
+    * [✅] Actualizar metodos para usar clases de entrada.
     * [❌] crear `cvToReadmeStrategy` para exportar el template a readme (github).
     * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
     * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
-    * [❌] Actualizar metodos para usar clases de entrada.
     * [❌] refactorizar `template_loader` para que tome las rutas del directorio `/templates`.
+    * [❌] Generar validador de parametros entrada api usando dataclass(arg).
 * **Contenido y Datos (CV):**
     * [❌] Agregar seccion de `Proyects` para incorporar data de proyectos y repos.
     * [❌] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
@@ -34,12 +30,13 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Revisar estilo de títulos con línea.
 * **Flujo de Trabajo:**
     * [✅] Incorporar `vista` para interfaz de API.
-    * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
     * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
+    * [❌] Agregar script generador de dataJson base.
+    * [❌] Incorporar `github-pages` y dejar todos los documentos en docs y acortar readme mediante enlaces.
 * **Testing:**
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
-    * [❌] Limpiar `.gitignore` para una gestión de archivos adecuada.
+    * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API (flask restx).
     * [❌] Validar y documentar uso de `setup.sh`.
 
 ---

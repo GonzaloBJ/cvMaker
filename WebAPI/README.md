@@ -1,17 +1,15 @@
 # 🚀 CV Maker
-
 Este proyecto es una API construida con **Python** y **Flask**, preparada para ejecutarse en un entorno virtual.
 En base a un template y datos de cv elegidos, construye un CV en PDF y HMTL.  
 Incluye instrucciones completas para instalación, configuración y ejecución.
-
 ---
 
 ## 📦 Requisitos
-
 - Python 3.10^
 - wkthmltopdf
-
 ---
+
+[Ver TODO](TODO.md)
 
 ## 🧪 Crear y activar entorno virtual
 

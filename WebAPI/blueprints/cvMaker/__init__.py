@@ -1,5 +1,6 @@
 from flask import current_app, jsonify, render_template, request
 from flask import Blueprint
+from DTOs.CVGenerationRequest import CVGenerationRequest
 from blueprints.cvMaker.models import DefaultResponse
 from config import API_INTERFACE_PATH
 from enums.cvMaker import EColorScheme, ELanguages
@@ -42,9 +43,16 @@ def cv_from_json():
             color_scheme = EColorScheme(color_scheme_param).value
         except KeyError:
             color_scheme = EColorScheme.LIGHT_BLUE.value
+
+        request_data = CVGenerationRequest(
+            language_name=language_enum.name,
+            color_scheme=color_scheme,
+            person_acronym=person_acronym_param,
+            template_name=template_name_param
+        )
             
         # Generate CV
-        cv_object = cv_maker_service.make_cv_from_template(language_enum.name, color_scheme, person_acronym_param, template_name_param)
+        cv_object = cv_maker_service.make_cv_from_template(request_data)
         if cv_object is None:
             print("cv_object es None")
             return jsonify(DefaultResponse(status= "Error", message= "El documento no pudo ser generado.", file=None, html=None).model_dump()), 400
