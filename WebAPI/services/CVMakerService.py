@@ -20,8 +20,8 @@ class CVMakerService():
         self.cv_data_strategy = cv_data_strategy
         self.cv_output_document_strategy = cv_output_document_strategy
         
-    def make_cv_from_template(self, request: CVGenerationRequest) :
-        try:            
+    def make_cv_from_template(self, request: CVGenerationRequest) -> dict:
+        try:
             # Get CV context data
             cv_data_path: CVDataSource = self.cv_data_strategy.get_person_data_source_by_acronym(request.person_acronym)
             cv_data: CVData = self.cv_data_strategy.get_cv_data_by_path(cv_data_path.dataPath)

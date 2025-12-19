@@ -11,13 +11,13 @@ class CVToPDFDocumentStrategy(ICVOutputDocumentStrategy):
         super().__init__()
         self.DATE_CORELATIVE_FORMAT = "%d%m%Y"
         
-    def generate_from_rendered_template(self, cv_rendered_template: str, css_files: list[str], output_document: str) -> DefaultResponse:
+    def generate_from_rendered_template(self, cv_rendered_template: str, css_files: list[str], output_document: str) -> dict:
         try:
             config = pdfkit.configuration(wkhtmltopdf=HTML_TO_PDF_CONFIG)
                         
             pdfkit.from_string(cv_rendered_template, output_document, configuration=config, css=css_files)
            
-            return DefaultResponse(status= "correcto", message= "CV Generado exitosamente", html= cv_rendered_template, file= output_document)
+            return { 'html': cv_rendered_template, 'file': output_document }
         except Exception:
             raise
         
