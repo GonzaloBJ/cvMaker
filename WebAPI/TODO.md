@@ -1,10 +1,5 @@
-# 🚀 Gestión de Tareas (TODO)
+# ☑️ Gestión de Tareas (TODO)
 
-Este archivo sirve como un registro centralizado de las funcionalidades, mejoras y correcciones pendientes para el proyecto. Utilizamos la sintaxis de casillas de verificación de Markdown para un seguimiento rápido y visual.
-
----
-
-## 📋 Lista de Tareas Pendientes
 Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 
 * **Configuración y Modelos:**
@@ -34,6 +29,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [✅] Incorporar `vista` para interfaz de API.
     * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API (flask restx).
     * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
+    * [❌] Agregar script generador de dataJson base.
 * **Testing:**
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
