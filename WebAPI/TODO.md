@@ -10,10 +10,11 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 * **Configuración y Modelos:**
     * [✅] `Registry` para `templatesData.json` y `cvData`.
     * [✅] refactorizar `cvFileRepository` a `cvOutputStategy` para tener distintas salidas de archivo(pdf, html, word).
+    * [✅] Actualizar metodos para usar clases de entrada.
     * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
     * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
-    * [❌] Actualizar metodos para usar clases de entrada.
     * [❌] refactorizar `template_loader` para que tome las rutas del directorio `/templates`.
+    * [❌] Generar validador de parametros entrada api usando dataclass(arg).
 * **Contenido y Datos (CV):**
     * [❌] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
     * [❌] Agregar `location` (ubicación) a los trabajos en la experiencia.
@@ -31,7 +32,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Revisar estilo de títulos con línea.
 * **Flujo de Trabajo:**
     * [✅] Incorporar `vista` para interfaz de API.
-    * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API.
+    * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API (flask restx).
     * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
 * **Testing:**
     * [❌] Agregar test unitarios.
