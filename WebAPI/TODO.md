@@ -27,13 +27,13 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Revisar estilo de títulos con línea.
 * **Flujo de Trabajo:**
     * [✅] Incorporar `vista` para interfaz de API.
-    * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API (flask restx).
     * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
     * [❌] Agregar script generador de dataJson base.
+    * [❌] Incorporar `github-pages` y dejar todos los documentos en docs y acortar readme mediante enlaces.
 * **Testing:**
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
-    * [❌] Limpiar `.gitignore` para una gestión de archivos adecuada.
+    * [❌] Cambiar `get` del `main` por algo como **Swagger** o una interfaz de API (flask restx).
     * [❌] Validar y documentar uso de `setup.sh`.
 
 ---
