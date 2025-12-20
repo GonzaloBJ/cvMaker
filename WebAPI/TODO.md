@@ -32,6 +32,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
 * **Flujo de Trabajo:**
     * [✅] Incorporar `vista` para interfaz de API.
     * [✅] Agregar script generador de dataJson base.
+    * [✅] Agregar script para generar rutas de nuevos templates.
     * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
     * [❌] Incorporar `github-pages` y dejar todos los documentos en docs y acortar readme mediante enlaces.
 * **Testing:**

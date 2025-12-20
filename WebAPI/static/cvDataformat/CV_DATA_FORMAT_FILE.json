@@ -24,13 +24,20 @@
             }
         ],
         "skills": [
-            ""
+            {
+                "skillName": "",
+                "level": "",
+                "group": ""
+            }
         ],
         "formation": [
             {
                 "degree": "",
                 "educationalInstitution": "",
-                "endDate": "",
+                "endDate": {
+                    "mm": 0,
+                    "yyyy": 0
+                },
                 "hasDegree": false
             }
         ],
@@ -38,7 +45,10 @@
             {
                 "title": "",
                 "educationalInstitution": "",
-                "certificationDate": ""
+                "certificationDate": {
+                    "mm": 0,
+                    "yyyy": 0
+                }
             }
         ],
         "languages": [
@@ -47,6 +57,34 @@
                 "level": "",
                 "certified": false,
                 "certificationName": ""
+            }
+        ],
+        "proyects": [
+            {
+                "name": "",
+                "shortDescription": {
+                    "ESP": "",
+                    "ENG": ""
+                },
+                "stackDescription": {
+                    "ESP": "",
+                    "ENG": ""
+                },
+                "client": {
+                    "ESP": "",
+                    "ENG": ""
+                },
+                "freelance": false,
+                "goals": {
+                    "ESP": "",
+                    "ENG": ""
+                },
+                "links": [
+                    {
+                        "label": "",
+                        "url": ""
+                    }
+                ]
             }
         ],
         "references": [
@@ -68,10 +106,20 @@
             "client": "",
             "company": "",
             "dateRange": {
+                "startDate": {
+                    "mm": 0,
+                    "yyyy": 0
+                },
+                "endDate": {
+                    "mm": 0,
+                    "yyyy": 0
+                }
+            },
+            "workModel": {
                 "ESP": "",
                 "ENG": ""
             },
-            "workModel": "",
+            "location": "",
             "outSourcing": false,
             "currentJob": false,
             "description": {
