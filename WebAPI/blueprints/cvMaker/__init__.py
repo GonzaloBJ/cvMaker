@@ -45,10 +45,10 @@ def cv_from_json():
         return jsonify(DefaultResponse.success(
             message="CV Generado exitosamente", 
             html=cv_object['html'], 
-            file=cv_object['file']).model_dump()), HTTPStatus.Ok
+            file=cv_object['file']).model_dump()), HTTPStatus.OK.value
     except Exception as e:
         return jsonify(DefaultResponse.fail(
-            message=f'El documento no pudo ser generado: {e}').model_dump()), HTTPStatus.INTERNAL_SERVER_ERROR
+            message=f'El documento no pudo ser generado: {e}').model_dump()), HTTPStatus.INTERNAL_SERVER_ERROR.value
 
 if __name__ == "__main__":
     cvMaker.run(debug=True)
