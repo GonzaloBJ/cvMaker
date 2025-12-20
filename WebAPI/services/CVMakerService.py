@@ -40,8 +40,8 @@ class CVMakerService():
             # Generate PDF CV by specified template and context
             cv_object = self.cv_output_document_strategy.generate_from_rendered_template(cv_rendered_template.html_template_str, cv_rendered_template.css_files, output_pdf)
             return cv_object
-        except Exception:
-            raise
+        except Exception as e:
+            raise e
 
     def _get_formatted_person_name(self, person_name: str) -> str:
         try:

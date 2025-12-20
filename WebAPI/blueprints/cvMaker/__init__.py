@@ -1,3 +1,4 @@
+from http import HTTPStatus
 from flask import current_app, jsonify, render_template, request
 from flask import Blueprint
 from DTOs.CVGenerationRequest import CVGenerationRequest
@@ -39,22 +40,15 @@ def cv_from_json():
             person_acronym=request_query.person,
             template_name=request_query.template
         )
-        
-        try:
-            cv_object = cv_maker_service.make_cv_from_template(request_data)
-            if cv_object is None:
-                print("cv_object es None")
-                return jsonify(DefaultResponse.fail("El documento no pudo ser generado.").model_dump()), 400
-        except Exception as e:
-            return jsonify(DefaultResponse.fail(str(e)).model_dump()), 500
-        
+        cv_object = cv_maker_service.make_cv_from_template(request_data)
+
         return jsonify(DefaultResponse.success(
             message="CV Generado exitosamente", 
             html=cv_object['html'], 
-            file=cv_object['file']).model_dump()), 200
+            file=cv_object['file']).model_dump()), HTTPStatus.Ok
     except Exception as e:
-        print("Error generating CV:", e)
-        return jsonify(DefaultResponse.fail(e).model_dump()), 500
+        return jsonify(DefaultResponse.fail(
+            message=f'El documento no pudo ser generado: {e}').model_dump()), HTTPStatus.INTERNAL_SERVER_ERROR
 
 if __name__ == "__main__":
     cvMaker.run(debug=True)
