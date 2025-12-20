@@ -4,30 +4,35 @@
     "career": { "ESP": "", "ENG": "" },
     "profileSummary": { "ESP": "", "ENG": "" },
     "picturePath": "#",
-    "contacts": [
-      { "icon": "", "name": "", "value": "" }
-    ],
-    "goals": [
-      { "ESP": "", "ENG": "" }
-    ],
-    "skills": [ "" ],
+    "contacts": [ { "icon": "", "name": "", "value": "" } ],
+    "goals": [ { "ESP": "", "ENG": "" } ],
+    "skills": [ { "skillName" : "", "level": "", "group": "" } ],
     "formation": [
       {
         "degree": "",
         "educationalInstitution": "",
-        "endDate": "",
+        "endDate": { "mm": 0, "yyyy": 0 },
         "hasDegree": false
       }
     ],
-    "certification": [
-      { "title": "", "educationalInstitution": "", "certificationDate": "" }
-    ],
+    "certification": [ { "title": "", "educationalInstitution": "", "certificationDate": { "mm": 0, "yyyy": 0 } } ],
     "languages": [
       {
         "language": "",
         "level": "",
         "certified": false,
         "certificationName": ""
+      }
+    ],
+    "proyects": [
+      {
+        "name": "",
+        "shortDescription": { "ESP": "", "ENG": "" },
+        "stackDescription": { "ESP": "", "ENG": "" },
+        "client": { "ESP": "", "ENG": "" },
+        "freelance": false,
+        "goals": { "ESP": "", "ENG": "" },
+        "links": [ { "label": "", "url": "" } ]
       }
     ],
     "references": [
@@ -45,8 +50,12 @@
       "position": { "ESP": "", "ENG": "" },
       "client": "",
       "company": "",
-      "dateRange": { "ESP": "", "ENG": "" },
-      "workModel": "",
+      "dateRange": { 
+        "startDate": { "mm": 0, "yyyy": 0 },
+        "endDate": { "mm": 0, "yyyy": 0 }
+      },
+      "workModel": { "ESP": "", "ENG": "" },
+      "location":  "",
       "outSourcing": false,
       "currentJob": false,
       "description": { "ESP": "", "ENG": "" },
