@@ -1,0 +1,89 @@
+{
+    "professionalInfo": {
+        "name": "",
+        "career": {
+            "ESP": "",
+            "ENG": ""
+        },
+        "profileSummary": {
+            "ESP": "",
+            "ENG": ""
+        },
+        "picturePath": "#",
+        "contacts": [
+            {
+                "icon": "",
+                "name": "",
+                "value": ""
+            }
+        ],
+        "goals": [
+            {
+                "ESP": "",
+                "ENG": ""
+            }
+        ],
+        "skills": [
+            ""
+        ],
+        "formation": [
+            {
+                "degree": "",
+                "educationalInstitution": "",
+                "endDate": "",
+                "hasDegree": false
+            }
+        ],
+        "certification": [
+            {
+                "title": "",
+                "educationalInstitution": "",
+                "certificationDate": ""
+            }
+        ],
+        "languages": [
+            {
+                "language": "",
+                "level": "",
+                "certified": false,
+                "certificationName": ""
+            }
+        ],
+        "references": [
+            {
+                "contactName": "",
+                "position": "",
+                "company": "",
+                "phoneNumber": "",
+                "email": ""
+            }
+        ]
+    },
+    "employmentHistory": [
+        {
+            "position": {
+                "ESP": "",
+                "ENG": ""
+            },
+            "client": "",
+            "company": "",
+            "dateRange": {
+                "ESP": "",
+                "ENG": ""
+            },
+            "workModel": "",
+            "outSourcing": false,
+            "currentJob": false,
+            "description": {
+                "ESP": "",
+                "ENG": ""
+            },
+            "functions": [
+                {
+                    "ESP": "",
+                    "ENG": ""
+                }
+            ]
+        }
+    ]
+}
