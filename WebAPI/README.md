@@ -5,9 +5,9 @@ Incluye instrucciones completas para instalación, configuración y ejecución.
 ---
 
 ## 📦 Requisitos
-- Python 3.10^
-- wkthmltopdf
----
+* **Python 3.10^**
+* **wkthmltopdf**
+
 
 [Ver TODO](TODO.md)
 

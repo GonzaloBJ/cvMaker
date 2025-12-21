@@ -10,7 +10,6 @@ load_dotenv(path.join(basedir, ".env"))
 ENVIRONMENT = getenv("ENVIRONMENT")
 HOST = getenv("HOST")
 PORT = getenv("PORT")
-AUTH_TOKEN = getenv("AUTH_TOKEN")
 
 ROOT_DIR = path.dirname(path.abspath(__file__))
 

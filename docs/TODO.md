@@ -11,6 +11,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
     * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
     * [❌] refactorizar `template_loader` para que tome las rutas del directorio `/templates`.
+    * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
 * **Contenido y Datos (CV):**
     * [✅] Agregar seccion de `Proyects` para incorporar data de proyectos y repos.
     * [✅] En la sección `skills` agregar atributos para **iconos y nivel** de conocimiento.
@@ -33,8 +34,7 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [✅] Incorporar `vista` para interfaz de API.
     * [✅] Agregar script generador de dataJson base.
     * [✅] Agregar script para generar rutas de nuevos templates.
-    * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
-    * [❌] Incorporar `github-pages` y dejar todos los documentos en docs y acortar readme mediante enlaces.
+    * [✅] Incorporar `github-pages` y dejar todos los documentos en docs y acortar readme mediante enlaces.
 * **Testing:**
     * [❌] Agregar test unitarios.
 * **Limpieza y Documentación:**
