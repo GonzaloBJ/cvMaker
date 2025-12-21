@@ -1,32 +1,38 @@
 [
-   {
-      "name": "basicATS",
-      "rootPath": "./templates/basicATS/",
-      "colorSchemesPath": "colorSchemes/",
-      "description": "pensado para cumplir con el formato ATS"
-   },
-   {
-      "name": "fullATS",
-      "rootPath": "./templates/fullATS/",
-      "colorSchemesPath": "colorSchemes/",
-      "description": "formato ATS"
-   },
-   {
-      "name": "simpleA",
-      "rootPath": "./templates/simpleA/",
-      "colorSchemesPath": "colorSchemes/",
-      "description": "plantilla simple"
-   },
-   {
-      "name": "simpleCustomA",
-      "rootPath": "./templates/simpleCustomA/",
-      "colorSchemesPath": "colorSchemes/",
-      "description": "plantilla simple pero con aspecto mejorado"
-   },
-   {
-      "name": "doubleColumnA",
-      "rootPath": "./templates/doubleColumnA/",
-      "colorSchemesPath": "colorSchemes/",
-      "description": "plantilla con informacion en 2 columnas"
-   }
+    {
+        "name": "basicATS",
+        "rootPath": "./templates/basicATS/",
+        "colorSchemesPath": "colorSchemes/",
+        "description": "pensado para cumplir con el formato ATS"
+    },
+    {
+        "name": "fullATS",
+        "rootPath": "./templates/fullATS/",
+        "colorSchemesPath": "colorSchemes/",
+        "description": "formato ATS"
+    },
+    {
+        "name": "simpleA",
+        "rootPath": "./templates/simpleA/",
+        "colorSchemesPath": "colorSchemes/",
+        "description": "plantilla simple"
+    },
+    {
+        "name": "simpleCustomA",
+        "rootPath": "./templates/simpleCustomA/",
+        "colorSchemesPath": "colorSchemes/",
+        "description": "plantilla simple pero con aspecto mejorado"
+    },
+    {
+        "name": "doubleColumnA",
+        "rootPath": "./templates/doubleColumnA/",
+        "colorSchemesPath": "colorSchemes/",
+        "description": "plantilla con informacion en 2 columnas"
+    },
+    {
+        "name": "githubBasicResume",
+        "rootPath": "./templates/githubBasicResume/",
+        "colorSchemesPath": "colorSchemes/",
+        "description": "Pensado para usar en Github."
+    }
 ]
