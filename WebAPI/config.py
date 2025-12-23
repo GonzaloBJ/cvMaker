@@ -1,6 +1,7 @@
 from os import getenv, path
 from dotenv import load_dotenv
 from flask import json
+from utils import open_toml
 
 # Load variables from .env
 basedir = path.abspath(path.dirname(__file__))
@@ -14,7 +15,9 @@ PORT = getenv("PORT")
 ROOT_DIR = path.dirname(path.abspath(__file__))
 
 # cvMaker rutas
-CV_DATA_SOURCES = "./cvDataSource.json"
+##CV_DATA_SOURCES = "./cvDataSource.json"
+CV_DATA_SOURCES = open_toml("./cvDataSource.toml")
+
 TEMPLATES_SOURCE = "./templatesData.json"
 TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
 OUTPUT_DIR_PATH = ".//static//outputCV"

@@ -1,5 +1,5 @@
+import tomllib
 import unicodedata
-
 
 def convert_str_to_normalized(text: str) -> str:
     # replace spaces with underscores and convert to uppercase
@@ -15,3 +15,9 @@ def convert_person_fullname_to_short(person_name: str) -> str:
     short_person_name = f"{listed_person_name[0]} {listed_person_name[2]}"
     
     return short_person_name
+
+def open_toml(path: str ):
+    print("Opening toml file from path: ", path)
+    with open(path, "rb") as f:
+        toml_data = tomllib.load(f)
+    return toml_data

@@ -11,19 +11,17 @@ class CVDataFromInternalFileStrategy(ICVDataStrategy):
         super().__init__()
         self.FILE_ENCODING = encodings.utf_8.getregentry().name
         self.FILE_READ_MODE = 'r'
+        self.PERSONs = 'persons'
         self.PERSON_ACRONYM = 'personAcronym'
     
     def get_person_data_source_by_acronym(self, person_acronym: str) -> CVDataSource:
         try:
-            with open(CV_DATA_SOURCES, self.FILE_READ_MODE, encoding=self.FILE_ENCODING) as cv_data_sources:
-                cv_data_sources_json = json.load(cv_data_sources)
+            cv_person_data = next((person for person in CV_DATA_SOURCES[self.PERSONs] if person[self.PERSON_ACRONYM] == person_acronym), None)
+            if cv_person_data:
+                cv_data_source = CVDataSource(**cv_person_data)
                 
-                cv_person_data = next((item for item in cv_data_sources_json if item[self.PERSON_ACRONYM] == person_acronym), None)
-                if cv_person_data: 
-                    cv_data_source = CVDataSource(**cv_person_data)
-                    
-                    return cv_data_source
-                else: raise IndexError(f"Datos de {person_acronym} no encontrados.")
+                return cv_data_source
+            else: raise IndexError(f"Datos de {person_acronym} no encontrados.")
         except Exception:
             raise
         

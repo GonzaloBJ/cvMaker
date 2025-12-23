@@ -1,0 +1,15 @@
+# Lista de personas y sus rutas de CV
+[[persons]]
+personAcronym = "gb"
+personName = "Gonzalo Barahona"
+dataPath = "./cvData/cvGonzaloBarahona.json"
+
+[[persons]]
+personAcronym = "gb_alt"
+personName = "Gonzalo Barahona"
+dataPath = "./cvData/cvGonzaloBarahona.json"
+
+[[persons]]
+personAcronym = "fu"
+personName = "Fernanda Urrutia"
+dataPath = "./cvData/cvFernandaUrrutia.json"
