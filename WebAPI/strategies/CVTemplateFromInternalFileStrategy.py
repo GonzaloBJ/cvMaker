@@ -2,7 +2,7 @@ import encodings
 from typing import Any
 from flask import json
 import jinja2
-from config import TEMPLATES_CONFIG_SOURCE, TEMPLATES_SOURCE
+from config import TEMPLATES_CONFIG, TEMPLATES_SOURCE
 from interfaces.strategy.ICVTemplateStrategy import ICVTemplateStrategy
 from models.cvMakerModel import CVTemplate, CVTemplateConfig, RenderedTemplate
 
@@ -18,12 +18,11 @@ class CVTemplateFromInternalFileStrategy(ICVTemplateStrategy):
     
     def get_config(self, language_name: str) -> CVTemplateConfig:
         try:
-            with open(TEMPLATES_CONFIG_SOURCE, self.FILE_READ_MODE, encoding=self.FILE_ENCODING) as cv_template_config_str:
-                cv_template_config = CVTemplateConfig.from_dict((json.load(cv_template_config_str)))
-                
-                cv_template_config.lang = language_name
-                
-                return cv_template_config
+            cv_template_config = CVTemplateConfig.from_dict(TEMPLATES_CONFIG)
+            
+            cv_template_config.lang = language_name
+            
+            return cv_template_config
         except Exception:
             raise
 

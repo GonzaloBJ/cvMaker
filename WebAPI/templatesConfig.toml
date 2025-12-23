@@ -1,0 +1,33 @@
+lang = "ESP"
+
+[sectionConfig.profile]
+ESP = "Perfil"
+ENG = "Profile"
+
+[sectionConfig.formation]
+ESP = "Educación"
+ENG = "Education"
+
+[sectionConfig.certification]
+ESP = "Certificaciones"
+ENG = "Certifications"
+
+[sectionConfig.languages]
+ESP = "Lenguajes"
+ENG = "Languages"
+
+[sectionConfig.goals]
+ESP = "Logros"
+ENG = "Goals"
+
+[sectionConfig.skills]
+ESP = "Aptitudes"
+ENG = "Skills"
+
+[sectionConfig.workHistory]
+ESP = "Experiencia Laboral"
+ENG = "Work Experience"
+
+[sectionConfig.references]
+ESP = "Referencias"
+ENG = "References"

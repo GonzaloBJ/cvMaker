@@ -17,9 +17,9 @@ ROOT_DIR = path.dirname(path.abspath(__file__))
 # cvMaker rutas
 ##CV_DATA_SOURCES = "./cvDataSource.json"
 CV_DATA_SOURCES = open_toml("./cvDataSource.toml")
-
 TEMPLATES_SOURCE = "./templatesData.json"
-TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
+##TEMPLATES_CONFIG_SOURCE = "./templatesConfig.json"
+TEMPLATES_CONFIG = open_toml("./templatesConfig.toml")
 OUTPUT_DIR_PATH = ".//static//outputCV"
 API_INTERFACE_PATH = ".//index.html"
 
