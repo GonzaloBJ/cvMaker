@@ -1,8 +1,7 @@
-import encodings
 from typing import Any
+from config import TEMPLATES_CONFIG, TEMPLATES_SOURCE, UNIVERSAL_ENCODING
 from flask import json
 import jinja2
-from config import TEMPLATES_CONFIG, TEMPLATES_SOURCE
 from interfaces.strategy.ICVTemplateStrategy import ICVTemplateStrategy
 from models.cvMakerModel import CVTemplate, CVTemplateConfig, RenderedTemplate
 
@@ -10,7 +9,6 @@ from models.cvMakerModel import CVTemplate, CVTemplateConfig, RenderedTemplate
 class CVTemplateFromInternalFileStrategy(ICVTemplateStrategy):
     def __init__(self):
         super().__init__()
-        self.FILE_ENCODING = encodings.utf_8.getregentry().name
         self.FILE_READ_MODE = 'r'
         self.NAME_ATTR = 'name'
         self.template_loader = jinja2.FileSystemLoader('./') # todo: set /templates/
@@ -28,7 +26,7 @@ class CVTemplateFromInternalFileStrategy(ICVTemplateStrategy):
 
     def get_by_name_and_color(self, template_name_param: str, color_scheme: str) -> CVTemplate:
         try:
-            with open(TEMPLATES_SOURCE, self.FILE_READ_MODE, encoding=self.FILE_ENCODING) as cvJson:
+            with open(TEMPLATES_SOURCE, self.FILE_READ_MODE, encoding=UNIVERSAL_ENCODING) as cvJson:
                 cv_templates = json.load(cvJson)
                 
                 template = next((item for item in cv_templates if item[self.NAME_ATTR] == template_name_param), None)

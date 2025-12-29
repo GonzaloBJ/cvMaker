@@ -7,9 +7,8 @@ Las tareas se marcan como pendientes (`[❌]`) o completadas (`[✅]`).
     * [✅] refactorizar `cvFileRepository` a `cvOutputStategy` para tener distintas salidas de archivo(pdf, html, word).
     * [✅] Actualizar metodos para usar clases de entrada.
     * [✅] Generar validador de parametros entrada api usando dataclass(arg).
+    * [✅] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
     * [❌] crear `cvToReadmeStrategy` para exportar el template a readme (github).
-    * [❌] Implementar `toml` (Tom's Obvious, Minimal Language) para configuraciones.
-    * [❌] Crear carpeta `core` para guardar configuraciones (`env`, `apiconf`, `pdfkit`, `gettemplates`, `dataJson`).
     * [❌] refactorizar `template_loader` para que tome las rutas del directorio `/templates`.
     * [❌] Agregar metodo de api para generar cv desde url de datos `cvDesdeUrl` usando github /docs.
 * **Contenido y Datos (CV):**

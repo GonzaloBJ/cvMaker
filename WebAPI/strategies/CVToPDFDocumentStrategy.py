@@ -1,8 +1,7 @@
 from datetime import datetime
 import os
+from config import OUTPUT_DIR_PATH, HTML_TO_PDF_CONFIG
 import pdfkit
-from blueprints.cvMaker.models import DefaultResponse
-from config import HTML_TO_PDF_CONFIG, OUTPUT_DIR_PATH
 from interfaces.strategy.ICVOutputDocumentStrategy import ICVOutputDocumentStrategy
 
 

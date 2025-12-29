@@ -3,7 +3,7 @@ import os
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from config import CV_DATA_FORMAT_FILE, OUTPUT_DIR_CV_DATA_FORMAT, OUTPUT_NAME_CV_DATA_FORMAT
+from WebAPI.config import OUTPUT_DIR_CV_DATA_FORMAT, OUTPUT_NAME_CV_DATA_FORMAT, CV_DATA_FORMAT_FILE
 
 def generate():
     try:
